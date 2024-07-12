@@ -1,0 +1,5 @@
+Transforma el siguiente texto en json siguiendo el siguiente patrón:
+Cada linea consta de 3 partes y se tratará de un objecto JSON separado por los siguientes atributos.
+"number" atributo de tipo int donde se almacenará el comienzo de la linea hasta el primer "."
+"answers" atributo de tipo array de String donde se almacenará la segunda parte de la línea que va desde el inicio hasta el primer ".   "
+"explanation" atributo de tipo String que va desde el segundo "." hasta el final de linea
