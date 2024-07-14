@@ -5,7 +5,7 @@
     <mat-nav-list>
       @if(chapters && chapters.length > 0) {
       @for (chapterMeta of chapters; track chapterMeta.chapterNumber) {
-      <a class="nav-item" [href]="'/chapters/chapter/'+chapterMeta.chapterNumber">{{chapterMeta.title}}</a>
+      <a class="nav-item" [href]="'/quizs_app/chapters/chapter/'+chapterMeta.chapterNumber">{{chapterMeta.title}}</a>
       }
       }
     </mat-nav-list>

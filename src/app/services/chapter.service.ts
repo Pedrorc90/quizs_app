@@ -13,15 +13,15 @@ export class ChapterService {
   constructor(private http: HttpClient) { }
 
   getChaptersMeta(): Observable<ChapterMeta[]> {
-    return this.http.get<ChapterMeta[]>('/assets/chapters.meta.json');
+    return this.http.get<ChapterMeta[]>('/quizs_app/assets/chapters.meta.json');
   }
 
   getQuestions(chapterNumber: string): Observable<Question[]> {
-    return this.http.get<Question[]>('/assets/chapter_' + chapterNumber + '/chapter_' + chapterNumber + '.json')
+    return this.http.get<Question[]>('/quizs_app/assets/chapter_' + chapterNumber + '/chapter_' + chapterNumber + '.json')
   }
 
   getAnswers(chapterNumber: string): Observable<Answer[]> {
-    return this.http.get<Answer[]>('/assets/chapter_' + chapterNumber + '/answers_chapter_' + chapterNumber + '.json')
+    return this.http.get<Answer[]>('/quizs_app/assets/chapter_' + chapterNumber + '/answers_chapter_' + chapterNumber + '.json')
   }
 
 
