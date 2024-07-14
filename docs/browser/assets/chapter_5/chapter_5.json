@@ -1,0 +1,912 @@
+{
+  "questions": [
+    {
+      "number": 1,
+      "question": "1. What is the output of the following?\nList<String> museums = new ArrayList<>(1);\nmuseums.add(\"Natural History\");\nmuseums.add(\"Science\");\nmuseums.add(\"Art\");\nmuseums.remove(2);\nSystem.out.println(museums);",
+      "choices": [
+        "A. [Natural History, Science]",
+        "B. [Natural History, Art, Science]",
+        "C. The code does not compile.",
+        "D. The code compiles but throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 2,
+      "question": "2. How many of the following are legal declarations?\n[]String lions = new String[];\nString[] tigers = new String[1] {\"tiger\"};\nString bears[] = new String[] {};\nString ohMy [] = new String[0] {};",
+      "choices": [
+        "A. None",
+        "B. One",
+        "C. Two",
+        "D. Three",
+        "E. Four"
+      ]
+    },
+    {
+      "number": 3,
+      "question": "3. Which of the following can fill in the blank to make the code compile?\npublic class News<__________> {}",
+      "choices": [
+        "A. ? only",
+        "B. N only",
+        "C. ? and N",
+        "D. News, and Object",
+        "E. N, News, and Object",
+        "F. None of the above"
+      ]
+    },
+    {
+      "number": 4,
+      "question": "4. Which of the following are true about this code? (Choose two.)\n26: List<String> strings = new ArrayList<?>();\n27: var ints = new HashSet<Integer>();\n28: Double dbl = 5.0;\n29: ints.add(2);\n30: ints.add(null);",
+      "choices": [
+        "A. The code compiles as is.",
+        "B. One line needs to be removed for the code to compile.",
+        "C. Two lines need to be removed for the code to compile.",
+        "D. One line of code uses autoboxing.",
+        "E. Two lines of code use autoboxing",
+        "F. Three lines of code use autoboxing"
+      ]
+    },
+    {
+      "number": 5,
+      "question": "5. Which of the following creates an empty two-dimensional array with dimensions 2×2?",
+      "choices": [
+        "A. int[][] blue = new int[2, 2];",
+        "B. int[][] blue = new int[2], [2];",
+        "C. int[][] blue = new int[2][2];",
+        "D. int[][] blue = new int[2 x 2];",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 6,
+      "question": "6. What is the output of the following?\nvar q = new ArrayDeque<String>();\nq.offer(\"snowball\");\nq.offer(\"minnie\");\nq.offer(\"sugar\");\n\nSystem.out.print(q.peek() + \" \" + q.peek() + \" \" + q.size());",
+      "choices": [
+        "A. sugar sugar 3",
+        "B. sugar minnie 1",
+        "C. snowball minnie 1",
+        "D. snowball snowball 3",
+        "E. The code does not compile.",
+        "F. None of the above."
+      ]
+    },
+    {
+      "number": 7,
+      "question": "7. You are running a library. Patrons select books by name. They get at the back of the checkout line. When they get to the front, they scan the book's ISBN, a unique identification number. The checkout system finds the book based on this number and marks the book as checked out. Of these choices, which data structures best represent the line to check out the book and the book lookup to mark it as checked out, respectively?",
+      "choices": [
+        "A. ArrayList, HashSet",
+        "B. ArrayList, TreeMap",
+        "C. ArrayList, TreeSet",
+        "D. LinkedList, HashSet",
+        "E. LinkedList, TreeMap",
+        "F. LinkedList, TreeSet"
+      ]
+    },
+    {
+      "number": 8,
+      "question": "8. What is the result of running the following program?\n1:  package fun;\n2:  public class Sudoku {\n3:     static int[][] game;\n4:\n5:     public static void main(String[] args) {\n6:        game[3][3] = 6;\n7:        Object[] obj = game;\n8:        game[3][3] = \"X\";\n9:        System.out.println(game[3][3]);\n10:    } }",
+      "choices": [
+        "A. X",
+        "B. The code does not compile.",
+        "C. The code compiles but throws a NullPointerException at runtime.",
+        "D. The code compiles but throws a different exception at runtime.",
+        "E. None of the above."
+      ]
+    },
+    {
+      "number": 9,
+      "question": "9. Suppose you want to implement a Comparator<String> so that it sorts the longest strings first. You may assume there are no null values. Which method could implement such a comparator?",
+      "choices": [
+        "A. \npublic int compare(String s1, String s2) {\n   return s1.length() - s2.length();\n}",
+        "B. \npublic int compare(String s1, String s2) {\n   return s2.length() - s1.length();\n}",
+        "C. \npublic int compare(Object obj1, Object obj2) {\n   String s1 = (String) obj1;\n   String s2 = (String) obj2;\n   return s1.length() - s2.length();\n}",
+        "D. \npublic int compare(Object obj1, Object obj2) {\n   String s1 = (String) obj1;\n   String s2 = (String) obj2;\n   return s2.length() - s1.length();\n}",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 10,
+      "question": "10. How many lines does the following code output?\nvar days = new String[] { \"Sunday\", \"Monday\", \"Tuesday\",\n   \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\" };\n\nfor (int i = 1; i < days.length; i++)\n      System.out.println(days[i]);",
+      "choices": [
+        "A. Zero",
+        "B. Six",
+        "C. Seven",
+        "D. The code does not compile.",
+        "E. The code compiles but throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 11,
+      "question": "11. Which cannot fill in the blank for this code to compile and print true at runtime?\nvar c = new _________________ <String>();\nc.add(\"pen\");\nc.remove(\"pen\");\nSystem.out.println(c.isEmpty());",
+      "choices": [
+        "A. ArrayDeque",
+        "B. ArrayList",
+        "C. TreeMap",
+        "D. TreeSet",
+        "E. All of these can fill in the blank."
+      ]
+    },
+    {
+      "number": 12,
+      "question": "12. What is true of the following code? (Choose two.)\nimport java.util.*;\npublic class Garden {\n   private static void sortAndSearch(String x, String y) {\n      var coll = Arrays.asList(x,y);\n      Collections.sort(coll);\n      _________ result = Collections.binarySearch(coll, x);\n      System.out.println(result);\n   }\n   public static void main(String[] args) {\n      sortAndSearch(\"seed\", \"flower\");\n   } }",
+      "choices": [
+        "A. If the blank contains int, then the code outputs 0.",
+        "B. If the blank contains int, then the code outputs 1.",
+        "C. If the blank contains int, then the code does not compile.",
+        "D. If the blank contains String, then the code outputs flower.",
+        "E. If the blank contains String, then the code outputs seed.",
+        "F. If the blank contains String, then the code does not compile."
+      ]
+    },
+    {
+      "number": 13,
+      "question": "13. How many of the following are legal declarations?\npublic void greek() {\n   [][]String alpha;\n   []String beta;\n   String[][] gamma;\n   String[] delta[];\n   String epsilon[][];\n   var[][] zeta;\n}",
+      "code": "A. One\nB. Two\nC. Three\nD. Four\nE. Five\nF. Six",
+      "choices": [
+        "A. One",
+        "B. Two",
+        "C. Three",
+        "D. Four",
+        "E. Five",
+        "F. Six"
+      ]
+    },
+    {
+      "number": 14,
+      "question": "14. What is the result of the following?\nvar list = new ArrayList<Integer>();\nlist.add(56);\nlist.add(56);\nlist.add(3);\n\nvar set = new TreeSet<Integer>(list);\nSystem.out.print(set.size());\nSystem.out.print(\" \");\nSystem.out.print(set.iterator().next());",
+      "choices": [
+        "A. 2 3",
+        "B. 2 56",
+        "C. 3 3",
+        "D. 3 56",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 15,
+      "question": "15. What is true of this code when run as java Copier.java with no arguments? (Choose two.)\n1:  import java.util.Arrays;\n2:\n3:  public class Copier {\n4:     public static void main(String… original) {\n5:        String… copy = original;\n6:        Arrays.linearSort(original);\n7:        Arrays.search(original, \"\");\n8:        System.out.println(original.size() \n9:           + \" \" + original[0]);\n10:    } }",
+      "choices": [
+        "A. One line contains a compiler error.",
+        "B. Two lines contain a compiler error.",
+        "C. Three lines contain a compiler error.",
+        "D. Four lines contain a compiler error.",
+        "E. If the compiler errors were fixed, the code would throw an exception.",
+        "F. If the compiler errors were fixed, the code would run successfully."
+      ]
+    },
+    {
+      "number": 16,
+      "question": "16. What is the output of the following? (Choose three.)\n20: var chars = new ______________________<Character>();\n21: chars.add('a');\n22: chars.add(Character.valueOf('b'));\n23: chars.set(1, 'c');\n24: chars.remove(0);\n25: System.out.print(chars.size() + \" \" + chars.contains('b'));",
+      "choices": [
+        "A. When inserting ArrayList into the blank, the code prints 1 false.",
+        "B. When inserting ArrayList into the blank, the code does not compile.",
+        "C. When inserting HashMap into the blank, the code prints 1 false.",
+        "D. When inserting HashMap into the blank, the code does not compile.",
+        "E. When inserting HashSet into the blank, the code prints 1 false.",
+        "F. When inserting HashSet into the blank, the code does not compile."
+      ]
+    },
+    {
+      "number": 17,
+      "question": "17. What is the output of the following?\nimport java.util.*;\nrecord Magazine(String name) {\n   public int compareTo(Magazine m) {\n      return name.compareTo(m.name);\n   }\n}\npublic class Newsstand {\n   public static void main(String[] args) {\n      var set = new TreeSet<Magazine>();\n      set.add(new Magazine(\"highlights\"));\n      set.add(new Magazine(\"Newsweek\"));\n      set.add(new Magazine(\"highlights\"));\n      System.out.println(set.iterator().next());\n   } }",
+      "choices": [
+        "A. Magazine[name=highlights]",
+        "B. Magazine[name=Newsweek]",
+        "C. null",
+        "D. The code does not compile.",
+        "E. The code compiles but throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 18,
+      "question": "18. Which is the first line to prevent this code from compiling or running without error?\n11: char[][] ticTacToe = new char[3][3];\n12: ticTacToe[1][3] = 'X';\n13: ticTacToe[2][2] = 'X';\n14: ticTacToe[3][1] = 'X';\n15: System.out.println(ticTacToe.length + \" in a row!\");",
+      "choices": [
+        "A. Line 11",
+        "B. Line 12",
+        "C. Line 13",
+        "D. Line 14",
+        "E. Line 15",
+        "F. None of the above; the code compiles and runs without issue."
+      ]
+    },
+    {
+      "number": 19,
+      "question": "19. What is the first line with a compiler error?\nclass Mammal {}\nclass Bat extends Mammal {}\nclass Cat extends Mammal {}\nclass Sat {}\n\nclass Fur<T extends Mammal> {    // line R\n   void clean() {\n      var bat = new Fur<Bat>();  // line S\n      var cat = new Fur<Cat>();  // line T\n      var sat = new Fur<Sat>();  // line U\n   }\n}",
+      "choices": [
+        "A. Line R",
+        "B. Line S",
+        "C. Line T",
+        "D. Line U",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 20,
+      "question": "20. What is a possible result of this code?\n17: var nums = new HashSet<Long>();\n18: nums.add((long) Math.min(5, 3));\n19: nums.add(Math.round(3.14));\n20: nums.add((long) Math.pow(4,2));\n21: System.out.println(nums);",
+      "choices": [
+        "A. [3]",
+        "B. [16]",
+        "C. [16, 3]",
+        "D. [16, 3, 3]",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 21,
+      "question": "21. What is the output of the following?\n5: var x = new ArrayDeque<Integer>();\n6: x.offer(18);\n7: x.offer(5);\n8: x.push(13);\n9: System.out.println(x.poll() + \" \" + x.poll());",
+      "choices": [
+        "A. 13 5",
+        "B. 13 18",
+        "C. 18 5",
+        "D. 18 13",
+        "E. The code does not compile.",
+        "F. The code compiles but prints something else."
+      ]
+    },
+    {
+      "number": 22,
+      "question": "22. Suppose we want to store JellyBean objects. Which of the following require JellyBean to implement the Comparable interface or create a Comparator to add them to the collection? (Choose two.)",
+      "choices": [
+        "A. ArrayList",
+        "B. HashMap",
+        "C. HashSet",
+        "D. SortedArray",
+        "E. TreeMap",
+        "F. TreeSet"
+      ]
+    },
+    {
+      "number": 23,
+      "question": "23. Which of the following references the first and last elements in a nonempty array?",
+      "choices": [
+        "A. trains[0] and trains[trains.length]",
+        "B. trains[0] and trains[trains.length - 1]",
+        "C. trains[1] and trains[trains.length]",
+        "D. trains[1] and trains[trains.length - 1]",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 24,
+      "question": "24. Which of the following fills in the blank so this code compiles?\npublic static void throwOne(Collection<____________> coll) {\n   var iter = coll.iterator();\n   if (iter.hasNext())\n      throw iter.next();\n}",
+      "choices": [
+        "A. ?",
+        "B. ? extends RuntimeException",
+        "C. ? super RuntimeException",
+        "D. T",
+        "E. T extends RuntimeException",
+        "F. T super RuntimeException",
+        "G. None of the above"
+      ]
+    },
+    {
+      "number": 25,
+      "question": "25. Which of these four array declarations produces a different array than the others?",
+      "choices": [
+        "A. int[][] nums = new int[2][1];",
+        "B. int[] nums[] = new int[2][1];",
+        "C. int[] nums[] = new int[][] { { 0 }, { 0 } };",
+        "D. int[] nums[] = new int[][] { { 0, 0 } };"
+      ]
+    },
+    {
+      "number": 26,
+      "question": "26. What does the following output?\nvar laptops = new String[] { \"Linux\", \"Mac\", \"Windows\" };\nvar desktops = new String[] { \"Mac\", \"Linux\", \"Windows\" };\n\nvar search = Arrays.binarySearch(laptops, \"Linux\");\nvar mismatch1 = Arrays.mismatch(laptops, desktops);\nvar mismatch2 = Arrays.mismatch(desktops, desktops);\n\nSystem.out.println(search + \" \" + mismatch1 + \" \" + mismatch2);",
+      "choices": [
+        "A. -1 0 -1 is guaranteed",
+        "B. -1 -1 0 is guaranteed",
+        "C. 0 -1 0 is guaranteed",
+        "D. 0 0 -1 is guaranteed",
+        "E. The output is not defined.",
+        "F. The code does not compile."
+      ]
+    },
+    {
+      "number": 27,
+      "question": "27. Which line in the main() method doesn't compile or points to a class that doesn't compile?\n1:  interface Comic<S> {\n2:     void draw(S s);\n3:  }\n4:  class ComicClass<S> implements Comic<S> {\n5:     public void draw(S s) {\n6:        System.out.println(s);\n7:     }\n8:  }\n9:  class SnoopyClass implements Comic<Snoopy> {\n10:    public void draw(Snoopy s) {\n11:       System.out.println(s);\n12:    }\n13: }\n14: class SnoopyComic implements Comic<Snoopy> {\n15:    public void draw(S s) {\n16:       System.out.println(s);\n17:    }\n18: }\n19: public class Snoopy {\n20:    public static void main(String[] args) {\n21:       Comic<Snoopy> s1 = s -> System.out.println(s);\n22:       Comic<Snoopy> s2 = new ComicClass<>();\n23:       Comic<Snoopy> s3 = new SnoopyClass();\n24:       Comic<Snoopy> s4 = new SnoopyComic();\n25:    } }",
+      "choices": [
+        "A. Line 21",
+        "B. Line 22",
+        "C. Line 23",
+        "D. Line 24",
+        "E. None of the above. All of the code compiles."
+      ]
+    },
+    {
+      "number": 28,
+      "question": "28. Fill in the blank to make this code compile:\npublic class Truck implements Comparable<Truck> {\n   private int id;\n   public Truck(int id) {\n      this.id = id;\n   }\n   @Override\n   public int _________________ {\n      return id - t.id;\n   } }",
+      "choices": [
+        "A. compare(Truck t)",
+        "B. compare(Truck t1, Truck t2)",
+        "C. compareTo(Truck t)",
+        "D. compareTo(Truck t1, Truck t2)",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 29,
+      "question": "29. How many lines does the following code output?\nvar days = new String[] { \"Sunday\", \"Monday\", \"Tuesday\",\n   \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\" };\n\nfor (int i = 0; i < days.length; i++)\n   System.out.println(days[i]);",
+      "choices": [
+        "A. Six",
+        "B. Seven",
+        "C. The code does not compile.",
+        "D. The code compiles but throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 30,
+      "question": "30. Which of the following fill in the blank to print out true? (Choose two.)\nString[] array = {\"Natural History\", \"Science\"};\nvar museums = _________________;\nmuseums.set(0, \"Art\");\nSystem.out.println(museums.contains(\"Art\"));",
+      "choices": [
+        "A. Arrays.asList(array)",
+        "B. Arrays.asList(\"Natural History, Science\")",
+        "C. List.of(array)",
+        "D. List.of(\"Natural History\", \"Science\")",
+        "E. new ArrayList<String>(\"Natural History\", \"Science\")",
+        "F. new List<String>(\"Natural History\", \"Science\")"
+      ]
+    },
+    {
+      "number": 31,
+      "question": "31. Which option cannot fill in the blank to print Clean socks?\nclass Wash<T> {\n   T item;\n   public void clean(T item) {\n      System.out.println(\"Clean \" + item);\n   } }\npublic class LaundryTime {\n   public static void main(String[] args) {\n      _______________________\n      wash.clean(\"socks\");\n   } }",
+      "choices": [
+        "A. var wash = new Wash<String>();",
+        "B. var wash = new Wash<>();",
+        "C. Wash wash = new Wash();",
+        "D. Wash wash = new Wash<String>();",
+        "E. Wash<String> wash = new Wash<>();",
+        "F. All of these can fill in the blank."
+      ]
+    },
+    {
+      "number": 32,
+      "question": "32. Which of the options in the graphic best represent the blocks variable?\nvar blocks = new char[][] {\n    { 'a', 'b', 'c' }, { 'd' }, { 'e', 'f' } };",
+      "choices": [
+        "A. Option A",
+        "B. Option B",
+        "C. Option C",
+        "D. Option D"
+      ]
+    },
+    {
+      "number": 33,
+      "question": "33. Fill in the blank so the code prints gamma. (Choose two.)\nvar list = Arrays.asList(\"alpha\", \"beta\", \"gamma\");\nCollections.sort(list, _________________);\nSystem.out.println(list.get(0));",
+      "choices": [
+        "A. (s, t) -> s.compareTo(t)",
+        "B. (s, t) -> t.compareTo(s)",
+        "C. Comparator.comparing((String s) -> s.charAt(0))",
+        "D. Comparator.comparing((String s) -> s.charAt(0)).reverse()",
+        "E. Comparator.comparing((String s) -> s.charAt(0)).reversed()"
+      ]
+    },
+    {
+      "number": 34,
+      "question": "34. How many of the following are legal declarations?\nfloat[] lion = new float[];\nfloat[] tiger = new float[1];\nfloat[] bear = new[] float;\nfloat[] ohMy = new[1] float;",
+      "choices": [
+        "A. None",
+        "B. One",
+        "C. Two",
+        "D. Three",
+        "E. Four"
+      ]
+    },
+    {
+      "number": 35,
+      "question": "35. Which is the first line of code that causes an ArrayIndexOutOfBoundsException?\nvar matrix = new String[1][2];\nmatrix[0][0] = \"Don't think you are, know you are.\"; // m1\nmatrix[0][1] = \"I'm trying to free your mind Neo\"; // m2\nmatrix[1][0] = \"Is all around you \"; // m3\nmatrix[1][1] = \"Why oh why didn't I take the BLUE pill?\"; // m4",
+      "choices": [
+        "A. m1",
+        "B. m2",
+        "C. m3",
+        "D. m4",
+        "E. The code does not compile.",
+        "F. None of the above."
+      ]
+    },
+    {
+      "number": 36,
+      "question": "36. Suppose we have list of type List<Integer>. Which method allows you to pass that List and return an immutable Set containing the same elements?",
+      "choices": [
+        "A. List.copyOf(list)",
+        "B. List.of(list)",
+        "C. Set.copyOf(list)",
+        "D. Set.of(list)",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 37,
+      "question": "37. What does the following output? (Choose two.)\nvar os = new String[] { \"Mac\", \"Linux\", \"Windows\" };\nArrays.sort(os);\n\nSystem.out.println(Arrays.binarySearch(os, \"RedHat\"));\nSystem.out.println(Arrays.binarySearch(os, \"Mac\"));",
+      "choices": [
+        "A. -1",
+        "B. -2",
+        "C. -3",
+        "D. 0",
+        "E. 1",
+        "F. 2"
+      ]
+    },
+    {
+      "number": 38,
+      "question": "38. What does the following output?\nvar names = new HashMap<String, String>();\nnames.put(\"peter\", \"pan\");\nnames.put(\"wendy\", \"darling\");\nvar first = names.entrySet();        // line x1\nSystem.out.println(first.getKey());  // line x2",
+      "choices": [
+        "A. peter",
+        "B. wendy",
+        "C. It does not compile due to line x1.",
+        "D. It does not compile due to line x2.",
+        "E. It does not compile due to another reason.",
+        "F. It throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 39,
+      "question": "39. Which of these elements are in the output of the following? (Choose three.)\nvar q = new ArrayDeque<String>();\nq.offerFirst(\"snowball\");\nq.offer(\"sugar\");\nq.offerLast(\"minnie\");\n\nSystem.out.println(q.poll());\nSystem.out.println(q.removeFirst());\nSystem.out.println(q.size());",
+      "choices": [
+        "A. sugar",
+        "B. minnie",
+        "C. snowball",
+        "D. 1",
+        "E. 2",
+        "F. 3"
+      ]
+    },
+    {
+      "number": 40,
+      "question": "40. Which of these pairs of declarations can point to an array that is different from the others?",
+      "choices": [
+        "A. int[][][][] nums1a, nums1b;",
+        "B. int[][][] nums2a[], nums2b;",
+        "C. int[][] nums3a[][], nums3b[][];",
+        "D. int[] nums4a[][][], numbs4b[][][];"
+      ]
+    },
+    {
+      "number": 41,
+      "question": "41. Which of the following does not behave the same way as the others?",
+      "choices": [
+        "A. var set = new HashSet<>();",
+        "B. var set = new HashSet<Object>();",
+        "C. HashSet<> set = new HashSet<Object>();",
+        "D. HashSet<Object> set = new HashSet<>();",
+        "E. HashSet<Object> set = new HashSet<Object>();"
+      ]
+    },
+    {
+      "number": 42,
+      "question": "42. What is true about the output of the following code?\nvar ints = new int[] {3,1,4};\nvar others = new int[] {2,7,1,8};\nSystem.out.println(Arrays.compare(ints, others));",
+      "choices": [
+        "A. It is negative because ints has fewer elements.",
+        "B. It is 0 because the arrays can't be compared.",
+        "C. It is positive because the first element is larger.",
+        "D. It is undefined.",
+        "E. The code does not compile."
+      ]
+    },
+    {
+      "number": 43,
+      "question": "43. Fill in the blank so that the code prints beta.\nvar list = List.of(\"alpha\", \"beta\", \"gamma\");\nCollections.sort(list, _________________);\nSystem.out.println(list.get(0));",
+      "choices": [
+        "A. (s, t) -> s.compareTo(t)",
+        "B. (s, t) -> t.compareTo(s)",
+        "C. Comparator.comparing(String::length)",
+        "D. Comparator.comparing(String::length).reversed()",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 44,
+      "question": "44. What is the output of the following?\n12: var queue = new ArrayDeque<>();\n13: queue.offer(\"exelsior\");\n14: queue.peekFirst();\n15: queue.addFirst(\"edwin\");\n16: queue.removeLast();\n17: System.out.println(queue);",
+      "choices": [
+        "A. [edwin]",
+        "B. [excelsior]",
+        "C. [edwin, excelsior]",
+        "D. [excelsior, edwin]",
+        "E. The code does not compile.",
+        "F. The code throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 45,
+      "question": "45. How many dimensions does the array reference moreBools allow?\nboolean[][] bools[], moreBools;",
+      "choices": [
+        "A. One dimension",
+        "B. Two dimensions",
+        "C. Three dimensions",
+        "D. None of the above"
+      ]
+    },
+    {
+      "number": 46,
+      "question": "46. What is the result of the following?\nComparator<Integer> c = (x, y) -> y - x;\nvar ints = Arrays.asList(3, 1, 4);\nCollections.sort(ints, c);\nSystem.out.println(Collections.binarySearch(ints, 1));",
+      "choices": [
+        "A. -1 is guaranteed.",
+        "B. 0 is guaranteed.",
+        "C. 1 is guaranteed.",
+        "D. The code does not compile.",
+        "E. The result is not defined."
+      ]
+    },
+    {
+      "number": 47,
+      "question": "47. Which statement most accurately represents the relationship between searching and sorting with respect to the Arrays class?",
+      "choices": [
+        "A. If the array is not sorted, calling Arrays.binarySearch() will be accurate, but slower than if it were sorted.",
+        "B. The array does not need to be sorted before calling Arrays.binarySearch() to get an accurate result.",
+        "C. The array must be sorted before calling Arrays.binarySearch() to get an accurate result.",
+        "D. None of the above."
+      ]
+    },
+    {
+      "number": 48,
+      "question": "48. Which statements are true about the following figure while ensuring the code continues to compile? (Choose two.)",
+      "choices": [
+        "A. <> can be inserted at positions P and R without making any other changes.",
+        "B. <> can be inserted at positions Q and S without making any other changes.",
+        "C. <> can be inserted at all four positions.",
+        "D. Both variables point to an ArrayList<String>.",
+        "E. Only one variable points to an ArrayList<String>.",
+        "F. Neither variable points to an ArrayList<String>."
+      ]
+    },
+    {
+      "number": 49,
+      "question": "49. What is the result of the following when called without any command-line arguments? (Choose two.)\n1: import java.util.*;\n2: public class Binary {\n3: \n4:    public static void main(String… args) {\n5:       Arrays.sort(args);\n6:       System.out.println(Arrays.toString(args));\n7:       System.out.println(args[0]);\n8:    } }",
+      "choices": [
+        "A. null",
+        "B. []",
+        "C. Binary",
+        "D. The code throws an ArrayIndexOutOfBoundsException.",
+        "E. The code throws a NullPointerException.",
+        "F. The code does not compile."
+      ]
+    },
+    {
+      "number": 50,
+      "question": "50. What is the first line with a compiler error?\nclass Mammal {}\nclass Bat extends Mammal {}\nclass Cat extends Mammal {}\nclass Sat {}\n\nclass Fur<? extends Mammal> {    // line R\n   void clean() {\n      var bat = new Fur<Bat>();  // line S\n      var cat = new Fur<Cat>();  // line T\n      var sat = new Fur<Sat>();  // line U\n   } }",
+      "choices": [
+        "A. Line R",
+        "B. Line S",
+        "C. Line T",
+        "D. Line U",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 51,
+      "question": "51. What is the result of running the following program?\n1:  package fun;\n2:  public class Sudoku {\n3:     static int[][] game = new int[6][6];\n4:\n5:     public static void main(String[] args) {\n6:        game[3][3] = 6;\n7:        Object[] obj = game;\n8:        obj[3] = \"X\";\n9:        System.out.println(game[3][3]);\n10:    } }",
+      "choices": [
+        "A. 6",
+        "B. X",
+        "C. The code does not compile.",
+        "D. The code compiles but throws a NullPointerException at runtime.",
+        "E. The code compiles but throws a different exception at runtime."
+      ]
+    },
+    {
+      "number": 52,
+      "question": "52. How many of these allow inserting null values: ArrayList, LinkedList, HashSet, and TreeSet?",
+      "choices": [
+        "A. 0",
+        "B. 1",
+        "C. 2",
+        "D. 3",
+        "E. 4"
+      ]
+    },
+    {
+      "number": 53,
+      "question": "53. What is the output of the following?\nvar threes = Arrays.asList(\"3\", \"three\", \"THREE\");\nCollections.sort(threes);\nSystem.out.println(threes);",
+      "choices": [
+        "A. [3, three, THREE]",
+        "B. [3, THREE, three]",
+        "C. [three, THREE, 3]",
+        "D. [THREE, three, 3]",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 54,
+      "question": "54. How many dimensions does the array reference moreBools allow?\nboolean[][][] bools, moreBools;",
+      "choices": [
+        "A. One dimension",
+        "B. Two dimensions",
+        "C. Three dimensions",
+        "D. None of the above"
+      ]
+    },
+    {
+      "number": 55,
+      "question": "55. What is the output of the following?\n20: List<Character> chars = new ArrayList<>();\n21: chars.add('a');\n22: chars.add('b');\n23: chars.clear();\n24: chars.remove(0);\n25: System.out.print(chars.isEmpty() + \" \" + chars.length());",
+      "choices": [
+        "A. false 1",
+        "B. true 0",
+        "C. 2",
+        "D. The code does not compile.",
+        "E. The code throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 56,
+      "question": "56. Which fills in the blank in the method signature to allow this code to compile and print [duck, duck, goose] at runtime?\nimport java.util.*;\npublic class ExtendingGenerics {\n   private static <_________________ , U> U add(T list, U element) {\n      list.add(element);\n      return element;\n   }\n   public static void main(String[] args) {\n      var values = new ArrayList<String>();\n      add(values, \"duck\");\n      add(values, \"duck\");\n      add(values, \"goose\");\n      System.out.println(values);\n   } }",
+      "choices": [
+        "A. ? extends Collection<U>",
+        "B. ? implements Collection<U>",
+        "C. T extends Collection<U>",
+        "D. T implements Collection<U>",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 57,
+      "question": "57. What does the following output?\nString[] os = new String[] { \"Mac\", \"Linux\", \"Windows\" };\nSystem.out.println(Arrays.binarySearch(os, \"Linux\"));",
+      "choices": [
+        "A. 0 is guaranteed.",
+        "B. 1 is guaranteed.",
+        "C. 2 is guaranteed",
+        "D. The output is not defined.",
+        "E. The code does not compile."
+      ]
+    },
+    {
+      "number": 58,
+      "question": "58. Which is the first line to prevent this code from compiling and running without error?\n11: char[][] ticTacToe = new char[3,3];\n12: ticTacToe[1][3] = 'X';\n13: ticTacToe[2][2] = 'X';\n14: ticTacToe[3][1] = 'X';\n15: System.out.println(ticTacToe.length + \" in a row!\");",
+      "choices": [
+        "A. Line 11",
+        "B. Line 12",
+        "C. Line 13",
+        "D. Line 14",
+        "E. Line 15",
+        "F. None of the above; the code compiles and runs without issue."
+      ]
+    },
+    {
+      "number": 59,
+      "question": "59. What is the result of the following?\nvar list = new ArrayList<String>();\nlist.add(\"Austin\");\nlist.add(\"Boston\");\nlist.add(\"San Francisco\");\n\nlist.removeIf(a -> a.length()> 10);\nSystem.out.println(list.size());",
+      "choices": [
+        "A. 0",
+        "B. 1",
+        "C. 2",
+        "D. 3",
+        "E. The code does not compile."
+      ]
+    },
+    {
+      "number": 60,
+      "question": "60. What happens when calling the following method with a non-null and non-empty array?\npublic static void addStationName(String[] names) {\n   names[names.length] = \"Times Square\";\n}",
+      "choices": [
+        "A. It adds an element to the array whose value is Times Square.",
+        "B. It replaces the last element in the array with the value Times Square.",
+        "C. It throws an exception.",
+        "D. It does not compile regardless of what is passed in.",
+        "E. None of the above."
+      ]
+    },
+    {
+      "number": 61,
+      "question": "61. Which is not a true statement about an array?",
+      "choices": [
+        "A. An array expands automatically when it is full.",
+        "B. An array is allowed to contain duplicate values.",
+        "C. An array understands the concept of ordered elements.",
+        "D. An array uses a zero index to reference the first element."
+      ]
+    },
+    {
+      "number": 62,
+      "question": "62. Which of the following cannot fill in the blank to make the code compile?\nprivate void output(___________________<?> x) {\n   x.forEach(System.out::println);\n}",
+      "choices": [
+        "A. Collection",
+        "B. LinkedList",
+        "C. TreeMap",
+        "D. None of these can fill in the blank.",
+        "E. All of these can fill in the blank."
+      ]
+    },
+    {
+      "number": 63,
+      "question": "63. Which of the following fills in the blank so this code compiles?\npublic static void getExceptions(Collection<____________________> coll) {\n   coll.add(new RuntimeException());\n   coll.add(new Exception());\n}\n",
+      "choices": [
+        "A. ?",
+        "B. ? extends RuntimeException",
+        "C. ? super RuntimeException",
+        "D. T",
+        "E. T extends RuntimeException",
+        "F. T super RuntimeException",
+        "G. None of the above"
+      ]
+    },
+    {
+      "number": 64,
+      "question": "64. What is the output of the following? (Choose two.)\n35: var mags = new HashMap<String, Integer>();\n36: mags.put(\"People\", 1974);\n37: mags.put(\"Readers Digest\", 1922);\n38: mags.put(\"The Economist\", 1843);\n39:\n40: Collection<Integer> years = mags.values();\n41:\n42: List<Integer> sorted = new ArrayList<>(years);\n43: Collections.sort(sorted);\n44:\n45: int first = sorted.get(0);\n46: System.out.println(first);\n47:\n48: Integer last = sorted.get(sorted.size());\n49: System.out.println(last);",
+      "choices": [
+        "A. 1843",
+        "B. 1922",
+        "C. 1974",
+        "D. The code compiles but throws an exception at runtime.",
+        "E. The code does not compile."
+      ]
+    },
+    {
+      "number": 65,
+      "question": "65. How do you access the array element with the value of \"z\"?",
+      "choices": [
+        "A. dimensions[\"three\"][2]",
+        "B. dimensions[\"three\"][3]",
+        "C. dimensions[2][2]",
+        "D. dimensions[3][3]"
+      ]
+    },
+    {
+      "number": 66,
+      "question": "66. What is the output of the following?\nimport java.util.*;\nrecord Magazine(String name) implements Comparable<Magazine> {\n   public int compareTo(Magazine m) {\n      return name.compareTo(m.name);\n   }\n}\npublic class Newsstand {\n   public static void main(String[] args) {\n      var set = new TreeSet<Magazine>();\n      set.add(new Magazine(\"highlights\"));\n      set.add(new Magazine(\"Newsweek\"));\n      set.add(new Magazine(\"highlights\"));\n      System.out.println(set.iterator().next());\n   } }",
+      "choices": [
+        "A. Magazine[name=highlights]",
+        "B. Magazine[name=Newsweek]",
+        "C. The code does not compile.",
+        "D. The code compiles but throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 67,
+      "question": "67. Which can fill in the blanks to print Cleaned 2 items?\nimport java.util.*;\nclass Wash<T _________________ Collection> {\n   public void clean(T items) {\n      System.out.println(\"Cleaned \" + items.size() + \" items\");\n   } }\npublic class LaundryTime {\n   public static void main(String[] args) {\n      Wash<List> wash = new Wash<_________________>();\n      wash.clean(List.of(\"sock\", \"tie\"));\n   } }\n",
+      "choices": [
+        "A. extends, ArrayList",
+        "B. extends, List",
+        "C. super, ArrayList",
+        "D. super, List",
+        "E. None of the above"
+      ]
+    },
+    {
+      "number": 68,
+      "question": "68. How many lines does the following code output?\nvar days = new String[] { \"Sunday\", \"Monday\", \"Tuesday\",\n   \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\" };\nfor (int i = 1; i <= days.length; i++)\n   System.out.println(days[i]);",
+      "choices": [
+        "A. Six",
+        "B. Seven",
+        "C. The code does not compile.",
+        "D. The code compiles but throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 69,
+      "question": "69. What is the output of the following?\nvar listing = new String[][] {\n    { \"Book\" }, { \"Game\", \"29.99\" } };\nSystem.out.println(listing.length + \" \" + listing[0].length);",
+      "choices": [
+        "A. 1 1",
+        "B. 1 2",
+        "C. 2 1",
+        "D. 2 2",
+        "E. The code does not compile.",
+        "F. The code compiles but throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 70,
+      "question": "70. What is the output of the following?\nQueue<String> q = new ArrayDeque<>();\nq.add(\"snowball\");\nq.addLast(\"sugar\");\nq.addFirst(\"minnie\");\n                           \nSystem.out.println(q.peek() + \" \" + q.peek() + \" \" + q.size());",
+      "choices": [
+        "A. sugar sugar 3",
+        "B. sugar minnie 1",
+        "C. minnie minnie 3",
+        "D. minnie snowball 1",
+        "E. The code does not compile.",
+        "F. None of the above."
+      ]
+    },
+    {
+      "number": 71,
+      "question": "71. What is the result of the following?\n13: var numbers = Arrays.asList(3, 1, 4);\n14: numbers.set(1, null);\n15: int first = numbers.get(0);\n16: int middle = numbers.get(1);\n17: int last = numbers.get(3);\n18: System.out.println(first + \" \" + middle + \" \" + last);",
+      "choices": [
+        "A. The code does not compile.",
+        "B. Line 14 throws an exception.",
+        "C. Line 15 throws an exception.",
+        "D. Line 16 throws an exception.",
+        "E. Line 17 throws an exception.",
+        "F. 3null4"
+      ]
+    },
+    {
+      "number": 72,
+      "question": "72. Fill in the blank so the code prints gamma.\nvar list = Arrays.asList(\"alpha\", \"beta\", \"gamma\");\nCollections.sort(list, ________________________________);\nSystem.out.println(list.get(0));\n",
+      "choices": [
+        "A. \nComparator.comparing(String::length)\n   .andCompare(s -> s.charAt(0))\n",
+        "B. \nComparator.comparing(String::length)\n   .thenCompare(s -> s.charAt(0))\n",
+        "C. \nComparator.comparing(String::length)\n   .thenComparing(s -> s.charAt(0))\n",
+        "D. \nComparator.comparing(String::length)\n   .andCompare(s -> s.charAt(0))\n   .reversed()\n",
+        "E. \nComparator.comparing(String::length)\n   .thenCompare(s -> s.charAt(0))\n   .reversed()\n",
+        "F. \nComparator.comparing(String::length)\n   .thenComparing(s -> s.charAt(0))\n   .reversed()\n"
+      ]
+    },
+    {
+      "number": 73,
+      "question": "73. What is the output of the following when run as java FirstName.java Wolfie? (Choose two.)\npublic class FirstName {\n   public static void main(String… names) {\n      System.out.println(names[0]);\n      System.out.println(names[1]);\n   } }",
+      "choices": [
+        "A. FirstName",
+        "B. Wolfie",
+        "C. The code throws an ArrayIndexOutOfBoundsException.",
+        "D. The code throws a NullPointerException.",
+        "E. The code throws a different exception."
+      ]
+    },
+    {
+      "number": 74,
+      "question": "74. What does the following output?\n11: var pennies = new ArrayList<>();\n12: pennies.add(1);\n13: pennies.add(2);\n14: pennies.add(Integer.valueOf(3));\n15: pennies.add(Integer.valueOf(4));\n16: pennies.remove(2);\n17: pennies.remove(Integer.valueOf(1));\n18: System.out.println(pennies);",
+      "choices": [
+        "A. [1, 2]",
+        "B. [1, 4]",
+        "C. [2, 4]",
+        "D. [2, 3]",
+        "E. [3, 4]",
+        "F. The code does not compile."
+      ]
+    },
+    {
+      "number": 75,
+      "question": "75. What is true of the following code? (Choose three.)\nprivate static void sortAndSearch(String… args) {\n   var one = args[1];\n   Comparator<String> comp = (x, y) -> _____________________;\n   Arrays.sort(args, comp);\n   var result = Arrays.binarySearch(args, one, comp);\n   System.out.println(result);\n}\npublic static void main(String[] args) {\n   sortAndSearch(\"seed\", \"flower\");\n}\n",
+      "choices": [
+        "A. If the blank contains -x.compareTo(y), then the code outputs 0.",
+        "B. If the blank contains -x.compareTo(y), then the code outputs -1.",
+        "C. If the blank contains x.compareTo(y), then the code outputs 0.",
+        "D. If the blank contains -y.compareTo(x), then the code outputs 0.",
+        "E. If the blank contains -y.compareTo(x), then the code outputs -1.",
+        "F. If the blank contains y.compareTo(x), then the code outputs 0.",
+        "G. If the blank contains y.compareTo(x), then the code outputs -1."
+      ]
+    },
+    {
+      "number": 76,
+      "question": "76. What does this code output?\nString[] nums = new String[] { \"1\", \"9\", \"10\" };\nArrays.sort(nums);\nSystem.out.println(Arrays.toString(nums));",
+      "choices": [
+        "A. [1, 9, 10]",
+        "B. [1, 10, 9]",
+        "C. [9, 1, 10]",
+        "D. [9, 10, 1]",
+        "E. [10, 1, 9]",
+        "F. [10, 9, 1]"
+      ]
+    },
+    {
+      "number": 77,
+      "question": "77. Which is the first line to prevent this code from compiling and running without error?\n11: char[][] ticTacToe = new char[3][3];\n12: ticTacToe[0][0] = 'X';\n13: ticTacToe[1][1] = 'X';\n14: ticTacToe[2][2] = 'X';\n15: System.out.println(ticTacToe.length + \" in a row!\");",
+      "choices": [
+        "A. Line 11",
+        "B. Line 12",
+        "C. Line 13",
+        "D. Line 14",
+        "E. Line 15",
+        "F. None of the above; the code compiles and runs without issue."
+      ]
+    },
+    {
+      "number": 78,
+      "question": "78. What is true of the following code? (Choose three.)\n36: var names = new HashMap<String, String>();\n37: names.put(\"peter\", \"pan\");\n38: names.put(\"wendy\", \"darling\");\n39:\n40: String w = names.getOrDefault(\"peter\");\n41: String x = names.getOrDefault(\"peter\", \"x\");\n42: String y = names.getOrDefault(\"john\", \"x\");",
+      "choices": [
+        "A. Exactly one line does not compile.",
+        "B. Exactly two lines do not compile.",
+        "C. If any lines that do not compile are removed, the String on line 40 is set to null.",
+        "D. If any lines that do not compile are removed, the String on line 41 is set to \"pan\".",
+        "E. If any lines that do not compile are removed, the String on line 41 is set to \"x\".",
+        "F. If any lines that do not compile are removed, the String on line 42 is set to \"x\"."
+      ]
+    },
+    {
+      "number": 79,
+      "question": "79. What does the following output?\n18: List<String> list = List.of(\n19:    \"Mary\", \"had\", \"a\", \"little\", \"lamb\");\n20: Set<String> set = new HashSet<>(list);\n21: set.addAll(list);\n22: for(String sheep : set)\n23:    if (sheep.length()> 1)\n24:       set.remove(sheep);\n25: System.out.println(set);",
+      "choices": [
+        "A. [a, lamb, had, Mary, little]",
+        "B. [a]",
+        "C. [a, a]",
+        "D. The code does not compile.",
+        "E. The code throws an exception at runtime."
+      ]
+    },
+    {
+      "number": 80,
+      "question": "80. Which of the following fills in the blank so this code compiles?\npublic static void getExceptions(Collection<_________________> coll) {\n   coll.add(new RuntimeException());\n   coll.add(new Exception());\n}\n \n        A. ?\n        B. ? extends Exception\n        C. ? super Exception\n        D. T\n        E. T extends Exception\n        F. T super Exception\n        G. None of the above",
+      "choices": [
+        "A. ?",
+        "B. ? extends Exception",
+        "C. ? super Exception",
+        "D. T",
+        "E. T extends Exception",
+        "F. T super Exception",
+        "G. None of the above"
+      ]
+    }
+  ]
+
+}
