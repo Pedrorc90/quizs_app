@@ -7,20 +7,23 @@
     @if(chapter.questions && chapter.questions.length > 0) {
     @for(question of chapter.questions; track question.number ) {
     <a mat-button [style]="evaluateColor($index)"
-        [href]="'/chapters/chapter/' + chapter.chapterNumber + '/question/' + (question.number - 1)">{{question.number}}</a>
+        [href]="'/chapters/chapter/' + chapter.chapterNumber + '/question/' + (question.number)">{{question.number}}</a>
     }
+
+    <mat-chip>{{score}} / {{chapter.questions.length}}</mat-chip>
+
     }
 </section>
 
-
+@if (currentAnswerContent) {
 <section>
-    <mat-card appearance="outlined" class="content-container">
+    <mat-card appearance="outlined" class="content-container" [style]="evaluateColor(chapter.currentQuestion)">
         <mat-card-content>
             <h6 [innerHTML]="currentQuestionContent.question | lineBreak"></h6>
             @if(currentQuestionContent.code) {
-            <p [innerHTML]="currentQuestionContent.code | lineBreak"></p>
+            <code [innerHTML]="currentQuestionContent.code | lineBreak"></code>
             }
-            @if(currentAnswerContent && currentAnswerContent.answers.length > 1) {
+            @if(currentAnswerContent.answers.length > 1) {
             <section class="vertical">
                 @for (choice of currentQuestionContent.choices; track choice) {
                 <mat-checkbox (change)="onChangedCheckBoxItem($event.checked, $index)">{{choice}}</mat-checkbox>
@@ -36,11 +39,11 @@
         </mat-card-content>
     </mat-card>
 </section>
-
+}
 
 
 <section>
-    @if(currentAnswerContent && currentAnswerContent.explanation) {
+    @if(currentAnswerContent && currentAnswerContent.explanation && showExplanation) {
     <mat-card appearance="outlined" class="content-container">
         <mat-card-content>
             <div style="display: flex; align-items: center;gap: 20px">

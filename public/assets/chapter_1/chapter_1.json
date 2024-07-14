@@ -12,7 +12,8 @@
         },
         {
             "number": 2,
-            "question": "2. How many lines does this print?\nSystem.out.print(\"\"\"\n   \"ape\"\n   \"baboon\"\n   \"gorilla\"\n   \"\"\");",
+            "question": "2. How many lines does this print?",
+            "code": "System.out.print(\"\"\"\n   \"ape\"\n   \"baboon\"\n   \"gorilla\"\n   \"\"\");",
             "choices": [
                 "A : Three",
                 "B : Four",
@@ -43,7 +44,8 @@
         },
         {
             "number": 5,
-            "question": "5. Most of the United States observes daylight saving time on March 13, 2022, by moving the clocks forward an hour at 2 a.m. What does the following code output?\nvar localDate = LocalDate.of(2022, 3, 13);\nvar localTime = LocalTime.of(1, 0);\nvar zone = ZoneId.of(\"America/New_York\");\nvar z = ZonedDateTime.of(localDate, localTime, zone);\n \nvar offset = z.getOffset();\nvar duration = Duration.ofHours(3);\nvar later = z.plus(duration);\n \nSystem.out.println(later.getHour() + \" \"\n   + offset.equals(later.getOffset()));",
+            "question": "5. Most of the United States observes daylight saving time on March 13, 2022, by moving the clocks forward an hour at 2 a.m. What does the following code output?",
+            "code": "var localDate = LocalDate.of(2022, 3, 13);\nvar localTime = LocalTime.of(1, 0);\nvar zone = ZoneId.of(\"America/New_York\");\nvar z = ZonedDateTime.of(localDate, localTime, zone);\n \nvar offset = z.getOffset();\nvar duration = Duration.ofHours(3);\nvar later = z.plus(duration);\n \nSystem.out.println(later.getHour() + \" \"\n   + offset.equals(later.getOffset()));",
             "choices": [
                 "A : 4 false",
                 "B :4 true",

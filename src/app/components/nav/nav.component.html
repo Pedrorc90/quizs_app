@@ -5,12 +5,9 @@
     <mat-nav-list>
       @if(chapters && chapters.length > 0) {
       @for (chapterMeta of chapters; track chapterMeta.chapterNumber) {
-      <a mat-list-item [href]="'/chapters/chapter/'+chapterMeta.chapterNumber"
-        matTooltip={{chapterMeta.title}}>{{chapterMeta.title}}</a>
+      <a class="nav-item" [href]="'/chapters/chapter/'+chapterMeta.chapterNumber">{{chapterMeta.title}}</a>
       }
       }
-
-
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -20,9 +17,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       }
-
     </mat-toolbar>
-    <!-- Add Content Here -->
     <router-outlet />
   </mat-sidenav-content>
 </mat-sidenav-container>

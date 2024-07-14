@@ -6,20 +6,17 @@
   width: 280px;
 }
 
-.sidenav .mat-toolbar {
+.sidenav {
   background: inherit;
 }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
+.nav-item {
+  color: white;
+  display: block;
+  margin: 15px;
+  text-decoration-line: none;
 
-.mdc-list-item__primary-text {
-  white-space: normal !important;
-}
-
-.mdc-list-item__content {
-  white-space: normal !important;
+  &:hover {
+    transform: scale(1.04);
+  }
 }

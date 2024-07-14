@@ -48,8 +48,11 @@ export class ChapterContentComponent implements OnInit {
   currentCheckBoxSelectedOption: boolean[] = [];
 
   responses: number[] = [];
+  score: number = 0;
 
   colorQuestionList: number[] = new Array().fill(0);
+
+  showExplanation: boolean = false;
 
   constructor(
     private router: Router,
@@ -68,7 +71,7 @@ export class ChapterContentComponent implements OnInit {
       this.chapterService.getChaptersMeta().subscribe((res: any) => {
         this.chapter.title = res.chapters[this.chapter.chapterNumber - 1].title;
       });
-      this.chapter.currentQuestion = params["question"] ? Number(params["question"]) : 0;
+      this.chapter.currentQuestion = params["question"] ? Number(params["question"] - 1) : 0;
     });
   }
 
@@ -76,10 +79,7 @@ export class ChapterContentComponent implements OnInit {
     this.chapterService.getQuestions(this.chapter.chapterNumber.toString()).subscribe((resp: any) => {
       this.chapter.questions = resp.questions;
       this.currentQuestionContent = this.chapter.questions![this.chapter.currentQuestion]
-
-      // this.colorQuestionList = new Array(this.chapter.questions?.length).fill(0)
       console.log(this.currentQuestionContent)
-
     })
   }
 
@@ -93,12 +93,15 @@ export class ChapterContentComponent implements OnInit {
 
   verifyAnswer() {
     (this.currentAnswerContent.answers.length > 1) ? this.evaluateAnswerCheckboxButton() : this.evaluateAnswersRadioButton();
+    this.showExplanation = true;
+    localStorage.setItem("responses", JSON.stringify(this.responses));
   }
 
   evaluateAnswersRadioButton() {
     if (this.currentRadioOption != -1 && this.answersValues[this.currentRadioOption] == this.currentAnswerContent.answers[0]) {
       this.colorQuestionList[this.chapter.currentQuestion] = 1;
       this.responses[this.chapter.currentQuestion] = 1;
+      this.score++;
       console.log("OK")
     } else {
       this.responses[this.chapter.currentQuestion] = -1;
@@ -121,13 +124,16 @@ export class ChapterContentComponent implements OnInit {
 
     if (this.currentAnswerContent.answers.length == counterRightAnswers) {
       this.responses[this.chapter.currentQuestion] = 1;
-      this.responses[this.chapter.currentQuestion] = 1;
+      this.colorQuestionList[this.chapter.currentQuestion] = 1;
+      this.score++;
       console.log("OK")
     } else {
       this.responses[this.chapter.currentQuestion] = -1;
       this.colorQuestionList[this.chapter.currentQuestion] = -1;
       console.log("NOT OK")
     }
+
+
 
   }
 
@@ -149,13 +155,13 @@ export class ChapterContentComponent implements OnInit {
     this.currentQuestionContent = this.chapter.questions![this.chapter.currentQuestion]
     this.currentAnswerContent = this.chapter.answers![this.chapter.currentQuestion];
     this.currentRadioOption = -1;
+    this.showExplanation = false;
   }
 
   evaluateColor(index: number) {
-    if (this.colorQuestionList[index] == -1) return 'background-color:#008000d6'
-    if (this.colorQuestionList[index] == 1) return 'background-color:#ff00008f'
+    if (this.colorQuestionList[index] == 1) return 'background-color:#008000d6'
+    if (this.colorQuestionList[index] == -1) return 'background-color:#ff00008f'
     return '';
   }
-
 
 }
