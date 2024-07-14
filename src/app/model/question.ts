@@ -1,7 +1,7 @@
 export interface Question {
     number: number,
-    question: String,
-    code: String,
-    image: String,
-    choices: [String]
+    question: string,
+    code: string,
+    image: string,
+    choices: [string]
 }

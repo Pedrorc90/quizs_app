@@ -6,6 +6,6 @@ export interface Chapter extends ChapterMeta {
     currentQuestion: number,
     score: number,
     questions?: [Question],
-    answers?: any,
+    answers?: [Answer],
     responses?: any
 }

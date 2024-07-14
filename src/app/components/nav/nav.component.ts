@@ -10,8 +10,9 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { ChapterContentComponent } from "../chapter-content/chapter-content.component";
 import { RouterOutlet } from '@angular/router';
-import { ChapterMeta } from '../model/chapter.meta';
-import { ChapterService } from '../services/chapter.service';
+import { ChapterMeta } from '../../model/chapter.meta';
+import { ChapterService } from '../../services/chapter.service';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-nav',
@@ -24,6 +25,7 @@ import { ChapterService } from '../services/chapter.service';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatTooltipModule,
     AsyncPipe,
     ChapterContentComponent,
     RouterOutlet

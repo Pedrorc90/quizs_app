@@ -1,5 +1,5 @@
 export interface Answer {
     answerNumber: number,
-    answers: [String],
+    answers: [string],
     explanation: String
 }

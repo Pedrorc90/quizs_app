@@ -1,0 +1,38 @@
+.content-container {
+    margin: 1em;
+}
+
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+}
+
+
+.example-button-row {
+    display: table-cell;
+    max-width: 600px;
+}
+
+
+.example-flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}
+
+.question-progress-button-ok {
+    background-color: green;
+}
+
+.question-progress-button-error {
+    background-color: red;
+}

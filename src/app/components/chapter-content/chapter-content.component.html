@@ -1,0 +1,74 @@
+@if(chapter && chapter.title) {
+<h4 style="text-align: center;">{{chapter.title}}</h4>
+}
+
+
+<section>
+    @if(chapter.questions && chapter.questions.length > 0) {
+    @for(question of chapter.questions; track question.number ) {
+    <a mat-button [style]="evaluateColor($index)"
+        [href]="'/chapters/chapter/' + chapter.chapterNumber + '/question/' + (question.number - 1)">{{question.number}}</a>
+    }
+    }
+</section>
+
+
+<section>
+    <mat-card appearance="outlined" class="content-container">
+        <mat-card-content>
+            <h6 [innerHTML]="currentQuestionContent.question | lineBreak"></h6>
+            @if(currentQuestionContent.code) {
+            <p [innerHTML]="currentQuestionContent.code | lineBreak"></p>
+            }
+            @if(currentAnswerContent && currentAnswerContent.answers.length > 1) {
+            <section class="vertical">
+                @for (choice of currentQuestionContent.choices; track choice) {
+                <mat-checkbox (change)="onChangedCheckBoxItem($event.checked, $index)">{{choice}}</mat-checkbox>
+                }
+            </section>
+            } @else {
+            <mat-radio-group class="vertical" [(ngModel)]="currentRadioOption">
+                @for (choice of currentQuestionContent.choices; track choice) {
+                <mat-radio-button [value]="$index">{{choice}}</mat-radio-button>
+                }
+            </mat-radio-group>
+            }
+        </mat-card-content>
+    </mat-card>
+</section>
+
+
+
+<section>
+    @if(currentAnswerContent && currentAnswerContent.explanation) {
+    <mat-card appearance="outlined" class="content-container">
+        <mat-card-content>
+            <div style="display: flex; align-items: center;gap: 20px">
+                <h4>{{currentAnswerContent.answers}}</h4>
+                {{currentAnswerContent.explanation}}
+            </div>
+        </mat-card-content>
+    </mat-card>
+    }
+</section>
+
+
+<section>
+    <div class="example-flex-container">
+        <div class="example-button-container">
+            <button mat-fab [disabled]="chapter.currentQuestion == 0" (click)="prevQuestion()">
+                <mat-icon>arrow_back_ios</mat-icon>
+            </button>
+        </div>
+        <div class="example-button-container">
+            <button mat-fab (click)="verifyAnswer()">
+                <mat-icon>check</mat-icon>
+            </button>
+        </div>
+        <div class="example-button-container">
+            <button mat-fab (click)="nextQuestion()">
+                <mat-icon>arrow_forward_ios</mat-icon>
+            </button>
+        </div>
+    </div>
+</section>

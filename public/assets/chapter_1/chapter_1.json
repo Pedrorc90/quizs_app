@@ -5,9 +5,9 @@
             "question": "1. How many of the Duration, LocalDateTime, and LocalTime classes have the concept of a time zone?",
             "choices": [
                 "A : None",
-                "B :One",
-                "C :Two",
-                "D :Three"
+                "B : One",
+                "C : Two",
+                "D : Three"
             ]
         },
         {
@@ -15,9 +15,9 @@
             "question": "2. How many lines does this print?\nSystem.out.print(\"\"\"\n   \"ape\"\n   \"baboon\"\n   \"gorilla\"\n   \"\"\");",
             "choices": [
                 "A : Three",
-                "B :Four",
-                "C :Five",
-                "D :The code does not compile."
+                "B : Four",
+                "C : Five",
+                "D : The code does not compile."
             ]
         },
         {
