@@ -4,11 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --output-path docs --base-href /quizs_app/",
+    "build": "ng build --output-path dist --base-href /quizs_app/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --repo=https://github.com/Pedrorc90/quizs_app.git --base-href=/quizs_app --name=Pedrorc90",
-    "deploy-gh": "ng deploy --repo=https://github.com/Pedrorc90/quizs_app.git --base-href=/quizs_app --name=Pedrorc90 --dir=dist/quizs_app/browser"
+    "deploy": "ng deploy --repo=https://github.com/Pedrorc90/quizs_app.git --base-href=/quizs_app/"
   },
   "private": true,
   "dependencies": {

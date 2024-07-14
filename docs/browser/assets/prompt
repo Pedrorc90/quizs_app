@@ -1,8 +1,0 @@
-Transforma el siguiente texto en json siguiendo el siguiente patrón: 
-Todas las preguntas empezarán por un número y un punto, introducelas dentro del atributo "question".
-Introduce el número de la pregunta en el atributo "number" de tipo int
-After question sometimes appears more text. Si este texto sigue un patrón de "choices" introducelo en "choices", 
-sino introducelo en el atributo "code" de tipo String
-El atributo "choices" será un array de tipo String
-
-
