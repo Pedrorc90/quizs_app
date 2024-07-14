@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --output-path dist --base-href /quizs_app/",
+    "build": "ng build --base-href /quizs_app/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng deploy --repo=https://github.com/Pedrorc90/quizs_app.git --base-href=/quizs_app/"
