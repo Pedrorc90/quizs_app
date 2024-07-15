@@ -6,18 +6,20 @@
 <section>
     @if(chapter.questions && chapter.questions.length > 0) {
     @for(question of chapter.questions; track question.number ) {
-    <a mat-button [style]="evaluateColor($index)"
-        [href]="baseUrl + '/chapters/chapter/' + chapter.chapterNumber + '/question/' + (question.number)">{{question.number}}</a>
+    <a mat-button [style]="evaluateColor($index)" (click)="goToQuestion(question.number)">{{question.number}}</a>
     }
+    <div style="margin: 1em 1em; display: flex; align-items: center; justify-content: space-evenly">
+        <mat-chip>{{score}} / {{chapter.questions.length}}</mat-chip>
+        <button mat-flat-button (click)="resetChapter()">Reset</button>
 
-    <mat-chip>{{score}} / {{chapter.questions.length}}</mat-chip>
+    </div>
 
     }
 </section>
 
 @if (currentAnswerContent) {
 <section>
-    <mat-card appearance="outlined" class="content-container" [style]="evaluateColor(chapter.currentQuestion)">
+    <mat-card appearance="outlined" class="content-container" [style]="evaluateColor(chapter.currentQuestion, 'card')">
         <mat-card-content>
             <h6 [innerHTML]="currentQuestionContent.question | lineBreak"></h6>
             @if(currentQuestionContent.code) {

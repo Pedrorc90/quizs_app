@@ -9,8 +9,7 @@ export const routes: Routes = [
     {
         path: 'chapters', component: ChaptersPageComponent,
         children: [
-            { path: 'chapter/:id', component: ChapterContentComponent },
-            { path: 'chapter/:id/question/:question', component: ChapterContentComponent }
+            { path: 'chapter/:id', component: ChapterContentComponent }
         ]
     },
 

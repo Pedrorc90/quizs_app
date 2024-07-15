@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Chapter } from '../../model/chapter';
 import { Question } from '../../model/question';
 import { ChapterService } from '../../services/chapter.service';
@@ -59,23 +59,34 @@ export class ChapterContentComponent implements OnInit {
   showExplanation: boolean = false;
 
   constructor(
-    private router: Router,
     private activatedRoute: ActivatedRoute,
-    private chapterService: ChapterService) { }
+    private chapterService: ChapterService) {
+  }
 
   ngOnInit(): void {
+    this.loadFromLS();
     this.fillChapterNumber();
+    this.fillTitle();
     this.populateQuestions();
     this.populateAnswers();
+  }
+
+  loadFromLS() {
+    this.score = localStorage.getItem("score") ? Number(localStorage.getItem("score")) : 0;
+    this.colorQuestionList = localStorage.getItem("responses") ? JSON.parse(localStorage.getItem("responses") || "") : [];
+
   }
 
   fillChapterNumber() {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.chapter.chapterNumber = params["id"];
-      this.chapterService.getChaptersMeta().subscribe((res: any) => {
-        this.chapter.title = res.chapters[this.chapter.chapterNumber - 1].title;
-      });
       this.chapter.currentQuestion = params["question"] ? Number(params["question"] - 1) : 0;
+    });
+  }
+
+  fillTitle() {
+    this.chapterService.getChaptersMeta().subscribe((res: any) => {
+      this.chapter.title = res.chapters[this.chapter.chapterNumber - 1].title;
     });
   }
 
@@ -83,7 +94,6 @@ export class ChapterContentComponent implements OnInit {
     this.chapterService.getQuestions(this.chapter.chapterNumber.toString()).subscribe((resp: any) => {
       this.chapter.questions = resp.questions;
       this.currentQuestionContent = this.chapter.questions![this.chapter.currentQuestion]
-      console.log(this.currentQuestionContent)
     })
   }
 
@@ -91,7 +101,6 @@ export class ChapterContentComponent implements OnInit {
     this.chapterService.getAnswers(this.chapter.chapterNumber.toString()).subscribe((resp: any) => {
       this.chapter.answers = resp.answers;
       this.currentAnswerContent = this.chapter.answers![this.chapter.currentQuestion];
-      console.log(this.currentAnswerContent)
     })
   }
 
@@ -99,6 +108,8 @@ export class ChapterContentComponent implements OnInit {
     (this.currentAnswerContent.answers.length > 1) ? this.evaluateAnswerCheckboxButton() : this.evaluateAnswersRadioButton();
     this.showExplanation = true;
     localStorage.setItem("responses", JSON.stringify(this.responses));
+    localStorage.setItem("score", JSON.stringify(this.score))
+    localStorage.setItem("progress", JSON.stringify(this.currentQuestionContent.number))
   }
 
   evaluateAnswersRadioButton() {
@@ -135,7 +146,6 @@ export class ChapterContentComponent implements OnInit {
   }
 
   onChangedCheckBoxItem(checked: boolean, index: number) {
-    console.log(checked)
     this.currentCheckBoxSelectedOption[index] = checked;
   }
 
@@ -149,6 +159,11 @@ export class ChapterContentComponent implements OnInit {
     this.resetQuestion();
   }
 
+  goToQuestion(questionNumber: number) {
+    this.chapter.currentQuestion = questionNumber - 1;
+    this.resetQuestion();
+  }
+
   resetQuestion() {
     this.currentQuestionContent = this.chapter.questions![this.chapter.currentQuestion]
     this.currentAnswerContent = this.chapter.answers![this.chapter.currentQuestion];
@@ -157,9 +172,30 @@ export class ChapterContentComponent implements OnInit {
     this.showExplanation = false;
   }
 
-  evaluateColor(index: number) {
-    if (this.colorQuestionList[index] == 1) return 'background-color:#008000d6'
-    if (this.colorQuestionList[index] == -1) return 'background-color:#ff00008f'
+  resetChapter() {
+    this.chapter.currentQuestion = 0;
+    this.currentQuestionContent = this.chapter.questions![0]
+    this.currentAnswerContent = this.chapter.answers![0];
+    this.currentRadioOption = -1;
+    this.currentCheckBoxSelectedOption.fill(false);
+    this.showExplanation = false;
+    this.colorQuestionList = new Array().fill(0)
+    localStorage.removeItem("score");
+    localStorage.removeItem("responses");
+    localStorage.removeItem("progress");
+
+  }
+
+  evaluateColor(index: number, element?: string) {
+
+    if (element == 'card') {
+      if (this.colorQuestionList[index] == 1) return 'border-color:#008000d6'
+      if (this.colorQuestionList[index] == -1) return 'border-color:#ff00008f'
+    } else {
+      if (this.chapter.currentQuestion == index) return 'background-color: #e5e5e5'
+      if (this.colorQuestionList[index] == 1) return 'background-color:#008000d6'
+      if (this.colorQuestionList[index] == -1) return 'background-color:#ff00008f'
+    }
     return '';
   }
 
