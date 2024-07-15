@@ -45,7 +45,7 @@ export class ChapterContentComponent implements OnInit {
   currentAnswerContent!: Answer;
 
   currentRadioOption: number = -1;
-  currentCheckBoxSelectedOption: boolean[] = [];
+  currentCheckBoxSelectedOption: boolean[] = new Array().fill(false);
 
   responses: number[] = [];
   score: number = 0;
@@ -155,6 +155,7 @@ export class ChapterContentComponent implements OnInit {
     this.currentQuestionContent = this.chapter.questions![this.chapter.currentQuestion]
     this.currentAnswerContent = this.chapter.answers![this.chapter.currentQuestion];
     this.currentRadioOption = -1;
+    this.currentCheckBoxSelectedOption.fill(false);
     this.showExplanation = false;
   }
 

@@ -23,6 +23,10 @@
             @if(currentQuestionContent.code) {
             <code [innerHTML]="currentQuestionContent.code | lineBreak"></code>
             }
+            @if(currentQuestionContent.image) {
+            <img [src]="'/assets/images/chapter_' + chapter.chapterNumber + '_' + currentQuestionContent.number + '.png'"
+                width="300" height="300" />
+            }
             @if(currentAnswerContent.answers.length > 1) {
             <section class="vertical">
                 @for (choice of currentQuestionContent.choices; track choice) {
