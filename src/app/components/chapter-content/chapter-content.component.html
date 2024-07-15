@@ -7,7 +7,7 @@
     @if(chapter.questions && chapter.questions.length > 0) {
     @for(question of chapter.questions; track question.number ) {
     <a mat-button [style]="evaluateColor($index)"
-        [href]="'/chapters/chapter/' + chapter.chapterNumber + '/question/' + (question.number)">{{question.number}}</a>
+        [href]="baseUrl + '/chapters/chapter/' + chapter.chapterNumber + '/question/' + (question.number)">{{question.number}}</a>
     }
 
     <mat-chip>{{score}} / {{chapter.questions.length}}</mat-chip>

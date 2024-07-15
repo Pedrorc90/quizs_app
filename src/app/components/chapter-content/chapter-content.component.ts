@@ -15,6 +15,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { LineBreakPipe } from "../../pipes/line-break.pipe";
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-chapter-content',
@@ -37,6 +39,8 @@ import { LineBreakPipe } from "../../pipes/line-break.pipe";
   styleUrl: './chapter-content.component.css'
 })
 export class ChapterContentComponent implements OnInit {
+
+  baseUrl = environment.baseUrl;
 
   answersValues: string[] = ["A", "B", "C", "D", "E", "F", "G", "H"];
   chapter: Chapter = { chapterNumber: 0, title: "", score: 0, currentQuestion: 0 };
