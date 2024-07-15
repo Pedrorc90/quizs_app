@@ -106,11 +106,9 @@ export class ChapterContentComponent implements OnInit {
       this.colorQuestionList[this.chapter.currentQuestion] = 1;
       this.responses[this.chapter.currentQuestion] = 1;
       this.score++;
-      console.log("OK")
     } else {
       this.responses[this.chapter.currentQuestion] = -1;
       this.colorQuestionList[this.chapter.currentQuestion] = -1;
-      console.log("NOT OK")
     }
   }
 
@@ -118,7 +116,7 @@ export class ChapterContentComponent implements OnInit {
     let counterRightAnswers: number = 0;
     let extractedAnswers: string[] = [];
 
-    this.currentCheckBoxSelectedOption.forEach((option: boolean, index: number) => (option) ? extractedAnswers[index] = this.answersValues[index] : option)
+    this.currentCheckBoxSelectedOption.forEach((option: boolean, index: number) => (option) ? extractedAnswers.push(this.answersValues[index]) : option)
 
     this.currentAnswerContent.answers.forEach((answer) => {
       if (extractedAnswers.includes(answer)) {
@@ -126,22 +124,18 @@ export class ChapterContentComponent implements OnInit {
       }
     });
 
-    if (this.currentAnswerContent.answers.length == counterRightAnswers) {
+    if (this.currentAnswerContent.answers.length == extractedAnswers.length && this.currentAnswerContent.answers.length == counterRightAnswers) {
       this.responses[this.chapter.currentQuestion] = 1;
       this.colorQuestionList[this.chapter.currentQuestion] = 1;
       this.score++;
-      console.log("OK")
     } else {
       this.responses[this.chapter.currentQuestion] = -1;
       this.colorQuestionList[this.chapter.currentQuestion] = -1;
-      console.log("NOT OK")
     }
-
-
-
   }
 
   onChangedCheckBoxItem(checked: boolean, index: number) {
+    console.log(checked)
     this.currentCheckBoxSelectedOption[index] = checked;
   }
 

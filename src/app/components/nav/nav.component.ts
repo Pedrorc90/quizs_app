@@ -13,6 +13,7 @@ import { RouterOutlet } from '@angular/router';
 import { ChapterMeta } from '../../model/chapter.meta';
 import { ChapterService } from '../../services/chapter.service';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-nav',
@@ -36,6 +37,7 @@ export class NavComponent implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
 
   chapters: ChapterMeta[] = []
+  baseUrl: string = environment.baseUrl;
 
   constructor(private chapterService: ChapterService) { }
 
