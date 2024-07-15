@@ -295,7 +295,8 @@
         },
         {
             "number": 26,
-            "question": "26. What is a possible output of this code?\nvar time = LocalTime.of(1,2,3,4);\nSystem.out.println(time);",
+            "question": "26. What is a possible output of this code?",
+            "code": "var time = LocalTime.of(1,2,3,4);\nSystem.out.println(time);",
             "choices": [
                 "A. 01:02:03.4",
                 "B. 01:02:03.000000004",
@@ -305,7 +306,8 @@
         },
         {
             "number": 27,
-            "question": "27. What is the output of the following?\nvar teams = new StringBuilder(\"333\");\nteams.append(\" 806\");\nteams.append(\" 1601\");\nSystem.out.print(teams);",
+            "question": "27. What is the output of the following?",
+            "code": "var teams = new StringBuilder(\"333\");\nteams.append(\" 806\");\nteams.append(\" 1601\");\nSystem.out.print(teams);",
             "choices": [
                 "A. 333",
                 "B. 333 806 1601",
@@ -350,7 +352,8 @@
         },
         {
             "number": 31,
-            "question": "31. The United States observes daylight saving time on March 13, 2022, by moving the clocks forward an hour at 2 a.m. What does the following code output?\nvar localDate = LocalDate.of(2022, 3, 13);\nvar localTime = LocalTime.of(13, 0);\nvar zone = ZoneId.of(\"America/New_York\");\nvar z = ZonedDateTime.of(localDate, localTime, zone);\n\nvar offset = z.getOffset();\nvar duration = Duration.ofHours(3);\nvar later = z.plus(duration);\n\nSystem.out.println(later.getHour() + \" \"\n   + offset.equals(later.getOffset()));",
+            "question": "31. The United States observes daylight saving time on March 13, 2022, by moving the clocks forward an hour at 2 a.m. What does the following code output?",
+            "code": "var localDate = LocalDate.of(2022, 3, 13);\nvar localTime = LocalTime.of(13, 0);\nvar zone = ZoneId.of(\"America/New_York\");\nvar z = ZonedDateTime.of(localDate, localTime, zone);\n\nvar offset = z.getOffset();\nvar duration = Duration.ofHours(3);\nvar later = z.plus(duration);\n\nSystem.out.println(later.getHour() + \" \"\n   + offset.equals(later.getOffset()));",
             "choices": [
                 "A. 13 false",
                 "B. 13 true",
@@ -363,7 +366,8 @@
         },
         {
             "number": 32,
-            "question": "32. Which of the following can fill in the blank so the code prints true?\nvar happy = \" :) - (: \";\nvar really = happy.trim();\nvar question = happy.substring(_____________________);\nSystem.out.println(really.equals(question));",
+            "question": "32. Which of the following can fill in the blank so the code prints true?",
+            "code": "var happy = \" :) - (: \";\nvar really = happy.trim();\nvar question = happy.substring(_____________________);\nSystem.out.println(really.equals(question));",
             "choices": [
                 "A. 0, happy.length() - 1",
                 "B. 0, happy.length()",
@@ -374,7 +378,8 @@
         },
         {
             "number": 33,
-            "question": "33. How many of the following lines contain a compiler error?\ndouble num1 = 2.718;\ndouble num2 = 2._718;\ndouble num3 = 2.7_1_8;\ndouble num4 = _2.718;",
+            "question": "33. How many of the following lines contain a compiler error?",
+            "code": "double num1 = 2.718;\ndouble num2 = 2._718;\ndouble num3 = 2.7_1_8;\ndouble num4 = _2.718;",
             "choices": [
                 "A. 0",
                 "B. 1",
@@ -385,7 +390,8 @@
         },
         {
             "number": 34,
-            "question": "34. What is a possible result of the following?\nvar montyPythonDay = LocalDate.of(2022, Month.MAY, 10);\nvar time = LocalTime.of(5, 40);\nvar dateTime = LocalDateTime.of(montyPythonDay, time);\nvar duration = Duration.ofDays(1);\nvar result = dateTime.minus(duration);\nSystem.out.println(result);",
+            "question": "34. What is a possible result of the following?",
+            "code": "var montyPythonDay = LocalDate.of(2022, Month.MAY, 10);\nvar time = LocalTime.of(5, 40);\nvar dateTime = LocalDateTime.of(montyPythonDay, time);\nvar duration = Duration.ofDays(1);\nvar result = dateTime.minus(duration);\nSystem.out.println(result);",
             "choices": [
                 "A. 2022-05-09",
                 "B. 2022-05-09T05:40",
@@ -396,7 +402,8 @@
         },
         {
             "number": 35,
-            "question": "35. What is true of the following code? (Choose two.)\nvar numPigeons = Long._____________(\"100\");\nSystem.out.println(numPigeons.toString());",
+            "question": "35. What is true of the following code? (Choose two.)",
+            "code": "var numPigeons = Long._____________(\"100\");\nSystem.out.println(numPigeons.toString());",
             "choices": [
                 "A. When parseLong fills in the blank,\n the code does not compile.",
                 "B. When parseLong fills in the blank,\n the code throws an exception.",
@@ -408,7 +415,8 @@
         },
         {
             "number": 36,
-            "question": "36. What is the output of the following application?\npublic class Airplane {\n   static int start = 2;\n   final int end;\n   public Airplane(int x) {\n      x = 4;\n      end = x;\n   }\n   public void fly(int distance) {\n      System.out.print(end-start+\" \");\n      System.out.print(distance);\n   }\n   public static void main(String… start) {\n      new Airplane(10).fly(5);\n   } }",
+            "question": "36. What is the output of the following application?",
+            "code": "public class Airplane {\n   static int start = 2;\n   final int end;\n   public Airplane(int x) {\n      x = 4;\n      end = x;\n   }\n   public void fly(int distance) {\n      System.out.print(end-start+\" \");\n      System.out.print(distance);\n   }\n   public static void main(String… start) {\n      new Airplane(10).fly(5);\n   } }",
             "choices": [
                 "A. 2 5",
                 "B. 8 5",
@@ -419,7 +427,8 @@
         },
         {
             "number": 37,
-            "question": "37. What is the output of the following?\nvar date1 = LocalDate.of(2022, Month.MARCH, 3);\nvar date2 = LocalDate.of(2022, Month.FEBRUARY, 31);\nSystem.out.println(date1.equals(date2));",
+            "question": "37. What is the output of the following?",
+            "code": "var date1 = LocalDate.of(2022, Month.MARCH, 3);\nvar date2 = LocalDate.of(2022, Month.FEBRUARY, 31);\nSystem.out.println(date1.equals(date2));",
             "choices": [
                 "A. false",
                 "B. true",
@@ -429,7 +438,8 @@
         },
         {
             "number": 38,
-            "question": "38. How many lines does this print?\nSystem.out.print(\"\"\" \"ape\"\n   \"baboon\"\n   \"gorilla\" \"\"\");",
+            "question": "38. How many lines does this print?",
+            "code": "System.out.print(\"\"\" \"ape\"\n   \"baboon\"\n   \"gorilla\" \"\"\");",
             "choices": [
                 "A. Three",
                 "B. Four",
@@ -439,7 +449,8 @@
         },
         {
             "number": 39,
-            "question": "39. What is the output of the following class?\n1: package rocket;\n2: public class Countdown {\n3:    public static void main(String[] blastOff) {\n4:       var builder = \"54321\";\n5:       builder = builder.substring(4);\n6:       System.out.println(builder.charAt(2));\n7:    } }",
+            "question": "39. What is the output of the following class?",
+            "code": "1: package rocket;\n2: public class Countdown {\n3:    public static void main(String[] blastOff) {\n4:       var builder = \"54321\";\n5:       builder = builder.substring(4);\n6:       System.out.println(builder.charAt(2));\n7:    } }",
             "choices": [
                 "A. 2",
                 "B. 3",
@@ -451,6 +462,7 @@
         {
             "number": 40,
             "question": "40. In the United States, daylight saving time for 2022 starts at 2 a.m. on March 13th and ends at 2 a.m. on November 6th. Given the sequence in the following image, what time comes next on March 13th, July 4th, and November 6th, respectively?\n        A. 01:00, 01:00, 01:00\n        B. 01:00, 02:00, 01:00\n        C. 01:00, 02:00, 03:00\n        D. 02:00, 02:00, 02:00\n        E. 03:00, 02:00, 01:00\n        F. 03:00, 02:00, 03:00",
+            "image": "chapter_1_40.png",
             "choices": [
                 "A. 01:00, 01:00, 01:00",
                 "B. 01:00, 02:00, 01:00",
@@ -462,7 +474,8 @@
         },
         {
             "number": 41,
-            "question": "41. What does the following code output?\nvar baa = false;\nvar bleat = ~baa;\nvar sheep = ~bleat;\nSystem.out.printf(bleat + \" \" + sheep);",
+            "question": "41. What does the following code output?",
+            "code": "var baa = false;\nvar bleat = ~baa;\nvar sheep = ~bleat;\nSystem.out.printf(bleat + \" \" + sheep);",
             "choices": [
                 "A. false false",
                 "B. false true",
@@ -473,7 +486,8 @@
         },
         {
             "number": 42,
-            "question": "42. What is a possible output of the following?\nvar trainDay = LocalDate.of(2022, 5, 13);\nvar time = LocalTime.of(10, 0);\nvar zone = ZoneId.of(\"America/Los_Angeles\");\nvar zdt = ZonedDateTime.of(trainDay, time, zone);\nvar instant = zdt.toInstant();\ninstant = instant.plus(1, ChronoUnit.DAYS);\nSystem.out.println(instant);",
+            "question": "42. What is a possible output of the following?",
+            "code": "var trainDay = LocalDate.of(2022, 5, 13);\nvar time = LocalTime.of(10, 0);\nvar zone = ZoneId.of(\"America/Los_Angeles\");\nvar zdt = ZonedDateTime.of(trainDay, time, zone);\nvar instant = zdt.toInstant();\ninstant = instant.plus(1, ChronoUnit.DAYS);\nSystem.out.println(instant);",
             "choices": [
                 "A. 2022-05-13T10:00-07:00[America/Los_Angeles]",
                 "B. 2022-05-13T00:00:00Z",
@@ -485,7 +499,8 @@
         },
         {
             "number": 43,
-            "question": "43. What is the output of the following application?\npackage transporter;\npublic class Rematerialize {\n   public static void main(String[] input) {\n      int init = 11;\n      int split = 3;\n      int partA = init / split;\n      int partB = init % split;\n      int result = split * (partB + partA);\n      System.out.print(result);\n   } }",
+            "question": "43. What is the output of the following application?",
+            "code": "package transporter;\npublic class Rematerialize {\n   public static void main(String[] input) {\n      int init = 11;\n      int split = 3;\n      int partA = init / split;\n      int partB = init % split;\n      int result = split * (partB + partA);\n      System.out.print(result);\n   } }",
             "choices": [
                 "A. 9",
                 "B. 11",
@@ -497,7 +512,8 @@
         },
         {
             "number": 44,
-            "question": "44. What is the output of the following code?\nvar math = new Math();\nvar sum = 0;\nsum += math.min(3, 5);\nsum += math.floor(1.8);\nsum += math.round(5.6);\n\nSystem.out.println(sum);",
+            "question": "44. What is the output of the following code?",
+            "code": "var math = new Math();\nvar sum = 0;\nsum += math.min(3, 5);\nsum += math.floor(1.8);\nsum += math.round(5.6);\n\nSystem.out.println(sum);",
             "choices": [
                 "A. 9",
                 "B. 9.0",
@@ -510,7 +526,8 @@
         },
         {
             "number": 45,
-            "question": "45. What is the output of the following?\nvar date = LocalDate.of(2022, Month.JULY, 17);\nvar time = LocalTime.of(10, 0);\nvar zone = ZoneId.of(\"America/New_York\");\nvar iceCreamDay = ZonedDateTime.of(date, time, zone);\ntime = time.plusMonths(1);\nSystem.out.println(iceCreamDay.getMonthValue());",
+            "question": "45. What is the output of the following?",
+            "code": "var date = LocalDate.of(2022, Month.JULY, 17);\nvar time = LocalTime.of(10, 0);\nvar zone = ZoneId.of(\"America/New_York\");\nvar iceCreamDay = ZonedDateTime.of(date, time, zone);\ntime = time.plusMonths(1);\nSystem.out.println(iceCreamDay.getMonthValue());",
             "choices": [
                 "A. 6",
                 "B. 7",
@@ -521,7 +538,8 @@
         },
         {
             "number": 46,
-            "question": "46. Which of these can replace isEmpty() and trim() to produce the same output? (Choose two.)\nString curious = \"george likes bananas \";\nSystem.out.println(curious.isEmpty());\nSystem.out.println(curious.trim());",
+            "question": "46. Which of these can replace isEmpty() and trim() to produce the same output? (Choose two.)",
+            "code": "String curious = \"george likes bananas \";\nSystem.out.println(curious.isEmpty());\nSystem.out.println(curious.trim());",
             "choices": [
                 "A. empty()",
                 "B. isBlank()",
@@ -533,7 +551,8 @@
         },
         {
             "number": 47,
-            "question": "47. What is the result of the following code?\nvar sb = new StringBuilder(\"radical\")\n   .insert(sb.length(), \"robots\");\nSystem.out.println(sb);",
+            "question": "47. What is the result of the following code?",
+            "code": "var sb = new StringBuilder(\"radical\")\n   .insert(sb.length(), \"robots\");\nSystem.out.println(sb);",
             "choices": [
                 "A. radicarobots",
                 "B. radicalrobots",
@@ -544,7 +563,8 @@
         },
         {
             "number": 48,
-            "question": "48. Given the following code snippet, what is the value of dinner after it is executed?\nint time = 9;\nint day = 3;\nvar dinner = ++time>= 10 ? day-- <= 2 \n   ? \"Takeout\" : \"Salad\" : \"Leftovers\";",
+            "question": "48. Given the following code snippet, what is the value of dinner after it is executed?",
+            "code": "int time = 9;\nint day = 3;\nvar dinner = ++time>= 10 ? day-- <= 2 \n   ? \"Takeout\" : \"Salad\" : \"Leftovers\";",
             "choices": [
                 "A. Takeout",
                 "B. Leftovers",
