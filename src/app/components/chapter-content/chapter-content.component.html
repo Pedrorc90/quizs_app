@@ -22,44 +22,52 @@
     <mat-card appearance="outlined" class="content-container" [style]="evaluateColor(chapter.currentQuestion, 'card')">
         <mat-card-content>
             <h6 [innerHTML]="currentQuestionContent.question | lineBreak"></h6>
-            @if(currentQuestionContent.code) {
-            <code [innerHTML]="currentQuestionContent.code | lineBreak"></code>
-            }
-            @if(currentQuestionContent.image) {
-            <img [src]="'/assets/images/chapter_' + chapter.chapterNumber + '_' + currentQuestionContent.number + '.png'"
-                width="300" height="300" />
-            }
-            @if(currentAnswerContent.answers.length > 1) {
-            <section class="vertical">
-                @for (choice of currentQuestionContent.choices; track choice) {
-                <mat-checkbox (change)="onChangedCheckBoxItem($event.checked, $index)">{{choice}}</mat-checkbox>
-                }
-            </section>
-            } @else {
-            <mat-radio-group class="vertical" [(ngModel)]="currentRadioOption">
-                @for (choice of currentQuestionContent.choices; track choice) {
-                <mat-radio-button [value]="$index">{{choice}}</mat-radio-button>
-                }
-            </mat-radio-group>
-            }
+            <div>
+                <div>
+                    @if(currentQuestionContent.code) {
+                    <code [innerHTML]="currentQuestionContent.code | lineBreak"></code>
+                    }
+                    @if(currentQuestionContent.image) {
+                    <img [src]="'/assets/images/chapter_' + chapter.chapterNumber + '_' + currentQuestionContent.number + '.png'"
+                        width="300" height="300" />
+                    }
+                    @if(currentAnswerContent.answers.length > 1) {
+                    <section class="vertical">
+                        @for (choice of currentQuestionContent.choices; track choice) {
+                        <mat-checkbox (change)="onChangedCheckBoxItem($event.checked, $index)">{{choice}}</mat-checkbox>
+                        }
+                    </section>
+                    } @else {
+                    <mat-radio-group class="vertical" [(ngModel)]="currentRadioOption">
+                        @for (choice of currentQuestionContent.choices; track choice) {
+                        <mat-radio-button [value]="$index">{{choice}}</mat-radio-button>
+                        }
+                    </mat-radio-group>
+                    }
+                </div>
+                <div>
+                    @if(currentAnswerContent && currentAnswerContent.explanation && showExplanation) {
+                    <mat-card appearance="outlined" class="content-container">
+                        <mat-card-content>
+                            <div style="display: flex; align-items: center;gap: 20px">
+                                <h4>{{currentAnswerContent.answers}}</h4>
+                                {{currentAnswerContent.explanation}}
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    }
+                </div>
+
+            </div>
+
+
         </mat-card-content>
     </mat-card>
 </section>
 }
 
 
-<section>
-    @if(currentAnswerContent && currentAnswerContent.explanation && showExplanation) {
-    <mat-card appearance="outlined" class="content-container">
-        <mat-card-content>
-            <div style="display: flex; align-items: center;gap: 20px">
-                <h4>{{currentAnswerContent.answers}}</h4>
-                {{currentAnswerContent.explanation}}
-            </div>
-        </mat-card-content>
-    </mat-card>
-    }
-</section>
+
 
 
 <section>

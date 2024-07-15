@@ -189,8 +189,8 @@ export class ChapterContentComponent implements OnInit {
   evaluateColor(index: number, element?: string) {
 
     if (element == 'card') {
-      if (this.colorQuestionList[index] == 1) return 'border-color:#008000d6'
-      if (this.colorQuestionList[index] == -1) return 'border-color:#ff00008f'
+      if (this.colorQuestionList[index] == 1) return 'border-color:#008000d6; border-width: 3px;'
+      if (this.colorQuestionList[index] == -1) return 'border-color:#ff00008f, border-width: 3px;'
     } else {
       if (this.chapter.currentQuestion == index) return 'background-color: #e5e5e5'
       if (this.colorQuestionList[index] == 1) return 'background-color:#008000d6'
