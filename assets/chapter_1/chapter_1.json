@@ -58,7 +58,8 @@
         },
         {
             "number": 6,
-            "question": "6. What is the value of tip after executing the following code snippet?\nint meal = 5;\nint tip = 2;\nvar total = meal + (meal>6 ? tip++ : tip--);",
+            "question": "6. What is the value of tip after executing the following code snippet?",
+            "code": "int meal = 5;\nint tip = 2;\nvar total = meal + (meal>6 ? tip++ : tip--);",
             "choices": [
                 "A : 1",
                 "B :2",
@@ -69,7 +70,8 @@
         },
         {
             "number": 7,
-            "question": "7. What does the following output?\nint year = 1874;\nint month = Month.MARCH;\nint day = 24;\nLocalDate date = LocalDate.of(year, month, day);\nSystem.out.println(date.isBefore(LocalDate.now()));",
+            "question": "7. What does the following output?",
+            "code": "int year = 1874;\nint month = Month.MARCH;\nint day = 24;\nLocalDate date = LocalDate.of(year, month, day);\nSystem.out.println(date.isBefore(LocalDate.now()));",
             "choices": [
                 "A : false",
                 "B :true",
@@ -79,7 +81,8 @@
         },
         {
             "number": 8,
-            "question": "8. What is the output of the following?\n12: var b = \"12\";\n13: b += \"3\";\n14: b.reverse();\n15: System.out.println(b.toString());",
+            "question": "8. What is the output of the following?",
+            "code": "12: var b = \"12\";\n13: b += \"3\";\n14: b.reverse();\n15: System.out.println(b.toString());",
             "choices": [
                 "A : 12",
                 "B :21",
@@ -90,7 +93,8 @@
         },
         {
             "number": 9,
-            "question": "9. What is the output of the following?\n5: var line = new StringBuilder(\"-\");\n6: var anotherLine = line.append(\"-\");\n7: System.out.print(line == anotherLine);\n8: System.out.print(\" \");\n9: System.out.print(line.length());",
+            "question": "9. What is the output of the following?",
+            "code": "5: var line = new StringBuilder(\"-\");\n6: var anotherLine = line.append(\"-\");\n7: System.out.print(line == anotherLine);\n8: System.out.print(\" \");\n9: System.out.print(line.length());",
             "choices": [
                 "A : false 1",
                 "B :false 2",
@@ -101,7 +105,8 @@
         },
         {
             "number": 10,
-            "question": "10. Given that daylight saving time starts on March 13, 2022, at 2 a.m. and clocks jump from 1:59 a.m. to 03:00 a.m., which of the following can fill in the blank so the code doesn’t throw an exception?\nvar localDate = LocalDate.of(2022, 3, 13);\nvar localTime = LocalTime.of(____________);\nvar zone = ZoneId.of(\"America/New_York\");\nvar z = ZonedDateTime.of(localDate, localTime, zone);",
+            "question": "10. Given that daylight saving time starts on March 13, 2022, at 2 a.m. and clocks jump from 1:59 a.m. to 03:00 a.m., which of the following can fill in the blank so the code doesn’t throw an exception?",
+            "code": "var localDate = LocalDate.of(2022, 3, 13);\nvar localTime = LocalTime.of(____________);\nvar zone = ZoneId.of(\"America/New_York\");\nvar z = ZonedDateTime.of(localDate, localTime, zone);",
             "choices": [
                 "A : 2, 0",
                 "B :3, 0",
@@ -111,7 +116,8 @@
         },
         {
             "number": 11,
-            "question": "11. Which statement is true of this text block?\n                                   var block = \"\"\"\n\n                                      green\n                                        yellow\n                                   \"\"\";",
+            "question": "11. Which statement is true of this text block?",
+            "code": "                                   var block = \"\"\"\n\n                                      green\n                                        yellow\n                                   \"\"\";",
             "choices": [
                 "A : There is only essential whitespace.",
                 "B :There is only incidental whitespace.",
@@ -121,7 +127,8 @@
         },
         {
             "number": 12,
-            "question": "12. What are the return types of cat, moose, and penguin, respectively?\nvar cat = Math.ceil(65);\nvar moose = Math.max(7,8);\nvar penguin = Math.pow(2, 3);",
+            "question": "12. What are the return types of cat, moose, and penguin, respectively?",
+            "code": "var cat = Math.ceil(65);\nvar moose = Math.max(7,8);\nvar penguin = Math.pow(2, 3);",
             "choices": [
                 "A : double, double, double",
                 "B :double, int, double",
@@ -133,7 +140,8 @@
         },
         {
             "number": 13,
-            "question": "13. What is the result of the following?\n11: var waffleDay = LocalDate.of(2022, Month.MARCH, 25);\n12: var period = Period.of(1, 6, 3);\n13: var later = waffleDay.plus(period);\n14: later.plusDays(1);\n15: var thisOne = LocalDate.of(2023, Month.SEPTEMBER, 28);\n16: var thatOne = LocalDate.of(2023, Month.SEPTEMBER, 29);\n17: System.out.println(later.isBefore(thisOne) + \" \" \n18:    + later.isBefore(thatOne));",
+            "question": "13. What is the result of the following?",
+            "code": "11: var waffleDay = LocalDate.of(2022, Month.MARCH, 25);\n12: var period = Period.of(1, 6, 3);\n13: var later = waffleDay.plus(period);\n14: later.plusDays(1);\n15: var thisOne = LocalDate.of(2023, Month.SEPTEMBER, 28);\n16: var thatOne = LocalDate.of(2023, Month.SEPTEMBER, 29);\n17: System.out.println(later.isBefore(thisOne) + \" \" \n18:    + later.isBefore(thatOne));",
             "choices": [
                 "A : false false",
                 "B :false true",
@@ -156,7 +164,8 @@
         },
         {
             "number": 15,
-            "question": "15. What is a possible result of the following?\nvar montyPythonDay = LocalDate.of(2023, Month.MAY, 10);\nvar aprilFools = LocalDate.of(2023,  Month.APRIL, 1);\nvar duration = Duration.ofDays(1);\nvar result = montyPythonDay.minus(duration);\nSystem.out.println(result + \" \" + aprilFools.isBefore(result));",
+            "question": "15. What is a possible result of the following?",
+            "code": "var montyPythonDay = LocalDate.of(2023, Month.MAY, 10);\nvar aprilFools = LocalDate.of(2023,  Month.APRIL, 1);\nvar duration = Duration.ofDays(1);\nvar result = montyPythonDay.minus(duration);\nSystem.out.println(result + \" \" + aprilFools.isBefore(result));",
             "choices": [
                 "A : 2023-05-09 false",
                 "B :2023-05-09 true",
@@ -166,7 +175,8 @@
         },
         {
             "number": 16,
-            "question": "16. What is the output of the following?\n5: var line = new String(\"-\");\n6: var anotherLine = line.concat(\"-\");\n7: System.out.print(line == anotherLine);\n8: System.out.print(\" \");\n9: System.out.print(line.length());",
+            "question": "16. What is the output of the following?",
+            "code": "5: var line = new String(\"-\");\n6: var anotherLine = line.concat(\"-\");\n7: System.out.print(line == anotherLine);\n8: System.out.print(\" \");\n9: System.out.print(line.length());",
             "choices": [
                 "A : false 1",
                 "B :false 2",
@@ -177,7 +187,8 @@
         },
         {
             "number": 17,
-            "question": "17. How many of these lines contain a compiler error?\npublic void pi() {\n   byte b = 3.14;\n   double d = 3.14;\n   float f = 3.14;\n   short s = 3.14;\n}",
+            "question": "17. How many of these lines contain a compiler error?",
+            "code": "public void pi() {\n   byte b = 3.14;\n   double d = 3.14;\n   float f = 3.14;\n   short s = 3.14;\n}",
             "choices": [
                 "A : None",
                 "B :One",
@@ -188,7 +199,8 @@
         },
         {
             "number": 18,
-            "question": "18. In the United States, daylight saving time ends on November 6, 2022 at 02:00 a.m. and we repeat the previous hour. What is the output of the following?\nvar localDate = LocalDate.of(2022, Month.NOVEMBER, 6);\nvar localTime = LocalTime.of(1, 0);\nvar zone = ZoneId.of(\"America/New_York\");\nvar z = ZonedDateTime.of(localDate, localTime, zone);\nvar offset = z.getOffset();\n \nfor (int i = 0; i < 6; i++) \n   z.plusHours(1);\n \nSystem.out.print(z.getHour() + \" \"\n   + offset.equals(z.getOffset()));",
+            "question": "18. In the United States, daylight saving time ends on November 6, 2022 at 02:00 a.m. and we repeat the previous hour. What is the output of the following?",
+            "code": "var localDate = LocalDate.of(2022, Month.NOVEMBER, 6);\nvar localTime = LocalTime.of(1, 0);\nvar zone = ZoneId.of(\"America/New_York\");\nvar z = ZonedDateTime.of(localDate, localTime, zone);\nvar offset = z.getOffset();\n \nfor (int i = 0; i < 6; i++) \n   z.plusHours(1);\n \nSystem.out.print(z.getHour() + \" \"\n   + offset.equals(z.getOffset()));",
             "choices": [
                 "A : 5 false",
                 "B :5 true",
@@ -201,7 +213,8 @@
         },
         {
             "number": 19,
-            "question": "19. What does the following code output?\nvar baa = 8;\nvar bleat = ~baa;\nvar sheep = ~bleat;\nSystem.out.printf(bleat + \" \" + sheep);",
+            "question": "19. What does the following code output?",
+            "code": "var baa = 8;\nvar bleat = ~baa;\nvar sheep = ~bleat;\nSystem.out.printf(bleat + \" \" + sheep);",
             "choices": [
                 "A : -8 8",
                 "B :-8 9",
@@ -212,7 +225,8 @@
         },
         {
             "number": 20,
-            "question": "20. The author of this method forgot to include the data type. Which of the following reference types can best fill in the blank to complete this method?\npublic static void secret(______________ mystery) {\n   char ch = mystery.charAt(3);\n   mystery = mystery.insert(1, \"more\");\n   int num = mystery.length();\n}",
+            "question": "20. The author of this method forgot to include the data type. Which of the following reference types can best fill in the blank to complete this method?",
+            "code": "public static void secret(______________ mystery) {\n   char ch = mystery.charAt(3);\n   mystery = mystery.insert(1, \"more\");\n   int num = mystery.length();\n}",
             "choices": [
                 "A : String",
                 "B :StringBuilder",
@@ -232,7 +246,8 @@
         },
         {
             "number": 22,
-            "question": "22. Which statements are true about the output of this code? (Choose three.)\nvar text = \"\"\"\n   ant  antelope \\s \\n\n   cat \"kitten\" \\\n   seal sea lion\n   \"\"\";\nSystem.out.print(text);",
+            "question": "22. Which statements are true about the output of this code? (Choose three.)",
+            "code": "var text = \"\"\"\n   ant  antelope \\s \\n\n   cat \"kitten\" \\\n   seal sea lion\n   \"\"\";\nSystem.out.print(text);",
             "choices": [
                 "A. It contains two quotes.",
                 "B. It contains eight quotes.",
