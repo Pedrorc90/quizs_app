@@ -18,7 +18,7 @@
     <mat-card appearance="outlined" class="content-container" [style]="evaluateColor(chapter.currentQuestion, 'card')">
         <mat-card-content>
             <h6 [innerHTML]="currentQuestionContent.question | lineBreak"></h6>
-            <div style="display:flex">
+            <div class="content-question-container">
                 <div style="flex: 1 1 100%">
                     @if(currentQuestionContent.code) {
                     <code [innerHTML]="currentQuestionContent.code | lineBreak"></code>

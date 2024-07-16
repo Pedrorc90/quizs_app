@@ -36,3 +36,14 @@
 .question-progress-button-error {
     background-color: red;
 }
+
+.content-question-container {
+    display: flex;
+}
+
+@media (max-width: 600px) {
+    .content-question-container {
+        display: block;
+    }
+
+}
