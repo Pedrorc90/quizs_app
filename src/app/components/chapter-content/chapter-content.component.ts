@@ -109,9 +109,7 @@ export class ChapterContentComponent implements OnInit {
   verifyAnswer() {
     (this.currentAnswerContent.answers.length > 1) ? this.evaluateAnswerCheckboxButton() : this.evaluateAnswersRadioButton();
     this.showExplanation = true;
-    localStorage.setItem("responses", JSON.stringify(this.responses));
-    localStorage.setItem("score", JSON.stringify(this.score))
-    localStorage.setItem("progress", JSON.stringify(this.currentQuestionContent.number))
+    this.updateLS();
   }
 
   evaluateAnswersRadioButton() {
@@ -182,6 +180,7 @@ export class ChapterContentComponent implements OnInit {
     this.currentCheckBoxSelectedOption.fill(false);
     this.showExplanation = false;
     this.colorQuestionList = new Array().fill(0)
+
     localStorage.removeItem("score");
     localStorage.removeItem("responses");
     localStorage.removeItem("progress");
@@ -199,6 +198,12 @@ export class ChapterContentComponent implements OnInit {
       if (this.colorQuestionList[index] == -1) return 'background-color:#ff00008f'
     }
     return '';
+  }
+
+  updateLS() {
+    localStorage.setItem("responses", JSON.stringify(this.responses));
+    localStorage.setItem("score", JSON.stringify(this.score))
+    localStorage.setItem("progress", JSON.stringify(this.currentQuestionContent.number))
   }
 
 }

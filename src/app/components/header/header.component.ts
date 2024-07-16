@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Chapter } from '../../model/chapter';
+import { ChapterService } from '../../services/chapter.service';
 
 @Component({
   selector: 'app-header',
@@ -12,5 +13,9 @@ export class HeaderComponent {
 
   @Input()
   chapter!: Chapter;
+
+
+
+
 
 }
