@@ -1,7 +1,4 @@
-@if(chapter && chapter.title) {
-<h4 style="text-align: center;">{{chapter.title}}</h4>
-}
-
+<app-header [chapter]="chapter"></app-header>
 
 <section>
     @if(chapter.questions && chapter.questions.length > 0) {
@@ -11,7 +8,6 @@
     <div style="margin: 1em 1em; display: flex; align-items: center; justify-content: space-evenly">
         <mat-chip>{{score}} / {{chapter.questions.length}}</mat-chip>
         <button mat-flat-button (click)="resetChapter()">Reset</button>
-
     </div>
 
     }
@@ -22,8 +18,8 @@
     <mat-card appearance="outlined" class="content-container" [style]="evaluateColor(chapter.currentQuestion, 'card')">
         <mat-card-content>
             <h6 [innerHTML]="currentQuestionContent.question | lineBreak"></h6>
-            <div>
-                <div>
+            <div style="display:flex">
+                <div style="flex: 1 1 100%">
                     @if(currentQuestionContent.code) {
                     <code [innerHTML]="currentQuestionContent.code | lineBreak"></code>
                     }
@@ -45,7 +41,7 @@
                     </mat-radio-group>
                     }
                 </div>
-                <div>
+                <div style="flex: 1 1 80%">
                     @if(currentAnswerContent && currentAnswerContent.explanation && showExplanation) {
                     <mat-card appearance="outlined" class="content-container">
                         <mat-card-content>
@@ -57,6 +53,8 @@
                     </mat-card>
                     }
                 </div>
+
+
 
             </div>
 

@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { LineBreakPipe } from "../../pipes/line-break.pipe";
 import { environment } from '../../../environments/environment';
+import { HeaderComponent } from "../header/header.component";
 
 
 @Component({
@@ -33,7 +34,8 @@ import { environment } from '../../../environments/environment';
     MatCheckboxModule,
     MatIconModule,
     MatDividerModule,
-    LineBreakPipe
+    LineBreakPipe,
+    HeaderComponent
   ],
   templateUrl: './chapter-content.component.html',
   styleUrl: './chapter-content.component.css'
