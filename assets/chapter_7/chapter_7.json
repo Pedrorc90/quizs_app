@@ -36,6 +36,7 @@
     {
       "number": 4,
       "question": "4. Given the following diagram, how many of the following are named modules?",
+      "image": "chapter_7_4.png",
       "choices": [
         "A. 0",
         "B. 1",
@@ -140,6 +141,7 @@
     {
       "number": 13,
       "question": "13. Each box in the diagram corresponds to a module. Given the module dependencies in the diagram, which boxes represent the service provider interface and service provider, respectively?",
+      "image": "chapter_7_13.png",
       "choices": [
         "A. W and X",
         "B. W and Z",
@@ -186,6 +188,7 @@
     {
       "number": 17,
       "question": "17. Suppose we want to have two modules: com.ny and com.sf. Which is true about the placement of the module-info.java file(s)?",
+      "image": "chapter_7_17.png",
       "choices": [
         "A. One module-info.java file is required in position Z.",
         "B. Two module-info.java files are required, in positions V and X.",
@@ -218,7 +221,8 @@
         "E. requires com.ny;",
         "F. requires com.ny.city;"
       ]
-    },{
+    },
+    {
       "number": 20,
       "question": "20. Suppose the consumer, service locator, service provider, and service provider interface are each in separate modules. Which of the following best describes the following module-info file?",
       "code": "module nature.tree {\n  provides nature.sapling.Tree with nature.tree.Maple;\n}",
@@ -229,7 +233,8 @@
         "D. Service provider interface",
         "E. None of the above"
       ]
-    },    {
+    },
+    {
       "number": 21,
       "question": "21. Which options are commonly used when compiling a module with the javac command?",
       "choices": [
@@ -276,6 +281,7 @@
     {
       "number": 25,
       "question": "25. Suppose you have these two JARs that are not modules. Which steps, when taken together, would be the best way to make them modules? (Choose two.)",
+      "image": "chapter_7_25.png",
       "choices": [
         "A. Add a module-info.java to each.",
         "B. Add them to the classpath.",
@@ -449,7 +455,7 @@
     },
     {
       "number": 40,
-      "question": "How many of these module declarations are valid?",
+      "question": "40. How many of these module declarations are valid?",
       "code": "module com.leaf {}\nmodule com.leaf2 {}\nmodule com-leaf { }\nmodule LEAF {}\nmodule leaf2 {}",
       "choices": [
         "A. Zero",
@@ -485,6 +491,7 @@
     {
       "number": 43,
       "question": "43. Suppose we have the packages in the diagram. What could we add to the module-info.java in com.duck to allow the com.park module to reference the Duckling class but not allow the com.bread module to do the same?",
+      "image": "chapter_7_43.png",
       "choices": [
         "A. exports com.duckling;",
         "B. exports com.duckling from com.park;",
@@ -590,6 +597,7 @@
     {
       "number": 52,
       "question": "52. Each box in the diagram corresponds to a module. The service locator and service provider interface share a module. Which boxes represent the consumer and service provider, respectively?",
+      "image": "chapter_7_52.png",
       "choices": [
         "A. X and Y",
         "B. X and Z",
@@ -757,6 +765,7 @@
     {
       "number": 66,
       "question": "66. This diagram shows the second step of a migration to modules. What type of migration is this?",
+      "image": "chapter_7_66.png",
       "choices": [
         "A. Bottom-up",
         "B. Side-to-side",
@@ -779,6 +788,7 @@
     {
       "number": 68,
       "question": "68. Suppose we have the two JARs in the diagram on the module path and the module-info in the com.magic JAR only exports one package: com.magic.unicorn. There is no module-info file in the com.science JAR. How many of the four packages in the diagram can a third module on the module path access?",
+      "image": "chapter_7_68.png",
       "choices": [
         "A. 0",
         "B. 1",
@@ -882,7 +892,8 @@
     },
     {
       "number": 77,
-      "question": "77. Fill in the blank with code to look up and call a service.\nString cheese = ServiceLoader.load(Mouse.class)\n   .stream()\n   .map(_________________)\n   .map(Mouse::favoriteFood)\n   .findFirst()\n   .orElse(\"\");",
+      "question": "77. Fill in the blank with code to look up and call a service.",
+      "code": "String cheese = ServiceLoader.load(Mouse.class)\n   .stream()\n   .map(_________________)\n   .map(Mouse::favoriteFood)\n   .findFirst()\n   .orElse(\"\");",
       "choices": [
         "A. Mouse.get()",
         "B. Mouse::get",
@@ -894,6 +905,7 @@
     {
       "number": 78,
       "question": "78. Given the following diagram, with each box representing a module, what statements need to be in module-info.java for the mammal module? (Choose three.)",
+      "image": "chapter_7_78.png",
       "choices": [
         "A. exports mammal;",
         "B. exports mammal.eat;",
@@ -905,7 +917,8 @@
     },
     {
       "number": 79,
-      "question": "79. Given the previous diagram and the following module-info.java for the panda module, what change can be made to the requires statement?\nmodule panda {\n   requires mammal;\n}",
+      "question": "79. Given the previous diagram and the following module-info.java for the panda module, what change can be made to the requires statement?",
+      "code": "module panda {\n   requires mammal;\n}",
       "choices": [
         "A. exports transitive mammal;",
         "B. exports transitive mammal.eat;",
@@ -917,7 +930,8 @@
     },
     {
       "number": 80,
-      "question": "80. Given the diagram in Question 78 and the following module-info.java for the panda module, what is the result of including line m1?\nmodule panda {\n   requires mammal;\n   requires transitive mammal; // line m1\n}",
+      "question": "80. Given the diagram in Question 78 and the following module-info.java for the panda module, what is the result of including line m1?",
+      "code": "module panda {\n   requires mammal;\n   requires transitive mammal; // line m1\n}",
       "choices": [
         "A. Any modules that require mammal will automatically get panda as well.",
         "B. Any modules that require panda will automatically get mammal as well.",
@@ -963,6 +977,7 @@
     {
       "number": 84,
       "question": "84. Each box in the following diagram corresponds to a module. The service locator and service provider interface share a module. Which boxes represent the consumer and service provider, respectively?",
+      "image": "chapter_7_84.png",
       "choices": [
         "A. X and Y",
         "B. X and Z",
@@ -1007,7 +1022,8 @@
     },
     {
       "number": 88,
-      "question": "88. Why is this module-info incorrect for a service provider?\nmodule plant.flower {\n   exports plant.flower.impl;\n   requires plant.flower.api;\n   provides plant.flower.api.Petal \n      with plant.flower.impl.PetalImpl;\n}",
+      "question": "88. Why is this module-info incorrect for a service provider?",
+      "code": "module plant.flower {\n   exports plant.flower.impl;\n   requires plant.flower.api;\n   provides plant.flower.api.Petal \n      with plant.flower.impl.PetalImpl;\n}",
       "choices": [
         "A. The exports directive should be export.",
         "B. The exports directive should not be present because all calls to the service provider should use the service locator.",
@@ -1019,7 +1035,8 @@
     },
     {
       "number": 89,
-      "question": "89. How many modules are part of the cyclic dependency?\nmodule.com.light {\n   exports com.light;\n}\nmodule com.plant {\n   exports com.plant;\n   requires com.light;\n   requires com.animal;\n}\nmodule com.animal {\n   exports com.animal;\n   requires com.light;\n}\nmodule com.worm {\n   exports com.worm;\n   requires com.light;\n   requires com.animal;\n   requires com.plant;\n}",
+      "question": "89. How many modules are part of the cyclic dependency?",
+      "code": "module.com.light {\n   exports com.light;\n}\nmodule com.plant {\n   exports com.plant;\n   requires com.light;\n   requires com.animal;\n}\nmodule com.animal {\n   exports com.animal;\n   requires com.light;\n}\nmodule com.worm {\n   exports com.worm;\n   requires com.light;\n   requires com.animal;\n   requires com.plant;\n}",
       "choices": [
         "A. 0",
         "B. 1",

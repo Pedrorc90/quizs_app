@@ -4,7 +4,13 @@
       "number": 1,
       "question": "1. How many lines would have to be changed for the following code to compile?",
       "code": "1: enum Color {\n2:    public static Color DEFAULT = BROWN;\n3:    BROWN, YELLOW, BLACK;\n4: }\n5: public record Pony {\n6:    String name;\n7:    static int age;\n8:    { age = 10;}\n9: }",
-      "choices": ["Zero", "One", "Two", "Three", "Four or more"]
+      "choices": [
+        "Zero",
+        "One",
+        "Two",
+        "Three",
+        "Four or more"
+      ]
     },
     {
       "number": 2,
@@ -286,6 +292,7 @@
       "number": 24,
       "question": "24. Suppose you have the following code. Which of the images best represents the state of the references c1, c2, and c3, right before the end of the main() method, assuming garbage collection hasn't run? In the diagrams, each box represents a Chicken object with a number of eggs.",
       "code": "public class Chicken {\n   private Integer eggs = 2;\n   { this.eggs = 3; }\n   public Chicken(int eggs) {\n      this.eggs = eggs;\n   }\n   public static void main(String[] r) {\n      var c1 = new Chicken(1);\n      var c2 = new Chicken(2);\n      var c3 = new Chicken(3);\n      c1.eggs = c2.eggs;\n      c2 = c1;\n      c3.eggs = null;\n   }\n}",
+      "image": "chapter_3_24.png",
       "choices": [
         "A. Option A",
         "B. Option B",
@@ -643,6 +650,7 @@
     {
       "number": 53,
       "question": "53. Which is not a true statement given this diagram? Assume all classes are public.",
+      "image": "chapter_3_53.png",
       "choices": [
         "A. Instance methods in the Blanket class can call the Flashlight class's turnOn().",
         "B. Instance methods in the Flashlight class can call the Flashlight class's replaceBulb().",
@@ -1111,6 +1119,7 @@
       "number": 91,
       "question": "91. The following diagram shows two reference variables pointing to the same Bunny object in memory. The reference variable myBunny is of type Bunny, while unknownBunny is a valid but unknown data type. Which statements about the reference variables are true? Assume the instance methods and variables shown in the diagram are marked public. (Choose three.)",
       "code": "After question sometimes appears more text. If this text follows a pattern of \"choices\" introduce it into \"choices\", otherwise introduce it into the attribute \"code\" of type String",
+      "image": "chapter_3_91.png",
       "choices": [
         "A. The reference type of unknownBunny must be Bunny or a supertype of Bunny.",
         "B. The reference type of unknownBunny cannot be cast to a reference type of Bunny.",
@@ -1408,6 +1417,7 @@
     {
       "number": 115,
       "question": "115. Suppose Panther and Cub are interfaces and neither contains any default methods. Which statements are true? (Choose two.)",
+      "image": "chapter_3_115.png",
       "choices": [
         "A. If Panther has a single abstract method, Cub is guaranteed to be a functional interface.",
         "B. If Panther has a single abstract method, Cub may be a functional interface.",
@@ -1603,7 +1613,7 @@
     },
     {
       "number": 131,
-      "question": "How many lines of the following program do not compile?",
+      "question": "131. How many lines of the following program do not compile?",
       "code": "public enum Color {\n   RED(1,2) { void toSpectrum() {} },\n   BLUE(2) { void toSpectrum() {} void printColor() {} },\n   ORANGE() { void toSpectrum() {} },\n   GREEN(4);\n   public Color(int… color) {}\n   abstract void toSpectrum();\n   final void printColor() {}\n}",
       "choices": [
         "A. Zero",
@@ -1615,7 +1625,7 @@
     },
     {
       "number": 132,
-      "question": "What is the output of the Square program?",
+      "question": "132. What is the output of the Square program?",
       "code": "package shapes;\nabstract class Trapezoid {\n   private int getEqualSides() {return 0;}\n}\nabstract class Rectangle extends Trapezoid {\n   public static int getEqualSides() {return 2;}  // x1\n}\npublic class Square extends Rectangle {\n   public int getEqualSides() {return 4;}         // x2\n   public static void main(String[] corners) {\n      final Square myFigure = new Square() {};       // x3\n      System.out.print(myFigure.getEqualSides());\n   } }",
       "choices": [
         "A. 0",
@@ -1628,7 +1638,7 @@
     },
     {
       "number": 133,
-      "question": "What can fill in the blank so that the play() method can be called from all classes in the com.mammal package but not the com.mammal.gopher package?",
+      "question": "133. What can fill in the blank so that the play() method can be called from all classes in the com.mammal package but not the com.mammal.gopher package?",
       "code": "package com.mammal;\npublic class Enrichment {\n  _________ void play() {}\n}",
       "choices": [
         "A. Leave it blank",
@@ -1640,7 +1650,7 @@
     },
     {
       "number": 134,
-      "question": "How many cells in the following table are incorrect?",
+      "question": "134. How many cells in the following table are incorrect?",
       "code": "Type             Allows abstract methods?    Allows constants?    Allows constructors?\nAbstract class        Yes                             Yes                         No\nConcrete class       Yes                             Yes                         Yes\nInterface                 Yes                             Yes                         Yes",
       "choices": [
         "A. Zero",
@@ -1654,7 +1664,7 @@
     },
     {
       "number": 135,
-      "question": "Which modifiers are permitted on a direct subclass of a sealed class? (Choose three.)",
+      "question": "135. Which modifiers are permitted on a direct subclass of a sealed class? (Choose three.)",
       "choices": [
         "A. void",
         "B. default",
@@ -1667,7 +1677,7 @@
     },
     {
       "number": 136,
-      "question": "Which statements are true about a functional interface? (Choose three.)",
+      "question": "136. Which statements are true about a functional interface? (Choose three.)",
       "choices": [
         "A. It may contain any number of abstract methods.",
         "B. It must contain a single abstract method.",
@@ -1679,7 +1689,7 @@
     },
     {
       "number": 137,
-      "question": "What is a possible output of the following application?",
+      "question": "137. What is a possible output of the following application?",
       "code": "package wrap;\npublic class Gift {\n   private final Object contents;\n   protected Object getContents() {\n      return contents;\n   }\n   protected void setContents(Object contents) {\n      this.contents = contents;\n   }\n   public void showPresent() {\n      System.out.print(\"Your gift: \"+contents);\n   }\n   public static void main(String[] treats) {\n      var gift = new Gift();\n      gift.setContents(gift);\n      gift.showPresent();\n   } }",
       "choices": [
         "A. Your gift: wrap.Gift@29ca2745",
@@ -1691,7 +1701,7 @@
     },
     {
       "number": 138,
-      "question": "How many lines would need to be corrected for the following code to compile?",
+      "question": "138. How many lines would need to be corrected for the following code to compile?",
       "code": "1:  package animal;\n2:  interface CanFly {\n3:     public void fly() {}\n4:     int speed = 5;\n5:  }\n6:  final class Bird {\n7:     public int fly(int speed) {}\n8:  }\n9:  public class Eagle extends Bird implements CanFly {\n10:    public void fly() {}\n11: }",
       "choices": [
         "A. None",
@@ -1703,7 +1713,7 @@
     },
     {
       "number": 139,
-      "question": "What is the output of the following code?",
+      "question": "139. What is the output of the following code?",
       "code": "public class Bunny {\n   static class Rabbit {\n      void hop() {\n         System.out.print(\"hop\");\n      }\n   }\n   static class FlemishRabbit extends Rabbit {\n      void hop() {\n         System.out.print(\"HOP\");\n      }\n    }\n    public static void main(String[] args) {\n       Rabbit r1 = new FlemishRabbit();\n       FlemishRabbit r2 = new FlemishRabbit();\n       r1.hop();\n       r2.hop();\n    } }",
       "choices": [
         "A. hophop",
@@ -1716,7 +1726,7 @@
     },
     {
       "number": 140,
-      "question": "Which of the following are valid class declarations? (Choose three.)",
+      "question": "140. Which of the following are valid class declarations? (Choose three.)",
       "choices": [
         "A. class _ {}",
         "B. class river {}",
@@ -1728,7 +1738,7 @@
     },
     {
       "number": 141,
-      "question": "What is the output of the InfiniteMath program?",
+      "question": "141. What is the output of the InfiniteMath program?",
       "code": "class Math {\n   public final double secret = 2;\n}\nclass ComplexMath extends Math {\n   public final double secret = 4;\n}\npublic class InfiniteMath extends ComplexMath {\n   public final double secret = 8;\n   public static void main(String[] numbers) {\n      Math math = new InfiniteMath();\n      System.out.print(math.secret);\n   } }",
       "choices": [
         "A. 2.0",
@@ -1741,7 +1751,7 @@
     },
     {
       "number": 142,
-      "question": "Given the following application, which diagram best represents the state of the mySkier, mySpeed, and myName variables in the main() method after the call to the slalom() method?",
+      "question": "142. Given the following application, which diagram best represents the state of the mySkier, mySpeed, and myName variables in the main() method after the call to the slalom() method?",
       "code": "package slopes;\npublic class Ski {\n   private int age = 18;\n   private static void slalom(Ski racer,\n         int[] speed, String name) {\n      racer.age = 18;\n      name = \"Wendy\";\n      speed = new int[1];\n      speed[0] = 11;\n      racer = null;\n   }\n   public static void main(String[] mountain) {\n      final var mySkier = new Ski();\n      mySkier.age = 16;\n      final int[] mySpeed = new int[1];\n      final String myName = \"Rosie\";\n      slalom(mySkier, mySpeed, myName);\n   } }",
       "choices": [
         "A. ",
@@ -1752,7 +1762,7 @@
     },
     {
       "number": 143,
-      "question": "What is the output of the following application?",
+      "question": "143. What is the output of the following application?",
       "code": "package zoo;\npublic class Penguin {\n   private int volume = 1;\n   private class Chick {\n      private static int volume = 3;\n      void chick(int volume) {\n         System.out.print(\"Honk(\"+Penguin.this.volume+\")!\");\n      } }\n   public static void main(String… eggs) {\n      Penguin pen = new Penguin();\n      final Penguin.Chick littleOne = pen.new Chick();\n      littleOne.chick(5);\n   } }",
       "choices": [
         "A. Honk(1)!",
@@ -1765,7 +1775,7 @@
     },
     {
       "number": 144,
-      "question": "What is a possible output of the following program?",
+      "question": "144. What is a possible output of the following program?",
       "code": "record Name(String v) {}\npublic record Fruit(Name n) {\n   public static void main(String[] vitamins) {\n      var x = new Name(\"Apple\");\n      System.out.println(new Fruit(x));\n   } }",
       "choices": [
         "A. Fruit@3f2f5b24",
@@ -1780,7 +1790,7 @@
     },
     {
       "number": 145,
-      "question": "Fill in the blank with the line of code that allows the program to compile and print X at runtime.",
+      "question": "145. Fill in the blank with the line of code that allows the program to compile and print X at runtime.",
       "code": "interface Fruit {\n   public default char getColor() { return 'Z'; }\n}\ninterface Edible  {\n   public default char getColor() { return 'X'; } \n}\npublic class Banana implements Fruit, Edible {\n   public char getColor() { return _________________; }\n   public static void main(String[] a) {\n      var d = new Banana();\n      System.out.println(d.getColor());\n   } }",
       "choices": [
         "A. Edible.getColor()",
@@ -1793,7 +1803,7 @@
     },
     {
       "number": 146,
-      "question": "Given the following two classes, each in a different package, which line inserted into the code allows the second class to compile?",
+      "question": "146. Given the following two classes, each in a different package, which line inserted into the code allows the second class to compile?",
       "code": "package clothes;\npublic class Store {\n   public static String getClothes() { return \"dress\"; }\n}\n \npackage wardrobe;\n// INSERT CODE HERE\npublic class Closet {\n   public void borrow() {\n      System.out.print(\"Borrowing clothes: \"+getClothes());\n   } }",
       "choices": [
         "A. static import clothes.Store.getClothes;",
@@ -1805,7 +1815,7 @@
     },
     {
       "number": 147,
-      "question": "What is the output of the ElectricCar program?",
+      "question": "147. What is the output of the ElectricCar program?",
       "code": "package vehicles;\nclass Automobile {\n   private final String drive() { return \"Driving vehicle\"; }\n}\nclass Car extends Automobile {\n   protected String drive() { return \"Driving car\"; }\n}\npublic class ElectricCar extends Car {\n   public final String drive() { return \"Driving electric car\"; }\n   public static void main(String[] wheels) {\n      final Automobile car = new ElectricCar();\n      var v = (Car)car;\n      System.out.print(v.drive());\n   } }",
       "choices": [
         "A. Driving vehicle",
@@ -1818,7 +1828,7 @@
     },
     {
       "number": 148,
-      "question": "Which statements about sealed classes are correct? (Choose three.)",
+      "question": "148. Which statements about sealed classes are correct? (Choose three.)",
       "choices": [
         "A. A sealed class may be extended by another sealed class.",
         "B. In an unnamed module, a sealed class must include all its subclasses within the same file.",
@@ -1830,7 +1840,7 @@
     },
     {
       "number": 149,
-      "question": "What is the output of the following program?",
+      "question": "149. What is the output of the following program?",
       "code": "public class Music {\n   { System.out.print(\"do-\"); }\n   static { System.out.print(\"re-\"); }\n   { System.out.print(\"mi-\"); }\n   static { System.out.print(\"fa-\"); }\n   public Music() {\n      System.out.print(\"so-\");\n   }\n   public Music(int note) {\n      System.out.print(\"la-\");\n   }\n   public static void main(String[] sound) {\n      System.out.print(\"ti-\");\n      var play = new Music();\n   } }",
       "choices": [
         "A. re-fa-ti-do-mi-so-",
@@ -1844,7 +1854,7 @@
     },
     {
       "number": 150,
-      "question": "Given the following class declaration, which options correctly declare a local variable containing an instance of the class?",
+      "question": "150. Given the following class declaration, which options correctly declare a local variable containing an instance of the class?",
       "code": "public class Earth {\n   private abstract class Sky {\n      void fall() {\n         var e = _________________\n      } } }",
       "choices": [
         "A. new Sunset() extends Sky {};",
@@ -1857,7 +1867,7 @@
     },
     {
       "number": 151,
-      "question": "What is the output of the Encyclopedia program?",
+      "question": "151. What is the output of the Encyclopedia program?",
       "code": "package paper;\nabstract class Book {\n   protected static String material = \"papyrus\";\n   public Book() {}\n   abstract String read() {}\n   public Book(String material) {this.material = material;}\n}\npublic class Encyclopedia extends Book {\n   public static String material = \"cellulose\";\n   public Encyclopedia() {super();}\n   public String read() { return \"Reading is fun!\"; }\n   public String getMaterial() {return super.material;}\n \n   public static void main(String[] pages) {\n      System.out.print(new Encyclopedia().read());\n      System.out.print(\"-\" + new Encyclopedia().getMaterial());\n   } }",
       "choices": [
         "A. Reading is fun!-papyrus",
@@ -1870,7 +1880,7 @@
     },
     {
       "number": 152,
-      "question": "What does the following print?",
+      "question": "152. What does the following print?",
       "code": "interface Vehicle {}\nclass Bus implements Vehicle {}\npublic class Transport { \n   public static void main(String[] args) {\n      Vehicle vehicle = new Bus();\n      boolean n = null instanceof Bus;\n      boolean v = vehicle instanceof Vehicle;\n      boolean b = vehicle instanceof Bus;\n      System.out.println(n + \" \" + v + \" \" + b);\n  } }",
       "choices": [
         "A. false false false",
@@ -1883,7 +1893,7 @@
     },
     {
       "number": 153,
-      "question": "How many rows of the following table contain an error?",
+      "question": "153. How many rows of the following table contain an error?",
       "code": "Interface member           Optional modifier(s)    Required modifier(s)\nPrivate method               private                          -\nDefault method              public                          default\nStatic method                public static                -\nAbstract method            public                           abstract",
       "choices": [
         "A. Zero",
@@ -1895,7 +1905,7 @@
     },
     {
       "number": 154,
-      "question": "What is the output of the following program?",
+      "question": "154. What is the output of the following program?",
       "code": "public class Dwarf {\n   private final String name;\n   public Dwarf() {\n      this(\"Bashful\");\n   }\n   public Dwarf(String name) {\n      name = \"Sleepy\";\n   }\n   public static void main(String[] sound) {\n      var d = new Dwarf(\"Doc\");\n      System.out.println(d.name);\n   } }",
       "choices": [
         "A. Sleepy",
@@ -1907,7 +1917,7 @@
     },
     {
       "number": 155,
-      "question": "What is the output of the following application?",
+      "question": "155. What is the output of the following application?",
       "code": "package pocketmath;\ninterface AddNumbers {\n   int add(int x, int y);\n   static int subtract(int x, int y) { return x-y; }\n   default int multiply(int x, int y) { return x*y; }\n}\npublic class Calculator {\n   protected void calculate(AddNumbers n, int a, int b) {\n      System.out.print(n.add(a, b));\n   }\n   public static void main(String[] moreNumbers) {\n      final var ti = new Calculator() {};\n      ti.calculate((k,p) -> p+k+1, 2, 5);  // x1\n   } }",
       "choices": [
         "A. 0",
@@ -1921,7 +1931,7 @@
     },
     {
       "number": 156,
-      "question": "Which of the following variables are always in scope for the entire program once defined?",
+      "question": "156. Which of the following variables are always in scope for the entire program once defined?",
       "choices": [
         "A. Package variables",
         "B. Class variables",
@@ -1932,7 +1942,7 @@
     },
     {
       "number": 157,
-      "question": "What is the command to call one constructor from another constructor in the same class?",
+      "question": "157. What is the command to call one constructor from another constructor in the same class?",
       "choices": [
         "A. construct()",
         "B. parent()",
@@ -1944,7 +1954,7 @@
     },
     {
       "number": 158,
-      "question": "Which of the following statements about no-argument constructors and inheritance are correct? (Choose two.)",
+      "question": "158. Which of the following statements about no-argument constructors and inheritance are correct? (Choose two.)",
       "choices": [
         "A. The compiler cannot insert a no-argument constructor into an abstract class.",
         "B. If a parent class does not include a no-argument constructor, a child class cannot declare one.",
@@ -1956,7 +1966,7 @@
     },
     {
       "number": 159,
-      "question": "What is the result of executing the Grasshopper program?",
+      "question": "159. What is the result of executing the Grasshopper program?",
       "code": "// Hopper.java\npackage com.animals;\npublic class Hopper {\n   protected void hop() {\n      System.out.println(\"hop\");\n   }\n}\n\n// Grasshopper.java\npackage com.insect;\nimport com.animals.Hopper;\npublic class Grasshopper extends Hopper {\n   public void move() {\n      hop();  // p1\n   }\n   public static void main(String[] args) {\n      var hopper = new Grasshopper();\n      hopper.move();  // p2\n      hopper.hop();   // p3\n   } }",
       "choices": [
         "A. The code prints hop once.",
@@ -1968,7 +1978,7 @@
     },
     {
       "number": 160,
-      "question": "What is the minimum number of lines that need to be removed to make this code compile?",
+      "question": "160. What is the minimum number of lines that need to be removed to make this code compile?",
       "code": "@FunctionalInterface\npublic interface Play {\n   public static void baseball() {}\n   private static void soccer() {}\n   default void play() {}\n   void fun();\n   void game();\n   void toy();\n}",
       "choices": [
         "A. One",
@@ -1980,7 +1990,7 @@
     },
     {
       "number": 161,
-      "question": "Which statement about the following classes is correct?",
+      "question": "161. Which statement about the following classes is correct?",
       "code": "import java.util.*;\npublic class Flower {\n   private final String name;\n   private final List<Integer> counts;\n   public Flower(String name, List<Integer> counts) {\n      this.name = name;\n      this.counts = new ArrayList<>(counts);\n   }\n   public final String getName() { return name; }\n   public final List<Integer> getCounts() {\n      return new ArrayList<>(counts);\n   } }\n \nclass Plant {\n   private final String name;\n   private final List<Integer> counts;\n   public Plant(String name, List<Integer> counts) {\n      this.name = name;\n      this.counts = new ArrayList<>(counts);\n   }\n   public String getName() { return name; }\n   public List<Integer> getCounts() {\n      return new ArrayList<>(counts);\n   } }",
       "choices": [
         "A. Only Flower is immutable.",
@@ -1992,7 +2002,7 @@
     },
     {
       "number": 162,
-      "question": "What is the result of executing the Sounds program?",
+      "question": "162. What is the result of executing the Sounds program?",
       "code": "// Sheep.java\npackage com.mammal;\npublic class Sheep {\n   private void baa() {\n      System.out.println(\"baa!\");\n   }\n   private void speak() {\n      baa();\n   } }\n\n// Sounds.java\npackage com.animals;\nimport com.mammal.Sheep;\npublic class Sounds {\n   public static void main(String[] args) {\n      var sheep = new Sheep();\n      sheep.speak();\n   } }",
       "choices": [
         "A. The code runs and prints baa!.",
@@ -2004,7 +2014,7 @@
     },
     {
       "number": 163,
-      "question": "What is the output of the following application?",
+      "question": "163. What is the output of the following application?",
       "code": "package stocks;\npublic class Bond {\n   private static int price = 5;\n   public boolean sell() {\n      if(price<10) {\n         price++;\n         return true;\n      } else if(price>=10) {\n         return false;\n      } }\n   public static void main(String[] cash) {\n      new Bond().sell();\n      new Bond().sell();\n      new Bond().sell();\n      System.out.print(price);\n   } }",
       "choices": [
         "A. 5",
@@ -2017,7 +2027,7 @@
     },
     {
       "number": 164,
-      "question": "Given the following class declaration, what expression can be used to fill in the blank so that 88 is printed at runtime?",
+      "question": "164. Given the following class declaration, what expression can be used to fill in the blank so that 88 is printed at runtime?",
       "code": "final public class Racecar {\n   final private int speed = 88;\n   final protected class Engine {\n      private final int speed = 100;\n      public final int getSpeed() {\n         return ________________________;\n      }\n   }\n   final Engine e = new Engine();\n   final public static void main(String[] feed) {\n      System.out.print(new Racecar().e.getSpeed());\n   } }",
       "choices": [
         "A. Racecar.speed",
@@ -2030,7 +2040,7 @@
     },
     {
       "number": 165,
-      "question": "Which statements about static initializers are correct? (Choose three.)",
+      "question": "165. Which statements about static initializers are correct? (Choose three.)",
       "choices": [
         "A. They cannot be used to create instances of the class they are contained in.",
         "B. They can assign a value to a static final variable.",
@@ -2042,7 +2052,7 @@
     },
     {
       "number": 166,
-      "question": "What is the output of the BlueCar program?",
+      "question": "166. What is the output of the BlueCar program?",
       "code": "package race;\nabstract class Car {\n   static { System.out.print(\"1\"); }\n   public Car(String name) {\n      super();\n      System.out.print(\"2\");\n   }\n   { System.out.print(\"3\"); } }\npublic class BlueCar extends Car {\n   { System.out.print(\"4\"); }\n   public BlueCar() {\n      super(\"blue\");\n      System.out.print(\"5\");\n   }\n   public static void main(String[] gears) {\n      new BlueCar();\n   } }",
       "choices": [
         "A. 23451",
@@ -2056,7 +2066,7 @@
     },
     {
       "number": 167,
-      "question": "The following Fish class is included, unmodified, in a larger program at runtime. As most, how many classes can inherit Fish (excluding Fish itself)?",
+      "question": "167. The following Fish class is included, unmodified, in a larger program at runtime. As most, how many classes can inherit Fish (excluding Fish itself)?",
       "code": "public sealed class Fish {\n   final class Blobfish extends Clownfish {}\n   private non-sealed class Dory extends BlueTang {}\n   sealed class Clownfish extends Fish {}\n   sealed class BlueTang extends Fish {}\n   final class Swordfish extends Fish {}\n   private non-sealed class Nemo extends Clownfish {}\n}",
       "choices": [
         "A. None",
@@ -2070,7 +2080,7 @@
     },
     {
       "number": 168,
-      "question": "Given the following class declaration, which value cannot be inserted into the blank line that would allow the code to compile?",
+      "question": "168. Given the following class declaration, which value cannot be inserted into the blank line that would allow the code to compile?",
       "code": "package mammal;\ninterface Pet {\n   public Object getDoggy();\n}\npublic class Canine implements Pet {\n   public __________ getDoggy() {\n      return this;\n   } }",
       "choices": [
         "A. Canine",
@@ -2083,7 +2093,7 @@
     },
     {
       "number": 169,
-      "question": "Which statement about the following interface is correct?",
+      "question": "169. Which statement about the following interface is correct?",
       "code": "public interface Movie {\n   String pass = \"TICKET\";\n   private void buyPopcorn() {\n      purchaseTicket();\n   }\n   public static int getDrink() {\n      buyPopcorn();\n      return 32;\n   }\n   private static String purchaseTicket() {\n      getDrink();\n      return pass;\n   } }",
       "choices": [
         "A. The code compiles.",
@@ -2096,7 +2106,7 @@
     },
     {
       "number": 170,
-      "question": "Which methods compile?",
+      "question": "170. Which methods compile?",
       "code": "class YardWork {\n   private static int numShovels;\n   private int numRakes;\n   public int getNumShovels() {\n      return numShovels;\n   }\n   public int getNumRakes() {\n      return numRakes;\n   } }",
       "choices": [
         "A. Just getNumRakes()",
@@ -2107,7 +2117,7 @@
     },
     {
       "number": 171,
-      "question": "How many lines of the following class contain compilation errors?\n1: class Fly {\n2:    public Fly Fly() { return new Fly(); }\n3:    public void Fly(int kite) {}\n4:    public int Fly(long kite) { return 1; }\n5:    public static void main(String[] a) {\n6:       var f = new Fly();\n7:       f.Fly();\n8:    } }",
+      "question": "171. How many lines of the following class contain compilation errors?\n1: class Fly {\n2:    public Fly Fly() { return new Fly(); }\n3:    public void Fly(int kite) {}\n4:    public int Fly(long kite) { return 1; }\n5:    public static void main(String[] a) {\n6:       var f = new Fly();\n7:       f.Fly();\n8:    } }",
       "choices": [
         "A. None",
         "B. One",
@@ -2119,7 +2129,8 @@
     },
     {
       "number": 172,
-      "question": "How many of the classes in the diagram can write code that references the sky() method?",
+      "question": "172. How many of the classes in the diagram can write code that references the sky() method?",
+      "image": "chapter_3_172.png",
       "choices": [
         "A. None",
         "B. One",
@@ -2130,7 +2141,7 @@
     },
     {
       "number": 173,
-      "question": "For the diagram in Question 172, how many classes can write code that references the light variable?",
+      "question": "173. For the diagram in Question 172, how many classes can write code that references the light variable?",
       "choices": [
         "A. None",
         "B. One",
@@ -2141,7 +2152,7 @@
     },
     {
       "number": 174,
-      "question": "Which of the following are the best reasons for creating a public static interface method? (Choose two.)",
+      "question": "174. Which of the following are the best reasons for creating a public static interface method? (Choose two.)",
       "choices": [
         "A. Allow static methods to access instance methods.",
         "B. Allow an interface to define a method at the class level.",
@@ -2153,7 +2164,8 @@
     },
     {
       "number": 175,
-      "question": "What is the output of the HighSchool application?\npackage edu;\nimport java.io.FileNotFoundException;\nabstract class School {\n   abstract Float getNumTeachers();\n   public int getNumStudents() {\n      return 10;\n   } }\npublic class HighSchool extends School {\n   final Float getNumTeachers() { return 4f; }\n   public int getNumStudents() throws FileNotFoundException {\n      return 20;\n   }\n   public static void main(String[] s) throws Exception {\n      var school = new HighSchool();\n      System.out.print(school.getNumStudents());\n   } }",
+      "question": "175. What is the output of the HighSchool application?",
+      "code": "package edu;\nimport java.io.FileNotFoundException;\nabstract class School {\n   abstract Float getNumTeachers();\n   public int getNumStudents() {\n      return 10;\n   } }\npublic class HighSchool extends School {\n   final Float getNumTeachers() { return 4f; }\n   public int getNumStudents() throws FileNotFoundException {\n      return 20;\n   }\n   public static void main(String[] s) throws Exception {\n      var school = new HighSchool();\n      System.out.print(school.getNumStudents());\n   } }",
       "choices": [
         "A. 10",
         "B. 20",
@@ -2165,7 +2177,8 @@
     },
     {
       "number": 176,
-      "question": "What is the output of the following application?\npackage track;\ninterface Run {\n   default CharSequence walk() {\n      return \"Walking and running!\";\n   } }\ninterface Jog {\n   default String walk() {\n      return \"Walking and jogging!\";\n   } }\npublic class Sprint implements Run, Jog {\n   public String walk() {\n      return \"Sprinting!\";\n   }\n   public static void main(String[] args) {\n      var s = new Sprint();\n      System.out.println(s.walk());\n   } }",
+      "question": "176. What is the output of the following application?",
+      "code": "package track;\ninterface Run {\n   default CharSequence walk() {\n      return \"Walking and running!\";\n   } }\ninterface Jog {\n   default String walk() {\n      return \"Walking and jogging!\";\n   } }\npublic class Sprint implements Run, Jog {\n   public String walk() {\n      return \"Sprinting!\";\n   }\n   public static void main(String[] args) {\n      var s = new Sprint();\n      System.out.println(s.walk());\n   } }",
       "choices": [
         "A. Walking and running!",
         "B. Walking and jogging!",
@@ -2177,7 +2190,8 @@
     },
     {
       "number": 177,
-      "question": "What is true of these two interfaces?\ninterface Crawl {\n   abstract void wriggle();\n}\ninterface Dance {\n   public void wriggle();\n}",
+      "question": "177. What is true of these two interfaces?",
+      "code": "interface Crawl {\n   abstract void wriggle();\n}\ninterface Dance {\n   public void wriggle();\n}",
       "choices": [
         "A. A concrete class can implement both interfaces, but must implement wriggle().",
         "B. A concrete class can implement both interfaces, but must not implement wriggle().",
@@ -2188,7 +2202,8 @@
     },
     {
       "number": 178,
-      "question": "Which of these are functional interfaces?\ninterface Lion {\n   public void roar();\n   default void drink() {}\n   boolean equals(Lion lion);\n}\ninterface Tiger {\n   public void roar();\n   default void drink() {}\n   String toString(String name);\n}\ninterface Bear {\n   void ohMy();\n   default void drink() {}\n}",
+      "question": "178. Which of these are functional interfaces?",
+      "code": "interface Lion {\n   public void roar();\n   default void drink() {}\n   boolean equals(Lion lion);\n}\ninterface Tiger {\n   public void roar();\n   default void drink() {}\n   String toString(String name);\n}\ninterface Bear {\n   void ohMy();\n   default void drink() {}\n}",
       "choices": [
         "A. Lion",
         "B. Tiger",
@@ -2202,7 +2217,8 @@
     },
     {
       "number": 179,
-      "question": "How many lines of the following class contain a compiler error?\n1:  public class Dragon {\n2:     boolean scaly;\n3:     static final int gold;   \n4:     Dragon protectTreasure(int value, boolean scaly) {\n5:        scaly = true;\n6:        return this;\n7:     }   \n8:     static void fly(boolean scaly) {\n9:        scaly = true;\n10:    }   \n11:    int saveTheTreasure(boolean scaly) {\n12:       return this.gold;\n13:    }   \n14:    static void saveTheDay(boolean scaly) {\n15:       this.gold = 0;\n16:    }\n17:    static { gold = 100; } }",
+      "question": "179. How many lines of the following class contain a compiler error?",
+      "code": "1:  public class Dragon {\n2:     boolean scaly;\n3:     static final int gold;   \n4:     Dragon protectTreasure(int value, boolean scaly) {\n5:        scaly = true;\n6:        return this;\n7:     }   \n8:     static void fly(boolean scaly) {\n9:        scaly = true;\n10:    }   \n11:    int saveTheTreasure(boolean scaly) {\n12:       return this.gold;\n13:    }   \n14:    static void saveTheDay(boolean scaly) {\n15:       this.gold = 0;\n16:    }\n17:    static { gold = 100; } }",
       "choices": [
         "A. None",
         "B. One",
@@ -2213,7 +2229,7 @@
     },
     {
       "number": 180,
-      "question": "Which are requirements for a class to be immutable? (Choose three.)",
+      "question": "180. Which are requirements for a class to be immutable? (Choose three.)",
       "choices": [
         "A. A private constructor is provided.",
         "B. Any instance variables are private.",
@@ -2225,7 +2241,8 @@
     },
     {
       "number": 181,
-      "question": "Which statement about the following interface is correct?\npublic interface Planet {\n   int circumference;\n   public abstract void enterAtmosphere();\n   public default int getCircumference() {\n      enterAtmosphere();\n      return circumference;\n   }\n   private static void leaveOrbit() {\n      var earth = new Planet() {\n         public void enterAtmosphere() {}\n      };\n      earth.getCircumference();\n   } }",
+      "question": "181. Which statement about the following interface is correct?",
+      "code": "public interface Planet {\n   int circumference;\n   public abstract void enterAtmosphere();\n   public default int getCircumference() {\n      enterAtmosphere();\n      return circumference;\n   }\n   private static void leaveOrbit() {\n      var earth = new Planet() {\n         public void enterAtmosphere() {}\n      };\n      earth.getCircumference();\n   } }",
       "choices": [
         "A. The code compiles.",
         "B. The method enterAtmosphere() does not compile.",
@@ -2237,7 +2254,8 @@
     },
     {
       "number": 182,
-      "question": "What is the output of the following program?\nimport java.time.*;\nimport java.time.temporal.*;\npublic record User(LocalDate creationDate) {\n   static LocalDate today = LocalDate.now();\n   public User {\n      creationDate = today;\n      creationDate = today;\n   }\n   public static void main(String[] p) {\n      LocalDate yesterday = LocalDate.now()\n         .minus(1, ChronoUnit.DAYS);\n      var u = new User(yesterday);\n      System.out.print(u.creationDate());\n   } }",
+      "question": "182. What is the output of the following program?",
+      "code": "import java.time.*;\nimport java.time.temporal.*;\npublic record User(LocalDate creationDate) {\n   static LocalDate today = LocalDate.now();\n   public User {\n      creationDate = today;\n      creationDate = today;\n   }\n   public static void main(String[] p) {\n      LocalDate yesterday = LocalDate.now()\n         .minus(1, ChronoUnit.DAYS);\n      var u = new User(yesterday);\n      System.out.print(u.creationDate());\n   } }",
       "choices": [
         "A. null",
         "B. Today's date",
@@ -2250,7 +2268,7 @@
     },
     {
       "number": 183,
-      "question": "Fill in the blanks: ___________________ methods always have the same name but a different list of parameters, while ___________________ methods always have the same name and the same return type.",
+      "question": "183. Fill in the blanks: ___________________ methods always have the same name but a different list of parameters, while ___________________ methods always have the same name and the same return type.",
       "choices": [
         "A. Overloaded, overridden",
         "B. Inherited, overridden",
@@ -2262,7 +2280,8 @@
     },
     {
       "number": 184,
-      "question": "What is the output of the following program?\npublic class Husky {\n   { this.food = 10; }\n   { this.toy = 2; }\n   private final int toy;\n   private static int food;\n   public Husky(int friend) {\n      this.food += friend++;\n      this.toy -= friend--;\n   }\n   public static void main(String… unused) {\n      var h = new Husky(2);\n      System.out.println(h.food+\",\"+h.toy);\n   } }",
+      "question": "184. What is the output of the following program?",
+      "code": "public class Husky {\n   { this.food = 10; }\n   { this.toy = 2; }\n   private final int toy;\n   private static int food;\n   public Husky(int friend) {\n      this.food += friend++;\n      this.toy -= friend--;\n   }\n   public static void main(String… unused) {\n      var h = new Husky(2);\n      System.out.println(h.food+\",\"+h.toy);\n   } }",
       "choices": [
         "A. 12,-1",
         "B. 12,2",
@@ -2274,7 +2293,9 @@
     },
     {
       "number": 185,
-      "question": "Suppose you have the following code. Which of the images best represents the state of the references right before the end of the main() method, assuming garbage collection hasn't run?\n1:  public class Link {\n2:     private String name;\n3:     private Link next;\n4:     public Link(String name, Link next) {\n5:        this.name = name;\n6:        this.next = next;\n7:     }\n8:     public void setNext(Link next) {\n9:        this.next = next;\n10:    }\n11:    public Link getNext() {\n12:       return next;\n13:    }\n14:    public static void main(String… args) {\n15:       var apple = new Link(\"x\", null);\n16:       var orange = new Link(\"y\", apple);\n17:       var banana = new Link(\"z\", orange);\n18:       orange.setNext(banana);\n19:       banana.setNext(orange);\n20:       apple = null;\n21:       banana = null;\n22:    } }",
+      "question": "185. Suppose you have the following code. Which of the images best represents the state of the references right before the end of the main() method, assuming garbage collection hasn't run?",
+      "code": "1:  public class Link {\n2:     private String name;\n3:     private Link next;\n4:     public Link(String name, Link next) {\n5:        this.name = name;\n6:        this.next = next;\n7:     }\n8:     public void setNext(Link next) {\n9:        this.next = next;\n10:    }\n11:    public Link getNext() {\n12:       return next;\n13:    }\n14:    public static void main(String… args) {\n15:       var apple = new Link(\"x\", null);\n16:       var orange = new Link(\"y\", apple);\n17:       var banana = new Link(\"z\", orange);\n18:       orange.setNext(banana);\n19:       banana.setNext(orange);\n20:       apple = null;\n21:       banana = null;\n22:    } }",
+      "image": "chapter_3_185.png",
       "choices": [
         "A. Option A",
         "B. Option B",
@@ -2286,7 +2307,7 @@
     },
     {
       "number": 186,
-      "question": "Which statement about a no-argument constructor is true?",
+      "question": "186. Which statement about a no-argument constructor is true?",
       "choices": [
         "A. The Java compiler will always insert a default no-argument constructor if you do not define a no-argument constructor in your class.",
         "B. For a class to call super() in one of its constructors, its parent class must explicitly implement a constructor.",
@@ -2297,7 +2318,8 @@
     },
     {
       "number": 187,
-      "question": "Which variable declaration is the first line not to compile?\npublic class Complex {\n   class Building {}\n   final class House extends Building {}\n \n   public void convert() {\n      Building b1 =  new Building();\n      House h1 = new House();\n      Building b2 = new House();\n      Building b3 = (House) b1;\n      House h2 = (Building) h1;\n      Building b4 = (Building) b2;\n      House h3 = (House) b2;\n   } }",
+      "question": "187. Which variable declaration is the first line not to compile?",
+      "code": "public class Complex {\n   class Building {}\n   final class House extends Building {}\n \n   public void convert() {\n      Building b1 =  new Building();\n      House h1 = new House();\n      Building b2 = new House();\n      Building b3 = (House) b1;\n      House h2 = (Building) h1;\n      Building b4 = (Building) b2;\n      House h3 = (House) b2;\n   } }",
       "choices": [
         "A. b2",
         "B. b3",
@@ -2309,7 +2331,8 @@
     },
     {
       "number": 188,
-      "question": "What is the output of the following application?\n1:  interface Tasty {\n2:     default void eat() {\n3:        System.out.print(\"Spoiled!\");\n4:     } }\n5:  public class ApplePicking {\n6:     public static void main(String[] food) {\n7:        var apple = new Tasty() {\n8:           @Override\n9:           void eat() {\n10:             System.out.print(\"Yummy!\");\n11:          }\n12:       } \n13:    }\n14: }",
+      "question": "188. What is the output of the following application?",
+      "code": "1:  interface Tasty {\n2:     default void eat() {\n3:        System.out.print(\"Spoiled!\");\n4:     } }\n5:  public class ApplePicking {\n6:     public static void main(String[] food) {\n7:        var apple = new Tasty() {\n8:           @Override\n9:           void eat() {\n10:             System.out.print(\"Yummy!\");\n11:          }\n12:       } \n13:    }\n14: }",
       "choices": [
         "A. Spoiled!",
         "B. Yummy!",
@@ -2321,7 +2344,7 @@
     },
     {
       "number": 189,
-      "question": "Which of the following statements about functional interfaces is true?",
+      "question": "189. Which of the following statements about functional interfaces is true?",
       "choices": [
         "A. It is possible to define a functional interface that returns two data types.",
         "B. It is possible to define a primitive functional interface that uses float, char, or short.",
@@ -2332,7 +2355,8 @@
     },
     {
       "number": 190,
-      "question": "What is the result of executing the Tortoise program?\n// Hare.java\npackage com.mammal;\npublic class Hare {\n   void init() {\n      System.out.print(\"init-\");\n   }\n   protected void race() {\n      System.out.print(\"hare-\");\n   } }\n \n// Tortoise.java\npackage com.reptile;\nimport com.mammal.Hare;\npublic class Tortoise {\n   protected void race(Hare hare) {\n      hare.init();    // x1\n      hare.race();    // x2\n      System.out.print(\"tortoise-\");\n    }\n    public static void main(String[] args) {\n       var tortoise = new Tortoise();\n       var hare = new Hare();\n       tortoise.race(hare);\n   } }",
+      "question": "190. What is the result of executing the Tortoise program?",
+      "code": "// Hare.java\npackage com.mammal;\npublic class Hare {\n   void init() {\n      System.out.print(\"init-\");\n   }\n   protected void race() {\n      System.out.print(\"hare-\");\n   } }\n \n// Tortoise.java\npackage com.reptile;\nimport com.mammal.Hare;\npublic class Tortoise {\n   protected void race(Hare hare) {\n      hare.init();    // x1\n      hare.race();    // x2\n      System.out.print(\"tortoise-\");\n    }\n    public static void main(String[] args) {\n       var tortoise = new Tortoise();\n       var hare = new Hare();\n       tortoise.race(hare);\n   } }",
       "choices": [
         "A. init-hare-tortoise",
         "B. init-hare",
@@ -2344,7 +2368,8 @@
     },
     {
       "number": 191,
-      "question": "How many lines of the following program do not compile?\ninterface Tool {\n   void use(int fun);\n}\nabstract class Childcare {\n   abstract void use(int fun);\n}\nfinal public class Stroller extends Childcare implements Tool {\n   final public void use(int fun) {\n      final int width = 5;\n      class ParkVisit {\n         final int getValue() { return width + fun; }\n      }\n      System.out.print(new ParkVisit().getValue());\n   } }",
+      "question": "191. How many lines of the following program do not compile?",
+      "code": "interface Tool {\n   void use(int fun);\n}\nabstract class Childcare {\n   abstract void use(int fun);\n}\nfinal public class Stroller extends Childcare implements Tool {\n   final public void use(int fun) {\n      final int width = 5;\n      class ParkVisit {\n         final int getValue() { return width + fun; }\n      }\n      System.out.print(new ParkVisit().getValue());\n   } }",
       "choices": [
         "A. Zero",
         "B. One",
@@ -2355,7 +2380,8 @@
     },
     {
       "number": 192,
-      "question": "What is the result of executing the Bush program?\n// Evergreen.java\npackage tree;\npublic class Evergreen {\n   String leaves = \"Green \";\n   default void season() {\n      System.out.println(\"spring\");\n   }\n   default void bloom() {\n      season();\n   } }\n \n// Bush.java\npackage shrub;\nimport tree.Evergreen;\npublic class Bush {\n   public static void main(String[] args) {\n      var var = new Evergreen();\n      System.out.print(var.leaves);\n      var.bloom();\n   } }",
+      "question": "192. What is the result of executing the Bush program?",
+      "code": "// Evergreen.java\npackage tree;\npublic class Evergreen {\n   String leaves = \"Green \";\n   default void season() {\n      System.out.println(\"spring\");\n   }\n   default void bloom() {\n      season();\n   } }\n \n// Bush.java\npackage shrub;\nimport tree.Evergreen;\npublic class Bush {\n   public static void main(String[] args) {\n      var var = new Evergreen();\n      System.out.print(var.leaves);\n      var.bloom();\n   } }",
       "choices": [
         "A. The code runs and prints Green spring.",
         "B. The code runs and prints Green springspring.",
@@ -2366,7 +2392,8 @@
     },
     {
       "number": 193,
-      "question": "What is the output of the following program?\npublic sealed class Seasons {\n   final static class Spring extends Seasons {}\n   non-sealed class Summer extends Seasons {}\n   public static void main(String[] w) {\n      var t = new Spring();\n      final String m = switch (t) {\n         case Spring -> \"Flowers\";\n         case Summer -> \"Pool\";\n         default -> \"Snow\";\n      };\n      System.out.print(m);\n   } }",
+      "question": "193. What is the output of the following program?",
+      "code": "public sealed class Seasons {\n   final static class Spring extends Seasons {}\n   non-sealed class Summer extends Seasons {}\n   public static void main(String[] w) {\n      var t = new Spring();\n      final String m = switch (t) {\n         case Spring -> \"Flowers\";\n         case Summer -> \"Pool\";\n         default -> \"Snow\";\n      };\n      System.out.print(m);\n   } }",
       "choices": [
         "A. Flowers",
         "B. Pool",
@@ -2378,7 +2405,7 @@
     },
     {
       "number": 194,
-      "question": "What is the best reason for marking an existing static method private within an interface?",
+      "question": "194. What is the best reason for marking an existing static method private within an interface?",
       "choices": [
         "A. It allows the method to be overridden in a subclass.",
         "B. It hides the secret implementation details from another developer using the interface.",
@@ -2390,7 +2417,8 @@
     },
     {
       "number": 195,
-      "question": "What is the output of the following application?\npackage jungle;\npublic class RainForest extends Forest {\n   public RainForest(long treeCount) {\n      this.treeCount = treeCount+1;\n   }\n   public static void main(String[] birds) {\n      System.out.print(new RainForest(5).treeCount);\n   } }\nclass Forest {\n   public long treeCount;\n   public Forest(long treeCount) {\n      this.treeCount = treeCount+2;\n   } }",
+      "question": "195. What is the output of the following application?",
+      "code": "package jungle;\npublic class RainForest extends Forest {\n   public RainForest(long treeCount) {\n      this.treeCount = treeCount+1;\n   }\n   public static void main(String[] birds) {\n      System.out.print(new RainForest(5).treeCount);\n   } }\nclass Forest {\n   public long treeCount;\n   public Forest(long treeCount) {\n      this.treeCount = treeCount+2;\n   } }",
       "choices": [
         "A. 5",
         "B. 6",
@@ -2401,7 +2429,8 @@
     },
     {
       "number": 196,
-      "question": "What is the result of compiling and executing the following class?\npackage sports;\npublic class Bicycle {\n   String color = \"red\";\n   private void printColor(String color) {\n      color = \"purple\";\n      System.out.print(color);\n   }\n   public static void main(String[] rider) {\n      new Bicycle().printColor(\"blue\");\n   } }",
+      "question": "196. What is the result of compiling and executing the following class?",
+      "code": "package sports;\npublic class Bicycle {\n   String color = \"red\";\n   private void printColor(String color) {\n      color = \"purple\";\n      System.out.print(color);\n   }\n   public static void main(String[] rider) {\n      new Bicycle().printColor(\"blue\");\n   } }",
       "choices": [
         "A. red",
         "B. purple",
@@ -2412,7 +2441,8 @@
     },
     {
       "number": 197,
-      "question": "Given that Short and Integer extend Number directly, what type can be used to fill in the blank in the following class to allow it to compile?\npackage band;\ninterface Horn {\n   public Integer play();\n}\nabstract class Woodwind {\n   public Short play() {\n      return 3;\n   } }\npublic final class Saxophone extends Woodwind implements Horn {\n   public _________________ play() {\n      return null;\n   } }",
+      "question": "197. Given that Short and Integer extend Number directly, what type can be used to fill in the blank in the following class to allow it to compile?",
+      "code": "package band;\ninterface Horn {\n   public Integer play();\n}\nabstract class Woodwind {\n   public Short play() {\n      return 3;\n   } }\npublic final class Saxophone extends Woodwind implements Horn {\n   public _________________ play() {\n      return null;\n   } }",
       "choices": [
         "A. Object",
         "B. Integer",
@@ -2423,7 +2453,7 @@
     },
     {
       "number": 198,
-      "question": "Which statements about abstract classes and methods are correct? (Choose three.)",
+      "question": "198. Which statements about abstract classes and methods are correct? (Choose three.)",
       "choices": [
         "A. An abstract class can be extended by a final class.",
         "B. An abstract method can be overridden by a final method.",
@@ -2435,7 +2465,8 @@
     },
     {
       "number": 199,
-      "question": "Given the following enum declaration, how many lines would need to be corrected for the code to compile?\npublic enum Proposition {\n   TRUE(1) { String getNickName() { return \"RIGHT\"; }},\n   FALSE(2) { public String getNickName() { return \"WRONG\"; }},\n   UNKNOWN(3) { public String getNickName() { return \"LOST\"; }}\n   public int value;\n   Proposition(int value) {\n      this.value = value;\n   }\n   public int getValue() {\n      return this.value;\n   }\n   protected abstract String getNickName();\n}",
+      "question": "199. Given the following enum declaration, how many lines would need to be corrected for the code to compile?",
+      "code": "public enum Proposition {\n   TRUE(1) { String getNickName() { return \"RIGHT\"; }},\n   FALSE(2) { public String getNickName() { return \"WRONG\"; }},\n   UNKNOWN(3) { public String getNickName() { return \"LOST\"; }}\n   public int value;\n   Proposition(int value) {\n      this.value = value;\n   }\n   public int getValue() {\n      return this.value;\n   }\n   protected abstract String getNickName();\n}",
       "choices": [
         "A. Zero",
         "B. One",
@@ -2446,7 +2477,8 @@
     },
     {
       "number": 200,
-      "question": "What is the result of executing the HopCounter program?\n// Hopper.java\npackage com.animals;\npublic class Hopper {\n   protected void hop() {\n      System.out.println(\"hop\");\n   } }\n \n// Grasshopper.java\npackage com.insect;\nimport com.animals.Hopper;\npublic class Grasshopper extends Hopper {\n   public void move() {\n      hop();  // p1\n   } }\n \n// HopCounter.java\npackage com.insect;\npublic class HopCounter {\n   public static void main(String[] args) {\n      var hopper = new Grasshopper();\n      hopper.move();  // p2\n      hopper.hop();   // p3\n   } }",
+      "question": "200. What is the result of executing the HopCounter program?",
+      "code": "// Hopper.java\npackage com.animals;\npublic class Hopper {\n   protected void hop() {\n      System.out.println(\"hop\");\n   } }\n \n// Grasshopper.java\npackage com.insect;\nimport com.animals.Hopper;\npublic class Grasshopper extends Hopper {\n   public void move() {\n      hop();  // p1\n   } }\n \n// HopCounter.java\npackage com.insect;\npublic class HopCounter {\n   public static void main(String[] args) {\n      var hopper = new Grasshopper();\n      hopper.move();  // p2\n      hopper.hop();   // p3\n   } }",
       "choices": [
         "A. The code prints hop once.",
         "B. The code prints hop twice.",
@@ -2458,7 +2490,7 @@
     },
     {
       "number": 201,
-      "question": "Which of the following are not attributes common to both abstract classes and interfaces? (Choose two.)",
+      "question": "201. Which of the following are not attributes common to both abstract classes and interfaces? (Choose two.)",
       "choices": [
         "A. They both can contain abstract methods.",
         "B. They both can contain default methods.",
@@ -2469,7 +2501,8 @@
     },
     {
       "number": 202,
-      "question": "Given the following class, which method signature could be successfully added to the class as an overloaded version of the findAverage() method? (Choose two.)\npublic class Calculations {\n   public Integer findAverage(int sum) { return sum; }\n}",
+      "question": "202. Given the following class, which method signature could be successfully added to the class as an overloaded version of the findAverage() method? (Choose two.)",
+      "code": "public class Calculations {\n   public Integer findAverage(int sum) { return sum; }\n}",
       "choices": [
         "A. public Long findAverage(int x)",
         "B. public Long findAverage(int x, int y)",
@@ -2481,7 +2514,7 @@
     },
     {
       "number": 203,
-      "question": "Which of the following is a valid method name in Java? (Choose two.)\n        A. Go_$Outside$2()\n        B. have-Fun()\n        C. new()\n        D. 9enjoyTheWeather()\n        E. $sprint()\n        F. walk#()",
+      "question": "203. Which of the following is a valid method name in Java? (Choose two.)",
       "choices": [
         "A. Go_$Outside$2()",
         "B. have-Fun()",
@@ -2493,7 +2526,7 @@
     },
     {
       "number": 204,
-      "question": "Fill in the blanks: A functional interface must contain or inherit ______________ and may optionally include ______________.\n        A. at least one abstract method, the @Override annotation\n        B. exactly one method, static methods\n        C. exactly one abstract method, the @FunctionalInterface annotation\n        D. at least one static method, at most one default method\n        E. None of the above",
+      "question": "204. Fill in the blanks: A functional interface must contain or inherit ______________ and may optionally include ______________.",
       "choices": [
         "A. at least one abstract method, the @Override annotation",
         "B. exactly one method, static methods",
@@ -2504,7 +2537,8 @@
     },
     {
       "number": 205,
-      "question": "Fill in the blank with the line of code that allows the program to compile and print 15 at runtime.\npackage love;\ninterface Sport {\n   private int play() { return 15; }\n}\ninterface Tennis extends Sport {\n   private int play() { return 30; }\n}\npublic class Game implements Tennis {\n   public int play() { return _________________; }\n   public static void main(String… ace) {\n      System.out.println(new Game().play());\n   } }",
+      "question": "205. Fill in the blank with the line of code that allows the program to compile and print 15 at runtime.",
+      "code": "package love;\ninterface Sport {\n   private int play() { return 15; }\n}\ninterface Tennis extends Sport {\n   private int play() { return 30; }\n}\npublic class Game implements Tennis {\n   public int play() { return _________________; }\n   public static void main(String… ace) {\n      System.out.println(new Game().play());\n   } }",
       "choices": [
         "A. Sport.play()",
         "B. Sport.super.play()",
@@ -2516,7 +2550,8 @@
     },
     {
       "number": 206,
-      "question": "What is the output of the following program?\npublic class MoreMusic {\n   {\n      System.out.print(\"do-\"); \n      System.out.print(\"re-\"); \n   }\n   public MoreMusic() {\n      System.out.print(\"mi-\");\n   }\n   public MoreMusic(int note) {\n      this(null);\n      System.out.print(\"fa-\");\n   }\n   public MoreMusic(String song) {\n      this(9);\n      System.out.print(\"so-\");\n   }\n   public static void main(String[] sound) {\n      System.out.print(\"la-\");\n      var play = new MoreMusic(1);\n   } }",
+      "question": "206. What is the output of the following program?",
+      "code": "public class MoreMusic {\n   {\n      System.out.print(\"do-\"); \n      System.out.print(\"re-\"); \n   }\n   public MoreMusic() {\n      System.out.print(\"mi-\");\n   }\n   public MoreMusic(int note) {\n      this(null);\n      System.out.print(\"fa-\");\n   }\n   public MoreMusic(String song) {\n      this(9);\n      System.out.print(\"so-\");\n   }\n   public static void main(String[] sound) {\n      System.out.print(\"la-\");\n      var play = new MoreMusic(1);\n   } }",
       "choices": [
         "A. la-do-re-mi-so-fa-",
         "B. la-do-re-mi-fa-",
@@ -2528,7 +2563,8 @@
     },
     {
       "number": 207,
-      "question": "Given the following two classes in the same package, what is the result of executing the Hug program?\npublic class Kitten {\n   /** private **/ float cuteness;\n   /* public */ String name;\n   // default double age;\n   void meow() { System.out.println(name + \" - \"+cuteness); }\n}\n \npublic class Hug {\n   public static void main(String… friends) {\n      var k = new Kitten();\n      k.cuteness = 5;\n      k.name = \"kitty\";\n      k.meow();\n   } }",
+      "question": "207. Given the following two classes in the same package, what is the result of executing the Hug program?",
+      "code": "public class Kitten {\n   /** private **/ float cuteness;\n   /* public */ String name;\n   // default double age;\n   void meow() { System.out.println(name + \" - \"+cuteness); }\n}\n \npublic class Hug {\n   public static void main(String… friends) {\n      var k = new Kitten();\n      k.cuteness = 5;\n      k.name = \"kitty\";\n      k.meow();\n   } }",
       "choices": [
         "A. kitty - 5.0",
         "B. The Kitten class does not compile.",
@@ -2539,7 +2575,8 @@
     },
     {
       "number": 208,
-      "question": "What is the output of the following application?\npackage prepare;\ninterface Ready {\n   static int first = 2;\n   final short DEFAULT_VALUE = 10;\n   GetSet go = new GetSet();            // n1\n}\npublic class GetSet implements Ready {\n   int first = 5;\n   static int second = DEFAULT_VALUE;   // n2\n   public static void main(String[] begin) {\n      var r = new Ready() {};\n      System.out.print(r.first);        // n3\n      System.out.print(\" \" + second);   // n4\n   } }",
+      "question": "208. What is the output of the following application?",
+      "code": "package prepare;\ninterface Ready {\n   static int first = 2;\n   final short DEFAULT_VALUE = 10;\n   GetSet go = new GetSet();            // n1\n}\npublic class GetSet implements Ready {\n   int first = 5;\n   static int second = DEFAULT_VALUE;   // n2\n   public static void main(String[] begin) {\n      var r = new Ready() {};\n      System.out.print(r.first);        // n3\n      System.out.print(\" \" + second);   // n4\n   } }",
       "choices": [
         "A. 2 10",
         "B. 5 10",
@@ -2552,7 +2589,8 @@
     },
     {
       "number": 209,
-      "question": "What is the result of executing the Tortoise program?\n// Hare.java\npackage com.mammal;\npublic class Hare {\n   public void init() {\n      System.out.print(\"init-\");\n   }\n   protected void race() {\n      System.out.print(\"hare-\");\n   } }\n \n// Tortoise.java\npackage com.reptile;\nimport com.mammal.Hare;\n \npublic class Tortoise extends Hare {\n   protected void race(Hare hare) {\n      hare.init();    // x1\n      hare.race();    // x2\n      System.out.print(\"tortoise-\");\n    }\n    public static void main(String[] args) {\n       var tortoise = new Tortoise();\n       var hare = new Hare();\n       tortoise.race(hare);\n   } }",
+      "question": "209. What is the result of executing the Tortoise program?",
+      "code": "// Hare.java\npackage com.mammal;\npublic class Hare {\n   public void init() {\n      System.out.print(\"init-\");\n   }\n   protected void race() {\n      System.out.print(\"hare-\");\n   } }\n \n// Tortoise.java\npackage com.reptile;\nimport com.mammal.Hare;\n \npublic class Tortoise extends Hare {\n   protected void race(Hare hare) {\n      hare.init();    // x1\n      hare.race();    // x2\n      System.out.print(\"tortoise-\");\n    }\n    public static void main(String[] args) {\n       var tortoise = new Tortoise();\n       var hare = new Hare();\n       tortoise.race(hare);\n   } }",
       "choices": [
         "A. init-hare-tortoise",
         "B. init-hare",
@@ -2564,7 +2602,8 @@
     },
     {
       "number": 210,
-      "question": "What is the output of the following program?\ninterface Autobot {}\npublic record Transformer(Boolean matrix) implements Autobot {\n   public boolean isMatrix() {\n      return matrix;\n   }\n   abstract void transform() {}\n   public Transformer {\n      if(matrix == null)\n         throw new IllegalArgumentException();\n   }\n   public static void main(String[] u) {\n      var prime = new Transformer(null) {\n         public void transform() {}\n      };\n      System.out.print(prime.matrix());\n   } }",
+      "question": "210. What is the output of the following program?",
+      "code": "interface Autobot {}\npublic record Transformer(Boolean matrix) implements Autobot {\n   public boolean isMatrix() {\n      return matrix;\n   }\n   abstract void transform() {}\n   public Transformer {\n      if(matrix == null)\n         throw new IllegalArgumentException();\n   }\n   public static void main(String[] u) {\n      var prime = new Transformer(null) {\n         public void transform() {}\n      };\n      System.out.print(prime.matrix());\n   } }",
       "choices": [
         "A. true",
         "B. false",
@@ -2576,7 +2615,8 @@
     },
     {
       "number": 211,
-      "question": "What is the result of executing the Movie program?\n// Story.java\npackage literature;\npublic abstract class Story {\n   private void tell() {\n      System.out.println(\"Once upon a time\");\n   }\n   public static void play() {\n      tell();\n   } }\n \n// Movie.java\npackage media;\nimport literature.Story;\npublic class Movie {\n   public static void main(String[] args) {\n      var story = new Story();\n      story.play();\n   } }",
+      "question": "211. What is the result of executing the Movie program?",
+      "code": "// Story.java\npackage literature;\npublic abstract class Story {\n   private void tell() {\n      System.out.println(\"Once upon a time\");\n   }\n   public static void play() {\n      tell();\n   } }\n \n// Movie.java\npackage media;\nimport literature.Story;\npublic class Movie {\n   public static void main(String[] args) {\n      var story = new Story();\n      story.play();\n   } }",
       "choices": [
         "A. The code runs and prints Once upon a time.",
         "B. The code runs but does not print anything.",
@@ -2587,7 +2627,8 @@
     },
     {
       "number": 212,
-      "question": "What is the output of the Helicopter program?\npackage flying;\nclass Rotorcraft {\n   protected final int height = 5;\n   abstract int fly();\n}\ninterface CanFly {}\npublic class Helicopter extends Rotorcraft implements CanFly {\n   private int height = 10;\n   protected int fly() {\n      return super.height;\n   }\n   public static void main(String[] unused) {\n      Helicopter h = (Helicopter)new Rotorcraft();\n      System.out.print(h.fly());\n   } }",
+      "question": "212. What is the output of the Helicopter program?",
+      "code": "package flying;\nclass Rotorcraft {\n   protected final int height = 5;\n   abstract int fly();\n}\ninterface CanFly {}\npublic class Helicopter extends Rotorcraft implements CanFly {\n   private int height = 10;\n   protected int fly() {\n      return super.height;\n   }\n   public static void main(String[] unused) {\n      Helicopter h = (Helicopter)new Rotorcraft();\n      System.out.print(h.fly());\n   } }",
       "choices": [
         "A. 5",
         "B. 10",
@@ -2598,7 +2639,8 @@
     },
     {
       "number": 213,
-      "question": "Given the following program, what is the first line to fail to compile?\n1: public class Electricity {\n2:    interface Power {}\n3:    public static void main(String[] light) {\n4:       class Source implements Power {};\n5:       final class Super extends Source {};\n6:       var start = new Super() {};\n7:       var end = new Source() { static boolean t = true; };\n8:    } }",
+      "question": "213. Given the following program, what is the first line to fail to compile?",
+      "code": "1: public class Electricity {\n2:    interface Power {}\n3:    public static void main(String[] light) {\n4:       class Source implements Power {};\n5:       final class Super extends Source {};\n6:       var start = new Super() {};\n7:       var end = new Source() { static boolean t = true; };\n8:    } }",
       "choices": [
         "A. Line 2",
         "B. Line 4",
@@ -2610,88 +2652,218 @@
     },
     {
       "number": 214,
-      "question": "What is the output of the following application?\npackage prepare;\npublic class Ready {\n   protected static int first = 2;\n   private static final short DEFAULT_VALUE = 10;\n   private static class GetSet {\n      int first = 5;\n      static int second = DEFAULT_VALUE;\n   }\n   private GetSet go = new GetSet();\n   public static void main(String[] begin) {\n      Ready r = new Ready();\n      System.out.print(r.go.first);\n      System.out.print(\", \"+r.go.second);\n   } }",
-      "choices": ["A. 2, 5","B. 5, 10","C. 5, 5","D. 2, 10","E. The code does not compile because of the GetSet class declaration.","F. The code does not compile for another reason."]
+      "question": "214. What is the output of the following application?",
+      "code": "package prepare;\npublic class Ready {\n   protected static int first = 2;\n   private static final short DEFAULT_VALUE = 10;\n   private static class GetSet {\n      int first = 5;\n      static int second = DEFAULT_VALUE;\n   }\n   private GetSet go = new GetSet();\n   public static void main(String[] begin) {\n      Ready r = new Ready();\n      System.out.print(r.go.first);\n      System.out.print(\", \"+r.go.second);\n   } }",
+      "choices": [
+        "A. 2, 5",
+        "B. 5, 10",
+        "C. 5, 5",
+        "D. 2, 10",
+        "E. The code does not compile because of the GetSet class declaration.",
+        "F. The code does not compile for another reason."
+      ]
     },
     {
       "number": 215,
-      "question": "Which of the following are true about the following code? (Choose two.)\npublic class Values {\n   static _________  defaultValue = 8;\n   static _________ DEFAULT_VALUE;\n \n   public static void main(String[] args) {\n      System.out.println(\"\" + defaultValue + DEFAULT_VALUE);\n   } }",
-      "choices": ["A. When you fill in both blanks with double, it prints 8.00.0.","B. When you fill in both blanks with double, it prints 8.0.","C. When you fill in both blanks with int, it prints 8.","D. When you fill in both blanks with int, it prints 80.","E. When you fill in both blanks with var, it prints 8.","F. When you fill in both blanks with var, it prints 80."]
+      "question": "215. Which of the following are true about the following code? (Choose two.)",
+      "code": "public class Values {\n   static _________  defaultValue = 8;\n   static _________ DEFAULT_VALUE;\n \n   public static void main(String[] args) {\n      System.out.println(\"\" + defaultValue + DEFAULT_VALUE);\n   } }",
+      "choices": [
+        "A. When you fill in both blanks with double, it prints 8.00.0.",
+        "B. When you fill in both blanks with double, it prints 8.0.",
+        "C. When you fill in both blanks with int, it prints 8.",
+        "D. When you fill in both blanks with int, it prints 80.",
+        "E. When you fill in both blanks with var, it prints 8.",
+        "F. When you fill in both blanks with var, it prints 80."
+      ]
     },
     {
       "number": 216,
-      "question": "How many Gems objects are eligible for garbage collection right before the end of the main() method?\npublic record Gems(String name) {\n   public static void main(String… args) {\n      var g1 = Gems(\"Garnet\");\n      var g2 = Gems(\"Amethyst\");\n      var g3 = Gems(\"Pearl\");\n      var g4 = Gems(\"Steven\");\n      g2 = g3;\n      g3 = g2;\n      g1 = g2;\n      g4 = null;\n   } }",
-      "choices": ["A. None","B. One","C. Two","D. Three","E. Four","F. The code does not compile."]
+      "question": "216. How many Gems objects are eligible for garbage collection right before the end of the main() method?",
+      "code": "public record Gems(String name) {\n   public static void main(String… args) {\n      var g1 = Gems(\"Garnet\");\n      var g2 = Gems(\"Amethyst\");\n      var g3 = Gems(\"Pearl\");\n      var g4 = Gems(\"Steven\");\n      g2 = g3;\n      g3 = g2;\n      g1 = g2;\n      g4 = null;\n   } }",
+      "choices": [
+        "A. None",
+        "B. One",
+        "C. Two",
+        "D. Three",
+        "E. Four",
+        "F. The code does not compile."
+      ]
     },
     {
       "number": 217,
-      "question": "How many lines of the following program contain compilation errors?\npackage sky;\npublic class Stars {\n   private int inThe = 4;\n   public void Stars() {\n      super();\n   }\n   public Stars(int inThe) {\n      this.inThe = this.inThe;\n   }\n   public static void main(String[] endless) {\n      System.out.print(new sky.Stars(2).inThe);\n   } }",
-      "choices": ["A. None","B. One","C. Two","D. Three","E. Four"]
+      "question": "217. How many lines of the following program contain compilation errors?",
+      "code": "package sky;\npublic class Stars {\n   private int inThe = 4;\n   public void Stars() {\n      super();\n   }\n   public Stars(int inThe) {\n      this.inThe = this.inThe;\n   }\n   public static void main(String[] endless) {\n      System.out.print(new sky.Stars(2).inThe);\n   } }",
+      "choices": [
+        "A. None",
+        "B. One",
+        "C. Two",
+        "D. Three",
+        "E. Four"
+      ]
     },
     {
       "number": 218,
-      "question": "What is the output of the following application?\npackage sports;\nabstract class Ball {\n   protected final int size;\n   public Ball(int size) {\n      this.size = size;\n   } }\ninterface Equipment {}\npublic class SoccerBall extends Ball implements Equipment {\n   public SoccerBall() {\n      super(5);\n   }\n   public Ball get() { return this; }\n   public static void main(String[] passes) {\n      var equipment = (Equipment)(Ball)new SoccerBall().get();\n      System.out.print(((SoccerBall)equipment).size);\n   } }",
-      "choices": ["A. 5","B. 55","C. The code does not compile due to an invalid cast.","D. The code does not compile for a different reason.","E. The code compiles but throws a ClassCastException at runtime."]
+      "question": "218. What is the output of the following application?",
+      "code": "package sports;\nabstract class Ball {\n   protected final int size;\n   public Ball(int size) {\n      this.size = size;\n   } }\ninterface Equipment {}\npublic class SoccerBall extends Ball implements Equipment {\n   public SoccerBall() {\n      super(5);\n   }\n   public Ball get() { return this; }\n   public static void main(String[] passes) {\n      var equipment = (Equipment)(Ball)new SoccerBall().get();\n      System.out.print(((SoccerBall)equipment).size);\n   } }",
+      "choices": [
+        "A. 5",
+        "B. 55",
+        "C. The code does not compile due to an invalid cast.",
+        "D. The code does not compile for a different reason.",
+        "E. The code compiles but throws a ClassCastException at runtime."
+      ]
     },
     {
       "number": 219,
-      "question": "Which statement about the Elephant program is correct?\npackage stampede;\ninterface Long {\n   Number length();\n}\npublic class Elephant {\n   public class Trunk implements Long {\n      public Number length() { return 6; }   // k1\n   }\n   public class MyTrunk extends Trunk {      // k2\n      public Integer length() { return 9; }  // k3\n   }\n   public static void charge() {\n      System.out.print(new MyTrunk().length());\n   }\n   public static void main(String[] cute) {\n      new Elephant().charge();               // k4\n   } }",
-      "choices": ["A. It compiles and prints 9.","B. The code does not compile because of line k1.","C. The code does not compile because of line k2.","D. The code does not compile because of line k3.","E. The code does not compile because of line k4.","F. None of the above."]
+      "question": "219. Which statement about the Elephant program is correct?",
+      "code": "package stampede;\ninterface Long {\n   Number length();\n}\npublic class Elephant {\n   public class Trunk implements Long {\n      public Number length() { return 6; }   // k1\n   }\n   public class MyTrunk extends Trunk {      // k2\n      public Integer length() { return 9; }  // k3\n   }\n   public static void charge() {\n      System.out.print(new MyTrunk().length());\n   }\n   public static void main(String[] cute) {\n      new Elephant().charge();               // k4\n   } }",
+      "choices": [
+        "A. It compiles and prints 9.",
+        "B. The code does not compile because of line k1.",
+        "C. The code does not compile because of line k2.",
+        "D. The code does not compile because of line k3.",
+        "E. The code does not compile because of line k4.",
+        "F. None of the above."
+      ]
     },
     {
       "number": 220,
-      "question": "What is the minimum number of lines that need to be removed for this code to compile?\n1:  package figures;\n2:  public class Dolls {\n3:     public int num() { return 3.0; }\n4:     public int size() { return 5L; }\n5:\n6:     public void nested() { nested(2,true); }\n7:     public int nested(int w, boolean h) { return 0; }\n8:     public int nested(int level) { return level+1; }\n9:\n10:    public static void main(String[] outOfTheBox) {\n11:       System.out.print(new Dolls().nested());\n12:    } }",
-      "choices": ["A. Zero","B. One","C. Two","D. Three","E. Four","F. Five or more"]
+      "question": "220. What is the minimum number of lines that need to be removed for this code to compile?",
+      "code": "1:  package figures;\n2:  public class Dolls {\n3:     public int num() { return 3.0; }\n4:     public int size() { return 5L; }\n5:\n6:     public void nested() { nested(2,true); }\n7:     public int nested(int w, boolean h) { return 0; }\n8:     public int nested(int level) { return level+1; }\n9:\n10:    public static void main(String[] outOfTheBox) {\n11:       System.out.print(new Dolls().nested());\n12:    } }",
+      "choices": [
+        "A. Zero",
+        "B. One",
+        "C. Two",
+        "D. Three",
+        "E. Four",
+        "F. Five or more"
+      ]
     },
     {
       "number": 221,
-      "question": "How many of these lines compile?\n18: Comparator<String> c1 = (j, k) -> 0;\n19: Comparator<String> c2 = (String j, String k) -> 0;\n20: Comparator<String> c3 = (var j, String k) -> 0;\n21: Comparator<String> c4 = (var j, k) -> 0;\n22: Comparator<String> c5 = (var j, var k) -> 0;",
-      "choices": ["A. Zero","B. One","C. Two","D. Three","E. Four","F. Five"]
+      "question": "221. How many of these lines compile?",
+      "code": "18: Comparator<String> c1 = (j, k) -> 0;\n19: Comparator<String> c2 = (String j, String k) -> 0;\n20: Comparator<String> c3 = (var j, String k) -> 0;\n21: Comparator<String> c4 = (var j, k) -> 0;\n22: Comparator<String> c5 = (var j, var k) -> 0;",
+      "choices": [
+        "A. Zero",
+        "B. One",
+        "C. Two",
+        "D. Three",
+        "E. Four",
+        "F. Five"
+      ]
     },
     {
       "number": 222,
-      "question": "What is the output of the following code?\npublic class Bunny {\n   static interface Rabbit { }\n   static class FlemishRabbit implements Rabbit { }\n \n   private static void hop(Rabbit r) {\n      System.out.print(\"hop\");\n   }\n   private static void hop(FlemishRabbit r) {\n      System.out.print(\"HOP\");\n   }\n   public static void main(String[] args) {\n      Rabbit r1 = new FlemishRabbit();\n      FlemishRabbit r2 = new FlemishRabbit();\n      hop(r1);\n      hop(r2);\n   } }",
-      "choices": ["A. hophop","B. HOPhop","C. hopHOP","D. HOPHOP","E. The code does not compile."]
+      "question": "222. What is the output of the following code?",
+      "code": "public class Bunny {\n   static interface Rabbit { }\n   static class FlemishRabbit implements Rabbit { }\n \n   private static void hop(Rabbit r) {\n      System.out.print(\"hop\");\n   }\n   private static void hop(FlemishRabbit r) {\n      System.out.print(\"HOP\");\n   }\n   public static void main(String[] args) {\n      Rabbit r1 = new FlemishRabbit();\n      FlemishRabbit r2 = new FlemishRabbit();\n      hop(r1);\n      hop(r2);\n   } }",
+      "choices": [
+        "A. hophop",
+        "B. HOPhop",
+        "C. hopHOP",
+        "D. HOPHOP",
+        "E. The code does not compile."
+      ]
     },
     {
       "number": 223,
-      "question": "Which is one of the lines output by this code?\n10: var list = new ArrayList<Integer>();\n11: list.add(10);\n12: list.add(9);\n13: list.add(8);\n14:\n15: var num = 9;\n16: list.removeIf(x -> {int keep = num; return x != keep;});\n17: System.out.println(list);\n18:\n19: list.removeIf(x -> {int keep = num; return x == keep;});\n20: System.out.println(list);",
-      "choices": ["A. []","B. [8]","C. [8, 10]","D. [8, 9, 10]","E. [10, 8]","F. The code does not compile."]
+      "question": "223. Which is one of the lines output by this code?",
+      "code": "10: var list = new ArrayList<Integer>();\n11: list.add(10);\n12: list.add(9);\n13: list.add(8);\n14:\n15: var num = 9;\n16: list.removeIf(x -> {int keep = num; return x != keep;});\n17: System.out.println(list);\n18:\n19: list.removeIf(x -> {int keep = num; return x == keep;});\n20: System.out.println(list);",
+      "choices": [
+        "A. []",
+        "B. [8]",
+        "C. [8, 10]",
+        "D. [8, 9, 10]",
+        "E. [10, 8]",
+        "F. The code does not compile."
+      ]
     },
     {
       "number": 224,
-      "question": "What does this code output?\nvar babies = Arrays.asList(\"chick\", \"cygnet\", \"duckling\");\nbabies.replaceAll(x -> { var newValue = \"baby\";\n   return newValue; });\nSystem.out.println(babies);",
-      "choices": ["A. [baby]","B. [baby, baby, baby]","C. [chick, cygnet, duckling]","D. []","E. None of the above.","F. The code does not compile."]
+      "question": "224. What does this code output?",
+      "code": "var babies = Arrays.asList(\"chick\", \"cygnet\", \"duckling\");\nbabies.replaceAll(x -> { var newValue = \"baby\";\n   return newValue; });\nSystem.out.println(babies);",
+      "choices": [
+        "A. [baby]",
+        "B. [baby, baby, baby]",
+        "C. [chick, cygnet, duckling]",
+        "D. []",
+        "E. None of the above.",
+        "F. The code does not compile."
+      ]
     },
     {
       "number": 225,
-      "question": "Which statement best describes this class?\nimport java.util.*;\npublic final class Forest {\n   private final int flora;\n   private final List<String> fauna;\n   public Forest() {\n      this.flora = 5;\n      this.fauna = new ArrayList<>();\n   }\n   public int getFlora() {\n      return flora;\n   }\n   public List<String> getFauna() {\n      return fauna;\n   } }",
-      "choices": ["A. It is serializable.","B. It is well encapsulated.","C. It is immutable.","D. It is both well encapsulated and immutable.","E. None of the above, as the code does not compile."]
+      "question": "225. Which statement best describes this class?",
+      "code": "import java.util.*;\npublic final class Forest {\n   private final int flora;\n   private final List<String> fauna;\n   public Forest() {\n      this.flora = 5;\n      this.fauna = new ArrayList<>();\n   }\n   public int getFlora() {\n      return flora;\n   }\n   public List<String> getFauna() {\n      return fauna;\n   } }",
+      "choices": [
+        "A. It is serializable.",
+        "B. It is well encapsulated.",
+        "C. It is immutable.",
+        "D. It is both well encapsulated and immutable.",
+        "E. None of the above, as the code does not compile."
+      ]
     },
     {
       "number": 226,
-      "question": "What is the output of the following program?\npublic record Light(String type, float lumens) {\n   final static String DEFAULT_TYPE = \"PAR\";\n   public Light {\n      if(type == null)\n         throw new IllegalArgumentException();\n      else type = DEFAULT_TYPE;\n   }\n   public Light(String type) {\n      this.type = \"B\";\n      this.lumens = 10f;\n   }\n   public static void main(String[] p) {\n      final var bulb = new Light(\"A\", 300);\n      System.out.print(bulb.type());\n   } }",
-      "choices": ["A. null","B. A","C. PAR","D. An exception is thrown at runtime.","E. The code does not compile.","F. None of the above."]
+      "question": "226. What is the output of the following program?",
+      "code": "public record Light(String type, float lumens) {\n   final static String DEFAULT_TYPE = \"PAR\";\n   public Light {\n      if(type == null)\n         throw new IllegalArgumentException();\n      else type = DEFAULT_TYPE;\n   }\n   public Light(String type) {\n      this.type = \"B\";\n      this.lumens = 10f;\n   }\n   public static void main(String[] p) {\n      final var bulb = new Light(\"A\", 300);\n      System.out.print(bulb.type());\n   } }",
+      "choices": [
+        "A. null",
+        "B. A",
+        "C. PAR",
+        "D. An exception is thrown at runtime.",
+        "E. The code does not compile.",
+        "F. None of the above."
+      ]
     },
     {
       "number": 227,
-      "question": "Which statement about the following code is correct?\npublic class Dress {\n   int size = 10;\n   default int getSize() {\n      display();\n      return size;\n   }\n   static void display() {\n      System.out.print(\"What a pretty outfit!\");\n   }\n   private int getLength() {\n      display();\n      return 15;\n   }\n   private static void tryOn() {\n      display();\n   } }",
-      "choices": ["A. The code contains an invalid constant.","B. The getSize() method does not compile.","C. The getLength() method does not compile.","D. The tryOn() method does not compile.","E. The code compiles.","F. None of the above."]
+      "question": "227. Which statement about the following code is correct?",
+      "code": "public class Dress {\n   int size = 10;\n   default int getSize() {\n      display();\n      return size;\n   }\n   static void display() {\n      System.out.print(\"What a pretty outfit!\");\n   }\n   private int getLength() {\n      display();\n      return 15;\n   }\n   private static void tryOn() {\n      display();\n   } }",
+      "choices": [
+        "A. The code contains an invalid constant.",
+        "B. The getSize() method does not compile.",
+        "C. The getLength() method does not compile.",
+        "D. The tryOn() method does not compile.",
+        "E. The code compiles.",
+        "F. None of the above."
+      ]
     },
     {
       "number": 228,
-      "question": "Which of the following are the best reasons for creating a private interface method? (Choose two.)\n        A. Add backward compatibility to existing interfaces.\n        B. Provide an implementation that a class implementing the interface can override.\n        C. Increase code reuse within the interface.\n        D. Allow interface methods to be inherited.\n        E. Improve encapsulation of the interface.\n        F. Allow static methods to access instance methods.",
-      "choices": ["A. Add backward compatibility to existing interfaces.","B. Provide an implementation that a class implementing the interface can override.","C. Increase code reuse within the interface.","D. Allow interface methods to be inherited.","E. Improve encapsulation of the interface.","F. Allow static methods to access instance methods."]
+      "question": "228. Which of the following are the best reasons for creating a private interface method? (Choose two.)",
+      "choices": [
+        "A. Add backward compatibility to existing interfaces.",
+        "B. Provide an implementation that a class implementing the interface can override.",
+        "C. Increase code reuse within the interface.",
+        "D. Allow interface methods to be inherited.",
+        "E. Improve encapsulation of the interface.",
+        "F. Allow static methods to access instance methods."
+      ]
     },
     {
       "number": 229,
-      "question": "How many subclasses of Snack compile?\npublic abstract sealed class Snack permits Snack.Lollipop {\n   final static class Toast extends Snack {}\n   sealed static class Lollipop extends Snack {}\n   final class Treat extends Lollipop {}\n   abstract non-sealed class IceCream extends Snack {}\n}",
-      "choices": ["A. Zero","B. One","C. Two","D. Three","E. Four","F. Trick question! Snack does not compile."]
+      "question": "229. How many subclasses of Snack compile?",
+      "code": "public abstract sealed class Snack permits Snack.Lollipop {\n   final static class Toast extends Snack {}\n   sealed static class Lollipop extends Snack {}\n   final class Treat extends Lollipop {}\n   abstract non-sealed class IceCream extends Snack {}\n}",
+      "choices": [
+        "A. Zero",
+        "B. One",
+        "C. Two",
+        "D. Three",
+        "E. Four",
+        "F. Trick question! Snack does not compile."
+      ]
     },
     {
       "number": 230,
-      "question": "Given the following two classes, each in a different package, which line inserted into the code allows the second class to compile?\npackage commerce;\npublic class Bank {\n   public static void withdrawal(int amountInCents) {}\n   public static void deposit(int amountInCents) {}\n}\n \npackage employee;\n// INSERT CODE HERE\npublic class Teller {\n   public void processAccount(int deposit, int withdrawal) {\n      withdrawal(withdrawal);\n      deposit(deposit);\n   } }",
-      "choices": ["A. import static commerce.Bank.*;","B. import static commerce.Bank;","C. static import commerce.Bank.*;","D. static import commerce.Bank;","E. None of the above"]
+      "question": "230. Given the following two classes, each in a different package, which line inserted into the code allows the second class to compile?",
+      "code": "package commerce;\npublic class Bank {\n   public static void withdrawal(int amountInCents) {}\n   public static void deposit(int amountInCents) {}\n}\n \npackage employee;\n// INSERT CODE HERE\npublic class Teller {\n   public void processAccount(int deposit, int withdrawal) {\n      withdrawal(withdrawal);\n      deposit(deposit);\n   } }",
+      "choices": [
+        "A. import static commerce.Bank.*;",
+        "B. import static commerce.Bank;",
+        "C. static import commerce.Bank.*;",
+        "D. static import commerce.Bank;",
+        "E. None of the above"
+      ]
     }
   ]
 }
