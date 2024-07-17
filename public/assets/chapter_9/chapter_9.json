@@ -143,6 +143,7 @@
     {
       "number": 12,
       "question": "Given the following class inheritance diagram, which two classes can be placed in the blank boxes?",
+      "image": "chapter_9_12.png",
       "choices": [
         "A. BufferedOutputStream and PrintStream",
         "B. BufferedOutputStream and PrintOutputStream",
@@ -194,6 +195,7 @@
       "number": 16,
       "question": "In the following file system diagram, forward is a symbolic link to the java directory. If each of the following values is inserted into the blank, which do not print /java/Sort.java? (Choose two.)",
       "code": "Path p = Path.of(\"/\", \"objC\", \"bin\");\nSystem.out.print(p.resolve(\"_________________\").toRealPath());",
+      "image": "chapter_9_16.png",
       "choices": [
         "A. objC/forward/Sort.java",
         "B. ../backwards/../forward/Sort.java",
@@ -381,7 +383,7 @@
     {
       "number": 31,
       "question": "Assuming the current working directory is /home, then what is the output of the following program?",
-      "code": "package magic;\nimport java.nio.file.*;\npublic class Magician {\n   public String doTrick(Path path) {\n      return path.subpath(2,3)\n         .getName(1)\n         .toAbsolutePath()\n         .toString();\n   }\n   public static void main(String… cards) {\n      final Magician m = new Magician();\n      System.out.print(m.doTrick(\n         Paths.get(\"/bag/of/tricks/.././disappear.txt\")));\n   } }",
+      "code": "1:package magic;\n2:import java.nio.file.*;\n3:public class Magician {\n4:   public String doTrick(Path path) {\n5:      return path.subpath(2,3)\n6:         .getName(1)\n7:         .toAbsolutePath()\n8:         .toString();\n9:   }\n10:   public static void main(String… cards) {\n11:      final Magician m = new Magician();\n12:      System.out.print(m.doTrick(\n13:         Paths.get(\"/bag/of/tricks/.././disappear.txt\")));\n14:   } }",
       "choices": [
         "A. /home/tricks",
         "B. /home",
@@ -495,7 +497,7 @@
     {
       "number": 40,
       "question": "What is the output of the following application? Assume /all-data exists and is accessible within the file system.",
-      "code": "package sesame;\nimport java.nio.file.*;\nimport java.util.stream.*;\npublic class TheCount {\n   public static Stream<String> readLines(Path p) {\n      try { return Files.lines(p); } catch (Exception e) {\n         throw new RuntimeException(e);\n      }\n   }\n   public static long count(Path p) throws Exception {\n      return Files.list(p)\n            .filter(w -> Files.isRegularFile(w))\n            .flatMap(s -> readLines(s))\n            .count();\n   }\n   public static void main(String[] d) throws Exception {\n      System.out.print(count(Paths.get(\"/all-data\")));\n   } }",
+      "code": "1:package sesame;\n2:import java.nio.file.*;\n3:import java.util.stream.*;\n4:public class TheCount {\n5:   public static Stream<String> readLines(Path p) {\n6:      try { return Files.lines(p); } catch (Exception e) {\n7:         throw new RuntimeException(e);\n8:      }\n9:   }\n10:   public static long count(Path p) throws Exception {\n11:      return Files.list(p)\n12:            .filter(w -> Files.isRegularFile(w))\n13:            .flatMap(s -> readLines(s))\n14:            .count();\n15:   }\n16:   public static void main(String[] d) throws Exception {\n17:      System.out.print(count(Paths.get(\"/all-data\")));\n18:   } }",
       "choices": [
         "A. The code does not compile.",
         "B. The number of lines in all files in a directory tree.",

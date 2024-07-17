@@ -300,7 +300,7 @@
     {
       "number": 25,
       "question": "25. Which statement about the following program is correct?",
-      "code": "package dogpark;\npublic class Fetch {\n   public int play(String name) throws RuntimeException {\n      try {\n         throw new RuntimeException(name);\n      } catch (Throwable e) {\n         throw new RuntimeException(e);\n      }\n   }\n   public static final void main(String[] ball) \n         throws RuntimeException {\n      new Fetch().play(\"Webby\");\n      new Fetch().play(\"Georgette\");\n   } }",
+      "code": "1:package dogpark;\n2:public class Fetch {\n3:   public int play(String name) throws RuntimeException {\n4:      try {\n5:         throw new RuntimeException(name);\n6:      } catch (Throwable e) {\n7:         throw new RuntimeException(e);\n8:      }\n9:   }\n10:   public static final void main(String[] ball) \n11:         throws RuntimeException {\n12:      new Fetch().play(\"Webby\");\n13:      new Fetch().play(\"Georgette\");\n14:   } }",
       "choices": [
         "A. One exception is thrown to the caller at runtime.",
         "B. Two exceptions are thrown to the caller at runtime.",
@@ -415,7 +415,7 @@
     {
       "number": 34,
       "question": "34. Assuming -g:vars is used when the code is compiled to include debug information, what is the output of the following code snippet?",
-      "code": "String mode = null;\nint grade = (Integer)null;\nInteger average = null;\nif(grade>= average && Integer.parseInt(mode)> 0) {\n   System.out.println(\"You passed!\");\n}",
+      "code": "41:String mode = null;\n42:int grade = (Integer)null;\n43:Integer average = null;\n44:if(grade>= average && Integer.parseInt(mode)> 0) {\n45:   System.out.println(\"You passed!\");\n46:}",
       "choices": [
         "A. A NullPointerException naming mode in the stack trace",
         "B. A NullPointerException naming grade in the stack trace",
@@ -491,6 +491,7 @@
     {
       "number": 40,
       "question": "40. Given the following class diagram, which two classes are missing in the hierarchy at positions 1 and 2?",
+      "image": "chapter_4_40.png",
       "choices": [
         "A. IOException at position 1, Exception at position 2",
         "B. Exception at position 1, RuntimeException at position 2",

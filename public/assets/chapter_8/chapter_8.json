@@ -2,7 +2,8 @@
   "questions": [
     {
       "number": 1,
-      "question": "1. How many times does the following code print How rude! at runtime?\npublic class Speaking {\n   void talk() {\n      try {\n         Thread.sleep(10_000);\n      } catch (InterruptedException e) {\n         System.out.println(\"How rude!\");\n      } }\n   public static void main(String[] args) {\n      var s = new Speaking();\n      var t = new Thread(() -> s.talk());\n      t.run();\n      t.interrupt();\n      t.interrupt();\n      t.interrupt();\n   } }",
+      "question": "1. How many times does the following code print How rude! at runtime?",
+      "code": "public class Speaking {\n   void talk() {\n      try {\n         Thread.sleep(10_000);\n      } catch (InterruptedException e) {\n         System.out.println(\"How rude!\");\n      } }\n   public static void main(String[] args) {\n      var s = new Speaking();\n      var t = new Thread(() -> s.talk());\n      t.run();\n      t.interrupt();\n      t.interrupt();\n      t.interrupt();\n   } }",
       "choices": [
         "A. Zero",
         "B. One",
@@ -14,7 +15,8 @@
     },
     {
       "number": 2,
-      "question": "2. What is the output of the following code snippet?\nCallable c = new Callable() {\n   public Object run() {\n      System.out.print(\"X\");\n      return 10;\n   }\n};\nvar s = Executors.newScheduledThreadPool(1);\nfor(int i=0; i<10; i++) {\n   Future f = s.submit(c);\n   f.get();\n}\ns.shutdown();\nSystem.out.print(\"Done!\");",
+      "question": "2. What is the output of the following code snippet?",
+      "code": "Callable c = new Callable() {\n   public Object run() {\n      System.out.print(\"X\");\n      return 10;\n   }\n};\nvar s = Executors.newScheduledThreadPool(1);\nfor(int i=0; i<10; i++) {\n   Future f = s.submit(c);\n   f.get();\n}\ns.shutdown();\nSystem.out.print(\"Done!\");",
       "choices": [
         "A. XXXXXXXXXXDone!",
         "B. Done!XXXXXXXXXX",
@@ -38,7 +40,8 @@
     },
     {
       "number": 4,
-      "question": "4. The following program simulates flipping a coin an even number of times. Assuming five seconds is enough time for all of the tasks to finish, what is the output of the following application?\nimport java.util.concurrent.*;\nimport java.util.concurrent.atomic.*;\npublic class Luck {\n   private AtomicBoolean coin = new AtomicBoolean(false);\n   void flip() {\n      coin.getAndSet(!coin.get());\n   }\n   public static void main(String[] gamble) throws Exception {\n      var luck = new Luck();\n      ExecutorService s = Executors.newCachedThreadPool();\n      for(int i=0; i<1000; i++) {\n         s.execute(() -> luck.flip());\n      }\n      s.shutdown();\n      Thread.sleep(5000);\n      System.out.println(luck.coin.get());\n   } }",
+      "question": "4. The following program simulates flipping a coin an even number of times. Assuming five seconds is enough time for all of the tasks to finish, what is the output of the following application?",
+      "code": "import java.util.concurrent.*;\nimport java.util.concurrent.atomic.*;\npublic class Luck {\n   private AtomicBoolean coin = new AtomicBoolean(false);\n   void flip() {\n      coin.getAndSet(!coin.get());\n   }\n   public static void main(String[] gamble) throws Exception {\n      var luck = new Luck();\n      ExecutorService s = Executors.newCachedThreadPool();\n      for(int i=0; i<1000; i++) {\n         s.execute(() -> luck.flip());\n      }\n      s.shutdown();\n      Thread.sleep(5000);\n      System.out.println(luck.coin.get());\n   } }",
       "choices": [
         "A. false",
         "B. true",
@@ -61,7 +64,8 @@
     },
     {
       "number": 6,
-      "question": "6. Assuming five seconds is enough time for the threads in this program to complete, what is the expected result of executing the following program?\nimport java.util.*;\npublic class Dance {\n   int count = 0;\n   synchronized int step() { return count++; }\n   public static void main(String[] args) throws InterruptedException {\n      var waltz = new Dance();\n      var dancers = new ArrayList<Thread>();\n\n      for(int i=0; i<10; i++)\n         dancers.add(new Thread(() -> waltz.step()));\n      for(Thread dancer : dancers)\n         dancer.start();      \n      dancers.forEach(d -> d.interrupt());\n\n      Thread.sleep(5_000);\n      System.out.print(waltz.count);\n   } }",
+      "question": "6. Assuming five seconds is enough time for the threads in this program to complete, what is the expected result of executing the following program?",
+      "code": "import java.util.*;\npublic class Dance {\n   int count = 0;\n   synchronized int step() { return count++; }\n   public static void main(String[] args) throws InterruptedException {\n      var waltz = new Dance();\n      var dancers = new ArrayList<Thread>();\n\n      for(int i=0; i<10; i++)\n         dancers.add(new Thread(() -> waltz.step()));\n      for(Thread dancer : dancers)\n         dancer.start();      \n      dancers.forEach(d -> d.interrupt());\n\n      Thread.sleep(5_000);\n      System.out.print(waltz.count);\n   } }",
       "choices": [
         "A. It always prints a number less than 10.",
         "B. It always prints 10.",
@@ -73,7 +77,8 @@
     },
     {
       "number": 7,
-      "question": "7. Given the following program, how many times is Locked! expected to be printed?\nimport java.util.concurrent.locks.*;\npublic class Padlock {\n   private Lock lock = new ReentrantLock();\n   public void lockUp() {\n      if (lock.tryLock()) {\n        lock.lock();\n         System.out.println(\"Locked!\");\n         lock.unlock();\n      }\n   }\n   public static void main(String… unused) throws Exception {\n      var gate = new Padlock();\n      for(int i=0; i<5; i++) {\n         new Thread(() -> gate.lockUp()).start();\n         Thread.sleep(1_000);\n      } } }",
+      "question": "7. Given the following program, how many times is Locked! expected to be printed?",
+      "code": "import java.util.concurrent.locks.*;\npublic class Padlock {\n   private Lock lock = new ReentrantLock();\n   public void lockUp() {\n      if (lock.tryLock()) {\n        lock.lock();\n         System.out.println(\"Locked!\");\n         lock.unlock();\n      }\n   }\n   public static void main(String… unused) throws Exception {\n      var gate = new Padlock();\n      for(int i=0; i<5; i++) {\n         new Thread(() -> gate.lockUp()).start();\n         Thread.sleep(1_000);\n      } } }",
       "choices": [
         "A. One time.",
         "B. Five times.",
@@ -85,7 +90,8 @@
     },
     {
       "number": 8,
-      "question": "8. Which statements about the following application are correct? (Choose two.)\nimport java.util.concurrent.atomic.*;\nimport java.util.stream.*;\npublic class TicketTaker {\n   long ticketsSold;\n   final AtomicInteger ticketsTaken;\n   public TicketTaker() {\n      ticketsSold = 0;\n      ticketsTaken = new AtomicInteger(0);\n   }\n   public void performJob() {\n      IntStream.iterate(1, p -> p+1)\n         .parallel()\n         .limit(100)\n         .forEach(i -> ticketsTaken.getAndIncrement());\n      IntStream.iterate(1, q -> q+1)\n         .parallel()\n         .limit(500)\n         .forEach(i -> ++ticketsSold);\n      System.out.print(ticketsTaken+\" \"+ticketsSold);\n   }\n   public static void main(String[] matinee) {\n      new TicketTaker().performJob();\n   } }",
+      "question": "8. Which statements about the following application are correct? (Choose two.)",
+      "code": "import java.util.concurrent.atomic.*;\nimport java.util.stream.*;\npublic class TicketTaker {\n   long ticketsSold;\n   final AtomicInteger ticketsTaken;\n   public TicketTaker() {\n      ticketsSold = 0;\n      ticketsTaken = new AtomicInteger(0);\n   }\n   public void performJob() {\n      IntStream.iterate(1, p -> p+1)\n         .parallel()\n         .limit(100)\n         .forEach(i -> ticketsTaken.getAndIncrement());\n      IntStream.iterate(1, q -> q+1)\n         .parallel()\n         .limit(500)\n         .forEach(i -> ++ticketsSold);\n      System.out.print(ticketsTaken+\" \"+ticketsSold);\n   }\n   public static void main(String[] matinee) {\n      new TicketTaker().performJob();\n   } }",
       "choices": [
         "A. The TicketTaker constructor does not compile.",
         "B. The performJob() method does not compile.",
@@ -97,7 +103,8 @@
     },
     {
       "number": 9,
-      "question": "9. Given the original array, how many of the following for statements result in an exception at runtime, assuming each is executed independently?\nvar original = List.of(1,2,3,4,5);\n\nvar copy1 = new CopyOnWriteArrayList<Integer>(original);\nfor(Integer w : copy1)\n   copy1.remove(w);\n\nvar copy2 = Collections.synchronizedList(original);\nfor(Integer w : copy2)\n   copy2.remove(w);\n\nvar copy3 = new ArrayList<Integer>(original);\nfor(Integer w : copy3)\n   copy3.remove(w);\n\nvar copy4 = new ConcurrentLinkedQueue<Integer>(original);\nfor(Integer w : copy4)\n   copy4.remove(w);",
+      "question": "9. Given the original array, how many of the following for statements result in an exception at runtime, assuming each is executed independently?",
+      "code": "var original = List.of(1,2,3,4,5);\n\nvar copy1 = new CopyOnWriteArrayList<Integer>(original);\nfor(Integer w : copy1)\n   copy1.remove(w);\n\nvar copy2 = Collections.synchronizedList(original);\nfor(Integer w : copy2)\n   copy2.remove(w);\n\nvar copy3 = new ArrayList<Integer>(original);\nfor(Integer w : copy3)\n   copy3.remove(w);\n\nvar copy4 = new ConcurrentLinkedQueue<Integer>(original);\nfor(Integer w : copy4)\n   copy4.remove(w);",
       "choices": [
         "A. Zero",
         "B. One",
@@ -121,7 +128,8 @@
     },
     {
       "number": 11,
-      "question": "11. What is the output of the following program?\nimport java.util.stream.*;\npublic class Bull {\n   void charge() {\n      IntStream.range(1,6)\n         .parallel()\n         .forEachOrdered(System.out::print);\n   }\n   public static void main(String[] args) {\n      var b = new Bull();\n      b.charge();\n   } }",
+      "question": "11. What is the output of the following program?",
+      "code": "import java.util.stream.*;\npublic class Bull {\n   void charge() {\n      IntStream.range(1,6)\n         .parallel()\n         .forEachOrdered(System.out::print);\n   }\n   public static void main(String[] args) {\n      var b = new Bull();\n      b.charge();\n   } }",
       "choices": [
         "A. 12345",
         "B. 54321",
