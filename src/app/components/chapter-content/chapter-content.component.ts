@@ -60,6 +60,8 @@ export class ChapterContentComponent implements OnInit {
 
   showExplanation: boolean = false;
 
+  chaptersProgress: Chapter[] = [];
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private chapterService: ChapterService) {
@@ -116,6 +118,7 @@ export class ChapterContentComponent implements OnInit {
     if (this.currentRadioOption != -1 && this.answersValues[this.currentRadioOption] == this.currentAnswerContent.answers[0]) {
       this.colorQuestionList[this.chapter.currentQuestion] = 1;
       this.responses[this.chapter.currentQuestion] = 1;
+      this.chapter.responses = this.responses;
       this.score++;
     } else {
       this.responses[this.chapter.currentQuestion] = -1;
@@ -188,19 +191,30 @@ export class ChapterContentComponent implements OnInit {
   }
 
   evaluateColor(index: number, element?: string) {
-
     if (element == 'card') {
-      if (this.colorQuestionList[index] == 1) return 'border-color:#008000d6; border-width: 3px;'
-      if (this.colorQuestionList[index] == -1) return 'border-color:#ff00008f, border-width: 3px;'
+      if (this.colorQuestionList[index] == 1) return 'card-container-ok'
+      if (this.colorQuestionList[index] == -1) return 'card-container-error'
     } else {
-      if (this.chapter.currentQuestion == index) return 'background-color: #e5e5e5'
-      if (this.colorQuestionList[index] == 1) return 'background-color:#008000d6'
-      if (this.colorQuestionList[index] == -1) return 'background-color:#ff00008f'
+      if (this.chapter.currentQuestion == index) return 'question-progress-button-current'
+      if (this.colorQuestionList[index] == 1) return 'question-progress-button-ok'
+      if (this.colorQuestionList[index] == -1) return 'question-progress-button-error'
     }
     return '';
   }
 
   updateLS() {
+    let chapterLS: any = { 'chapterNumber': this.chapter.chapterNumber, 'chapter': this.chapter }
+
+    if (this.chaptersProgress.length == 0) {
+      this.chaptersProgress.push(chapterLS)
+    }
+
+    if (this.chaptersProgress.find((e: Chapter) => e.chapterNumber != this.chapter.chapterNumber)) {
+      console.log("fdsafdsaf")
+      this.chaptersProgress.push(chapterLS)
+    }
+
+    localStorage.setItem("chaptersProgress", JSON.stringify(this.chaptersProgress))
     localStorage.setItem("responses", JSON.stringify(this.responses));
     localStorage.setItem("score", JSON.stringify(this.score))
     localStorage.setItem("progress", JSON.stringify(this.currentQuestionContent.number))

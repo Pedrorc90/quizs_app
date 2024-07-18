@@ -10,20 +10,19 @@
     align-items: flex-start;
 }
 
-
-.example-button-row {
-    display: table-cell;
-    max-width: 600px;
+.progress-button {
+    margin: 0 0.2em;
+    border-radius: 12%;
 }
 
-
-.example-flex-container {
+.flex-container {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-bottom: 2em;
 }
 
-.example-button-container {
+.button-container {
     display: flex;
     justify-content: center;
     width: 120px;
@@ -37,8 +36,26 @@
     background-color: red;
 }
 
+.question-progress-button-current {
+    background-color: white;
+}
+
+.card-container-ok {
+    border-color: green;
+    border-width: 3px;
+}
+
+.card-container-error {
+    border-color: red;
+    border-width: 3px;
+}
+
 .content-question-container {
     display: flex;
+}
+
+.explanation {
+    flex: 1 1 80%
 }
 
 @media (max-width: 600px) {

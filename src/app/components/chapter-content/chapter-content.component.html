@@ -3,7 +3,9 @@
 <section>
     @if(chapter.questions && chapter.questions.length > 0) {
     @for(question of chapter.questions; track question.number ) {
-    <a mat-button [style]="evaluateColor($index)" (click)="goToQuestion(question.number)">{{question.number}}</a>
+    <a class="progress-button" mat-button [class]="evaluateColor($index)"
+        (click)="goToQuestion(question.number)">{{question.number}}</a>
+
     }
     <div style="margin: 1em 1em; display: flex; align-items: center; justify-content: space-evenly">
         <mat-chip>{{score}} / {{chapter.questions.length}}</mat-chip>
@@ -15,7 +17,7 @@
 
 @if (currentAnswerContent) {
 <section>
-    <mat-card appearance="outlined" class="content-container" [style]="evaluateColor(chapter.currentQuestion, 'card')">
+    <mat-card appearance="outlined" class="content-container" [class]="evaluateColor(chapter.currentQuestion, 'card')">
         <mat-card-content>
             <h6 [innerHTML]="currentQuestionContent.question | lineBreak"></h6>
             <div class="content-question-container">
@@ -41,9 +43,10 @@
                     </mat-radio-group>
                     }
                 </div>
-                <div style="flex: 1 1 80%">
+                <div class="explanation">
                     @if(currentAnswerContent && currentAnswerContent.explanation && showExplanation) {
-                    <mat-card appearance="outlined" class="content-container">
+                    <mat-card appearance="outlined" class="content-container"
+                        [class]="evaluateColor(chapter.currentQuestion, 'card')">
                         <mat-card-content>
                             <div style="display: flex; align-items: center;gap: 20px">
                                 <h4>{{currentAnswerContent.answers}}</h4>
@@ -69,18 +72,18 @@
 
 
 <section>
-    <div class="example-flex-container">
-        <div class="example-button-container">
+    <div class="flex-container">
+        <div class="button-container">
             <button mat-fab [disabled]="chapter.currentQuestion == 0" (click)="prevQuestion()">
                 <mat-icon>arrow_back_ios</mat-icon>
             </button>
         </div>
-        <div class="example-button-container">
+        <div class="button-container">
             <button mat-fab (click)="verifyAnswer()">
                 <mat-icon>check</mat-icon>
             </button>
         </div>
-        <div class="example-button-container">
+        <div class="button-container">
             <button mat-fab (click)="nextQuestion()">
                 <mat-icon>arrow_forward_ios</mat-icon>
             </button>
