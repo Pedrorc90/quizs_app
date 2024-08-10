@@ -117,7 +117,7 @@
     {
       "number": 11,
       "question": "11. Which command could you run to print output similar to the following?",
-      "description": "java.base@17\njava.compiler@17\njava.datatransfer@17\njava.desktop@17\n…",
+      "code": "java.base@17\njava.compiler@17\njava.datatransfer@17\njava.desktop@17\n…",
       "choices": [
         "A. java --all-modules",
         "B. java --describe-modules",
@@ -176,7 +176,8 @@
     },
     {
       "number": 16,
-      "question": "16. Fill in the blank with code to look up and call a service.\nString cheese = ServiceLoader.load(Mouse.class)\n   .map(_________________)\n   .map(Mouse::favoriteFood)\n   .findFirst()\n   .orElse(\"\");",
+      "question": "16. Fill in the blank with code to look up and call a service.",
+      "code": "String cheese = ServiceLoader.load(Mouse.class)\n   .map(_________________)\n   .map(Mouse::favoriteFood)\n   .findFirst()\n   .orElse(\"\");",
       "choices": [
         "A. Mouse.get()",
         "B. Mouse::get",
@@ -250,7 +251,9 @@
       "question": "22. Which of the following are modules supplied by the JDK? (Choose three.)",
       "choices": [
         "A. java.base",
+        "B. java.basic",
         "C. java.desktop",
+        "D. java.sdk",
         "E. java.sql",
         "F. java.swing"
       ]
@@ -270,6 +273,7 @@
     {
       "number": 24,
       "question": "24. Suppose the consumer, service locator, service provider, and service provider interface are each in separate modules. Which of the following best describes the following module-info file?",
+      "code": "module nature.tree {\nrequires nature.sapling;\nrequires nature.bush;\n}",
       "choices": [
         "A. Consumer",
         "B. Service locator",
@@ -292,7 +296,8 @@
     },
     {
       "number": 26,
-      "question": "26. Which command produces output such as the following?\nanimal.puppy -> animal.dog",
+      "question": "26. Which command produces output such as the following?",
+      "code": "animal.puppy -> animal.dog",
       "choices": [
         "A. jdeps –d zoo.animal.puppy.jar",
         "B. jdeps –s zoo.animal.puppy.jar",
@@ -304,6 +309,7 @@
     {
       "number": 27,
       "question": "27. Suppose the consumer, service locator, service provider, and service provider interface are each in separate modules. Which of the following best describes the following module-info file?",
+      "code": "module nature.tree{\nrequires nature.sapling;\nprovides nature.sapling.Tree with nature.tree.Maple\n}",
       "choices": [
         "A. Consumer",
         "B. Service locator",
@@ -314,7 +320,8 @@
     },
     {
       "number": 28,
-      "question": "28. Suppose we have a com.bird module that contains a com.bird.tweet package and a Tweety class with a main() method. Which of the following can fill in the blank to run this program?\njava --module-path mods –module _________________",
+      "question": "28. Suppose we have a com.bird module that contains a com.bird.tweet package and a Tweety class with a main() method. Which of the following can fill in the blank to run this program?",
+      "code": "java --module-path mods –module _________________",
       "choices": [
         "A. com.bird.Tweety",
         "B. com.bird.tweety.Tweety",
@@ -339,6 +346,7 @@
     {
       "number": 30,
       "question": "30. Suppose the consumer, service locator, service provider, and service provider interface are each in separate modules. Which of the following best describes the following module-info file?",
+      "code": "module nature.tree {\n exports nature.tree.leaf;\n requires nature.sapling;\n uses nature.tree.Photosynthesis;\n}",
       "choices": [
         "A. Consumer",
         "B. Service locator",
@@ -384,7 +392,7 @@
     },
     {
       "number": 34,
-      "question": "Which of the following is true of this module declaration?",
+      "question": "34. Which of the following is true of this module declaration?",
       "code": "1: class com.mammal {\n2:    exports com.mammal.cat;\n3:    exports cat.mammal.mouse to com.mice;\n4:    uses com.animal;\n5: }",
       "choices": [
         "A. The first line that fails to compile is line 1.",
@@ -408,7 +416,7 @@
     },
     {
       "number": 36,
-      "question": "Suppose the consumer, service locator, service provider, and service provider interface are each in separate modules. Which of the following best describes this module-info file?",
+      "question": "36. Suppose the consumer, service locator, service provider, and service provider interface are each in separate modules. Which of the following best describes this module-info file?",
       "code": "module nature.tree{\n  exports nature.tree.leaf;\n}",
       "choices": [
         "A. Consumer",
@@ -420,7 +428,7 @@
     },
     {
       "number": 37,
-      "question": "Which of the following are modules supplied by the JDK? (Choose three.)",
+      "question": "37. Which of the following are modules supplied by the JDK? (Choose three.)",
       "choices": [
         "A. jdk.base",
         "B. jdk.basic",
@@ -635,6 +643,7 @@
     {
       "number": 55,
       "question": "55. Fill in the blanks to list a way of getting a lot of useful information in debugging modules.",
+      "code": "____________ -m x –p y --____________",
       "choices": [
         "A. jar and show-modules",
         "B. jar and show-module-detail",
@@ -647,6 +656,7 @@
     {
       "number": 56,
       "question": "56. Suppose you have the following interface in a module named animal.insect.api. What needs to be included in the module-info file for it to be a service provider interface?",
+      "code": "package animal.insect.api.bugs;\npublic interface Bug {\nint crawl();\n}",
       "choices": [
         "A. exports animal.insect.api;",
         "B. exports animal.insect.api.bugs;",
@@ -659,6 +669,7 @@
     {
       "number": 57,
       "question": "57. Suppose you have the following class in a module named animal.insect.impl and the service provider interface module from Question 56. What needs to be included in the module-info for it to be a service provider? (Choose two.)",
+      "code": "package animal.insect.impl;\nimport animal.insect.api.bugs.Bug;\npublic class Worm implements Bug {\n@Override\npublic int crawl() {\nreturn 1;\n} }\n",
       "choices": [
         "A. requires animal.insect.api;",
         "B. requires animal.insect.lookup;",
@@ -671,6 +682,7 @@
     {
       "number": 58,
       "question": "58. Suppose you have the following class in a module named animal.insect.lookup, the service provider interface from Question 56, and the service provider from Question 57. What needs to be included in the module-info file besides an exports directive for it to be a service locator? (Choose two.)",
+      "code": "package animal.insect.lookup;\nimport animal.insect.api.bugs.Bug;\nimport java.util.List;\nimport java.util.ServiceLoader;\nimport java.util.stream.Collectors;\npublic class InsectFinder {\npublic static List<Bug> findAllBugs() {\nreturn ServiceLoader.load(Bug.class)\n.stream()\n.map(ServiceLoader.Provider::get)\n.collect(Collectors.toList());\n} }",
       "choices": [
         "A. provides animal.insect.lookup;",
         "B. provides animal.insect.lookup.InsectFinder;",
@@ -683,6 +695,7 @@
     {
       "number": 59,
       "question": "59. Suppose you have the following class in a module named animal.insect.printer, the service provider interface from Question 56, the service provider from Question 57, and the service locator from Question 58. What needs to be included in the module-info for it to be a consumer? (Choose two.)",
+      "code": "package animal.printer;\nimport animal.insect.lookup.InsectFinder;\npublic class Print {\npublic static void main(String[] args) {\nvar bugs = InsectFinder.findAllBugs();\nbugs.forEach(System.out::println);\n} }",
       "choices": [
         "A. requires animal.insect.api.bugs;",
         "B. requires animal.insect.lookup;",
@@ -869,6 +882,7 @@
     {
       "number": 75,
       "question": "75. Suppose you have the following class in a module named animal.insect.impl. Which two most likely go in the module-info of the service locator? (Choose two.)",
+      "code": "package animal.insect.impl;\nimport animal.insect.api.bugs.Bug;\npublic class Worm implements Bug {\n@Override\npublic int crawl() {\nreturn 1;\n} }",
       "choices": [
         "A. requires animal.insect.api.bugs;",
         "B. requires animal.insect.api.bugs.Bug;",
