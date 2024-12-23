@@ -5,11 +5,11 @@
       "question": "1. How many lines would have to be changed for the following code to compile?",
       "code": "1: enum Color {\n2:    public static Color DEFAULT = BROWN;\n3:    BROWN, YELLOW, BLACK;\n4: }\n5: public record Pony {\n6:    String name;\n7:    static int age;\n8:    { age = 10;}\n9: }",
       "choices": [
-        "Zero",
-        "One",
-        "Two",
-        "Three",
-        "Four or more"
+        "A. Zero",
+        "B. One",
+        "C. Two",
+        "D. Three",
+        "E. Four or more"
       ]
     },
     {
