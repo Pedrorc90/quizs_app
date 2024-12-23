@@ -2,7 +2,7 @@
   "questions": [
     {
       "number": 1,
-      "question": "What exception is expected to be thrown by the following code snippet?",
+      "question": "1. What exception is expected to be thrown by the following code snippet?",
       "code": "var oldPath = Path.get(\"/rodent/mouse.txt\");\nvar newPath = Path.get(\"/rodent/rat.txt\");\nFiles.move(oldPath, newPath,\n   StandardCopyOption.REPLACE_EXISTING);",
       "choices": [
         "A. AtomicMoveNotSupportedException",
@@ -14,7 +14,7 @@
     },
     {
       "number": 2,
-      "question": "What is the result of compiling and executing the following program?",
+      "question": "2. What is the result of compiling and executing the following program?",
       "code": "package vacation;\nimport java.io.*;\nimport java.util.*;\npublic class Itinerary {\n   private List<String> activities = new ArrayList<>();\n   private static Itinerary getItinerary(String name) {\n      return null;\n   }\n   public static void printItinerary() throws Exception {\n      Console c = new Console();\n      final String name = c.readLine(\"What is your name?\");\n      final var stuff = getItinerary(name);\n      stuff.activities.forEach(s -> c.printf(s));\n   }\n   public static void main(String[] h) throws Exception {\n      printItinerary();\n   } }",
       "choices": [
         "A. The code does not compile.",
@@ -27,7 +27,7 @@
     },
     {
       "number": 3,
-      "question": "Assuming the file path referenced in the following class is accessible and writable, what is the output of the following program? (Choose two.)",
+      "question": "3. Assuming the file path referenced in the following class is accessible and writable, what is the output of the following program? (Choose two.)",
       "code": "String fn = \"icecream.txt\";\ntry (var w = new BufferedWriter(new FileOutputStream(fn));\n     var s = System.out) {\n   w.write(\"ALERT!\");\n   w.flush();\n   w.write('!');\n   System.out.print(\"1\");\n} catch (IOException e) {\n   System.out.print(\"2\");\n} finally {\n   System.out.print(\"3\");\n}",
       "choices": [
         "A. 1",
@@ -40,7 +40,7 @@
     },
     {
       "number": 4,
-      "question": "What is the expected result when the writeResume() method is called? Assume the directories referenced in the class do not exist prior to the execution and that the file system is available and able to be written to.",
+      "question": "4. What is the expected result when the writeResume() method is called? Assume the directories referenced in the class do not exist prior to the execution and that the file system is available and able to be written to.",
       "code": "package job;\nimport java.nio.file.*;\npublic class Resume {\n   public void writeResume() throws Exception {\n      var f1 = Path.of(\"/templates/proofs\");\n      f1.createDirectories();\n      var f2 = Path.of(\"/templates\");\n      f2.createDirectory(); // k1\n      try(var w = Files.newBufferedWriter(\n            Path.of(f2.toString(), \"draft.txt\"))) {\n         w.append(\"My dream job\");\n         w.flush();\n      }\n      f1.delete(f1);\n      f2.delete(f2);        // k2\n   } }",
       "choices": [
         "A. One line of this application does not compile.",
@@ -53,7 +53,7 @@
     },
     {
       "number": 5,
-      "question": "Which classes are least likely to be marked Serializable? (Choose two.)",
+      "question": "5. Which classes are least likely to be marked Serializable? (Choose two.)",
       "choices": [
         "A. A class that monitors the state of every thread in the application",
         "B. A class that holds data about the amount of rain that has fallen in a given year",
@@ -65,7 +65,7 @@
     },
     {
       "number": 6,
-      "question": "What is the output of the following code snippet? Assume that the current directory is the root path.",
+      "question": "6. What is the output of the following code snippet? Assume that the current directory is the root path.",
       "code": "Path p1 = Path.of(\"./found/../keys\");\nPath p2 = Paths.get(\"/lost/blue.txt\");\nSystem.out.println(p1.resolve(p2));\nSystem.out.println(p2.resolve(p1));",
       "choices": [
         "A. /lost/blue.txt and /lost/blue.txt/keys",
@@ -78,7 +78,7 @@
     },
     {
       "number": 7,
-      "question": "Fill in the blanks: Writer is a(n) _________________ that related stream classes _________________.",
+      "question": "7. Fill in the blanks: Writer is a(n) _________________ that related stream classes _________________.",
       "choices": [
         "A. concrete class, extend",
         "B. abstract class, extend",
@@ -90,7 +90,7 @@
     },
     {
       "number": 8,
-      "question": "Assuming /away/baseball.txt exists and is accessible, what is the expected result of executing the following code snippet?",
+      "question": "8. Assuming /away/baseball.txt exists and is accessible, what is the expected result of executing the following code snippet?",
       "code": "var p1 = Path.of(\"baseball.txt\");\nvar p2 = Path.of(\"/home\");\nvar p3 = Path.of(\"/away\");\nFiles.createDirectories(p2);\nFiles.copy(p3.resolve(p1),p2);",
       "choices": [
         "A. A new file /home/baseball.txt is created.",
@@ -103,7 +103,7 @@
     },
     {
       "number": 9,
-      "question": "Assuming the file referenced in the following snippet exists and contains five lines with the word eggs in them, what is the expected output?",
+      "question": "9. Assuming the file referenced in the following snippet exists and contains five lines with the word eggs in them, what is the expected output?",
       "code": "var p = Path.of(\"breakfast.menu\");\nFiles.readAllLines(p)\n   .filter(s -> s.contains(\"eggs\"))\n   .collect(Collectors.toList())\n   .forEach(System.out::println);",
       "choices": [
         "A. No lines will be printed.",
@@ -116,7 +116,7 @@
     },
     {
       "number": 10,
-      "question": "What is the output of the following program? Assume the file paths referenced in the class exist and are able to be written to and read from.",
+      "question": "10. What is the output of the following program? Assume the file paths referenced in the class exist and are able to be written to and read from.",
       "code": "import java.io.*;\npublic class Vegetable implements Serializable {\n   private Integer size = 1;\n   private transient String name = \"Red\";\n   { size = 3; name = \"Purple\"; }\n   public Vegetable() { this.size = 2; name = \"Green\"; }\n   public static void main(String[] love) throws Throwable {\n      // Write data\n      try (var o = new ObjectOutputStream(\n            new FileOutputStream(\"healthy.txt\"))) {\n         final var v = new Vegetable();\n         v.size = 4;\n         o.writeObject(v);\n      }\n      // Read data\n      try (var o = new ObjectInputStream(\n            new FileInputStream(\"healthy.txt\"))) {\n         var v = (Vegetable) o.readObject();\n         System.out.print(v.size + \",\" + v.name);\n      } } }",
       "choices": [
         "A. 1,Red",
@@ -130,7 +130,7 @@
     },
     {
       "number": 11,
-      "question": "Why does Console readPassword() return a char array rather than a String?",
+      "question": "11. Why does Console readPassword() return a char array rather than a String?",
       "choices": [
         "A. It improves performance.",
         "B. It improves security.",
@@ -142,7 +142,7 @@
     },
     {
       "number": 12,
-      "question": "Given the following class inheritance diagram, which two classes can be placed in the blank boxes?",
+      "question": "12. Given the following class inheritance diagram, which two classes can be placed in the blank boxes?",
       "image": "chapter_9_12.png",
       "choices": [
         "A. BufferedOutputStream and PrintStream",
@@ -155,7 +155,7 @@
     },
     {
       "number": 13,
-      "question": "How many lines of the following code contain compiler errors?",
+      "question": "13. How many lines of the following code contain compiler errors?",
       "code": "12: var path = Paths.get(new URI(\"ice.cool\"));\n13: var view = Files.readAttributes(path, \n14:    BasicFileAttributes.class);\n15: Files.createDirectories(Path.relativize(\".backup\"));\n16: if(view.length()> 0 && view.isDirectory())\n17:    view.setTimes(null,null,null);\n18: System.out.println(Files.deleteIfExists(path));",
       "choices": [
         "A. All of the lines compile.",
@@ -167,7 +167,7 @@
     },
     {
       "number": 14,
-      "question": "What is the output of the following application?",
+      "question": "14. What is the output of the following application?",
       "code": "import java.io.*;\npublic class TaffyFactory {\n   public int getPrize(byte[] luck) throws Exception {\n      try (InputStream is = new ByteArrayInputStream(luck)) {\n         is.read(new byte[2]);\n         if (!is.markSupported()) return -1;\n         is.mark(5);\n         is.read(); is.read();\n         is.skip(3);\n         is.reset();\n         return is.read();\n      }\n   }\n   public static void main(String[] sticky) throws Exception {\n      final TaffyFactory p = new TaffyFactory();\n      final var luck = new byte[] { 1, 2, 3, 4, 5, 6, 7 };\n      System.out.print(p.getPrize(luck));\n   } }",
       "choices": [
         "A. -2",
@@ -180,7 +180,7 @@
     },
     {
       "number": 15,
-      "question": "What is the output of the following program? Assume the file paths referenced in the class exist and are able to be written to and read from.",
+      "question": "15. What is the output of the following program? Assume the file paths referenced in the class exist and are able to be written to and read from.",
       "code": "package heart;\nimport java.io.*;\npublic class Valve implements Serializable {\n   private int chambers = -1;\n   private transient Double size = null;\n   private static String color;\n   public Valve() { this.chambers = 3; color = \"BLUE\"; }\n \n   public static void main(String[] love) throws Throwable {\n      try (var o = new ObjectOutputStream(\n            new FileOutputStream(\"scan.txt\"))) {\n         final Valve v = new Valve();\n         v.chambers = 2;\n         v.size = 10.0;\n         v.color = \"RED\";\n         o.writeObject(v);\n      }\n      new Valve();\n      try (var i = new ObjectInputStream(\n            new FileInputStream(\"scan.txt\"))) {\n         Valve v = (Valve)i.readObject();\n         System.out.print(v.chambers+\",\"+v.size+\",\"+v.color);\n      }\n   }\n   { chambers = 4; } }",
       "choices": [
         "A. 2,null,RED",
@@ -193,7 +193,7 @@
     },
     {
       "number": 16,
-      "question": "In the following file system diagram, forward is a symbolic link to the java directory. If each of the following values is inserted into the blank, which do not print /java/Sort.java? (Choose two.)",
+      "question": "16. In the following file system diagram, forward is a symbolic link to the java directory. If each of the following values is inserted into the blank, which do not print /java/Sort.java? (Choose two.)",
       "code": "Path p = Path.of(\"/\", \"objC\", \"bin\");\nSystem.out.print(p.resolve(\"_________________\").toRealPath());",
       "image": "chapter_9_16.png",
       "choices": [
@@ -207,7 +207,7 @@
     },
     {
       "number": 17,
-      "question": "Which method defined in Reader can be used in place of calling skip(1)?",
+      "question": "17. Which method defined in Reader can be used in place of calling skip(1)?",
       "choices": [
         "A. jump()",
         "B. mark()",
@@ -219,7 +219,7 @@
     },
     {
       "number": 18,
-      "question": "The Rose application is run with an input argument of /flower. The /flower directory contains five subdirectories, each of which contains five files. What is the result of executing the following program?",
+      "question": "18. The Rose application is run with an input argument of /flower. The /flower directory contains five subdirectories, each of which contains five files. What is the result of executing the following program?",
       "code": "import java.nio.file.*;\npublic class Rose {\n   public void tendGarden(Path p) throws Exception {\n      Files.walk(p,1)\n         .map(q -> q.toRealPath())\n         .forEach(System.out::println);\n   }\n   public static void main(String… thorns) throws Exception {\n      new Rose().tendGarden(Paths.get(thorns[0]));\n   } }",
       "choices": [
         "A. The program completes without outputting anything.",
@@ -232,7 +232,7 @@
     },
     {
       "number": 19,
-      "question": "What may be the result of executing the following program?",
+      "question": "19. What may be the result of executing the following program?",
       "code": "package test;\nimport java.io.*;\npublic class Turing {\n   public static void main(String… robots) {\n      Console c = System.console();\n      final String response = c.readLine(\"Are you human?\");\n      System.err.print(response);\n   } }",
       "choices": [
         "A. The program asks the user a question and prints the results to the error stream.",
@@ -244,7 +244,7 @@
     },
     {
       "number": 20,
-      "question": "What is the output of the following method applied to an InputStream that contains the first four prime numbers, stored as bytes: 2, 3, 5, 7?",
+      "question": "20. What is the output of the following method applied to an InputStream that contains the first four prime numbers, stored as bytes: 2, 3, 5, 7?",
       "code": "private void jumpAround(InputStream is) throws IOException {\n   try (is) {\n      is.skip(1);\n      is.read();\n      is.skip(1);\n      is.mark(4);\n      is.skip(1);\n      is.reset();\n      System.out.print(is.read());\n   }\n}",
       "choices": [
         "A. 5",
@@ -257,7 +257,7 @@
     },
     {
       "number": 21,
-      "question": "Assuming the directories and files referenced exist and are not symbolic links, what is the result of executing the following code?",
+      "question": "21. Assuming the directories and files referenced exist and are not symbolic links, what is the result of executing the following code?",
       "code": "var p1 = Path.of(\"/tea/earlgrey/..\",\".\").resolve(Path.of(\"hot.txt\"));\nvar p2 = new File(\"/./tea/./earlgrey/./.././hot.txt\").toPath();\nSystem.out.print(Files.isSameFile(p1,p2));\nSystem.out.print(\" \");\nSystem.out.print(p1.normalize().equals(p2.normalize()));\nSystem.out.print(\" \");\nSystem.out.print(Files.mismatch(p1,p2));",
       "choices": [
         "A. true true -1",
@@ -272,7 +272,7 @@
     },
     {
       "number": 22,
-      "question": "Which method are classes that implement the java.io.Serializable interface required to implement?",
+      "question": "22. Which method are classes that implement the java.io.Serializable interface required to implement?",
       "choices": [
         "A. cereal()",
         "B. deserialize()",
@@ -284,7 +284,7 @@
     },
     {
       "number": 23,
-      "question": "What is the result of compiling and executing the following program? Assume the current directory is /stock and the /stock/sneakers path does not exist prior to execution.",
+      "question": "23. What is the result of compiling and executing the following program? Assume the current directory is /stock and the /stock/sneakers path does not exist prior to execution.",
       "code": "package shoe;\nimport java.io.*;\nimport java.nio.file.*;\npublic class Sneaker {\n   public void setupInventory(Path d) throws Exception {\n      Path suggestedPath = Paths.get(\"sneakers\");\n      if(Files.isSameFile(suggestedPath, d)           // j1\n            && !Files.exists(suggestedPath))\n         Files.createDirectories(d);                  // j2\n   }\n   public static void main(String[] socks) throws Exception {\n      Path w = new File(\"/stock/sneakers\").toPath();  // j3\n      new Sneaker().setupInventory(w);\n   } }",
       "choices": [
         "A. The /stock/sneakers directory is created.",
@@ -296,7 +296,7 @@
     },
     {
       "number": 24,
-      "question": "Assuming the absolute path referenced in the code exists and its contents are accessible, which statement about the following code snippet is correct?",
+      "question": "24. Assuming the absolute path referenced in the code exists and its contents are accessible, which statement about the following code snippet is correct?",
       "code": "Path p = Paths.get(\"/glasses/lens\");\n \nFiles.walk(p)\n   .map(z -> z.toAbsolutePath().toString())\n   .filter(s -> s.endsWith(\".java\"))\n   .collect(Collectors.toList()).forEach(System.out::println);\n \nFiles.find(p,Integer.MAX_VALUE,\n      (w,a) -> w.toAbsolutePath().toString().endsWith(\".java\"))\n   .collect(Collectors.toList()).forEach(System.out::println);",
       "choices": [
         "A. The first stream statement does not compile.",
@@ -308,7 +308,7 @@
     },
     {
       "number": 25,
-      "question": "When reading file information, what is an advantage of using an NIO.2 attribute interface rather than reading the values individually using Files methods? (Choose two.)",
+      "question": "25. When reading file information, what is an advantage of using an NIO.2 attribute interface rather than reading the values individually using Files methods? (Choose two.)",
       "choices": [
         "A. Costs fewer round-trips to the file system",
         "B. Guarantees performance improvement",
@@ -320,7 +320,7 @@
     },
     {
       "number": 26,
-      "question": "Suppose that you need to read data that consists of serialized int, double, boolean, and String values from a file. You also want the program to be performant on large files. Which three java.io stream classes can be chained together to best achieve this result? (Choose three.)",
+      "question": "26. Suppose that you need to read data that consists of serialized int, double, boolean, and String values from a file. You also want the program to be performant on large files. Which three java.io stream classes can be chained together to best achieve this result? (Choose three.)",
       "choices": [
         "A. BufferedReader",
         "B. FileReader",
@@ -332,7 +332,7 @@
     },
     {
       "number": 27,
-      "question": "Which statement about the following method is correct? Assume the coffee directory exists and is able to be read.",
+      "question": "27. Which statement about the following method is correct? Assume the coffee directory exists and is able to be read.",
       "code": "void brew() throws Exception {\n   final var m = Path.of(\"coffee\");\n   Files.walk(m)\n      .filter(Files::isDirectory)\n      .forEach(Files::isDirectory);\n}",
       "choices": [
         "A. It does not compile.",
@@ -345,7 +345,7 @@
     },
     {
       "number": 28,
-      "question": "Assuming the file referenced in the StudentManager class exists and contains at least one record, which statements about the following class are correct? (Choose two.)",
+      "question": "28. Assuming the file referenced in the StudentManager class exists and contains at least one record, which statements about the following class are correct? (Choose two.)",
       "code": "package school;\nimport java.io.*;\nrecord Student(String name) { static Integer score = -1; }\npublic class StudentManager {\n   public static void main(String[] grades) {\n      try(var ios = new ObjectInputStream(\n            new FileInputStream(new File(\"s.data\")))) {\n         Student record;\n         while((record = (Student)ios.readObject()) != null)  // p1\n            System.out.print(record);\n      } catch (EOFException e) {\n      } catch (Exception e) {\n         throw new RuntimeException(e);\n      } } }",
       "choices": [
         "A. The code does not compile.",
@@ -358,7 +358,7 @@
     },
     {
       "number": 29,
-      "question": "Given an instance of Console c, which of the following two method calls are invalid ways of retrieving input from the user? (Choose two.)",
+      "question": "29. Given an instance of Console c, which of the following two method calls are invalid ways of retrieving input from the user? (Choose two.)",
       "choices": [
         "A. c.read()",
         "B. c.reader().read()",
@@ -369,7 +369,7 @@
     },
     {
       "number": 30,
-      "question": "What is the output of the following code snippet? Assume that the current directory is the root path /.",
+      "question": "30. What is the output of the following code snippet? Assume that the current directory is the root path /.",
       "code": "Path p1 = Paths.get(\"./locks\");\nPath p2 = Paths.get(\"/found/red.zip\");\nSystem.out.println(p1.relativize(p2));\nSystem.out.println(p2.relativize(p1));",
       "choices": [
         "A. ../found/red.zip and ../../locks",
@@ -382,7 +382,7 @@
     },
     {
       "number": 31,
-      "question": "Assuming the current working directory is /home, then what is the output of the following program?",
+      "question": "31. Assuming the current working directory is /home, then what is the output of the following program?",
       "code": "1:package magic;\n2:import java.nio.file.*;\n3:public class Magician {\n4:   public String doTrick(Path path) {\n5:      return path.subpath(2,3)\n6:         .getName(1)\n7:         .toAbsolutePath()\n8:         .toString();\n9:   }\n10:   public static void main(String… cards) {\n11:      final Magician m = new Magician();\n12:      System.out.print(m.doTrick(\n13:         Paths.get(\"/bag/of/tricks/.././disappear.txt\")));\n14:   } }",
       "choices": [
         "A. /home/tricks",
@@ -395,7 +395,7 @@
     },
     {
       "number": 32,
-      "question": "Which statements about the Files methods lines() and readAllLines() are correct? (Choose two.)",
+      "question": "32. Which statements about the Files methods lines() and readAllLines() are correct? (Choose two.)",
       "choices": [
         "A. They have different return types.",
         "B. The readAllLines() method is always faster.",
@@ -407,7 +407,7 @@
     },
     {
       "number": 33,
-      "question": "Given the following application in which a user enters bone twice, what is the expected result?",
+      "question": "33. Given the following application in which a user enters bone twice, what is the expected result?",
       "code": "long start = System.currentTimeMillis();\nvar retriever = new BufferedReader(new InputStreamReader(System.in));\ntry(retriever; var husky = System.err) {\n   var fetch = retriever.readLine();\n   System.out.printf(\"%s fetched in %5.1f seconds\",fetch, // v1\n      (System.currentTimeMillis()-start)/1000.0);\n}\nvar fetchAgain = retriever.readLine();\nSystem.out.println(fetchAgain + \" fetched again!\");",
       "choices": [
         "A. The program completes after printing a message once.",
@@ -420,7 +420,7 @@
     },
     {
       "number": 34,
-      "question": "What is the expected result of calling deleteTree() on a directory? Assume the directory exists and is able to be modified.",
+      "question": "34. What is the expected result of calling deleteTree() on a directory? Assume the directory exists and is able to be modified.",
       "code": "import java.nio.file.*;\npublic class Exterminate {\n   public void deleteTree(Path q) {\n      if (!Files.isDirectory(q))\n         Files.delete(q);\n      else {\n         Files.list(q).forEach(this::deleteTree);\n         Files.delete(q);\n      } } }",
       "choices": [
         "A. It will delete the directory itself only.",
@@ -433,7 +433,7 @@
     },
     {
       "number": 35,
-      "question": "Which code, if inserted into the method, will cause it to correctly copy any file passed to it that is accessible? (Choose two.)",
+      "question": "35. Which code, if inserted into the method, will cause it to correctly copy any file passed to it that is accessible? (Choose two.)",
       "code": "void copyFile(String source, String target) throws Exception {\n    try (var is = new FileInputStream(source);\n          OutputStream os = new FileOutputStream(target)) {\n       byte[] data = new byte[123];\n       int chirps;\n  \n       // INSERT CODE HERE\n    } }",
       "choices": [
         "A. while (is.read(data)> 0)\n    os.write(data);",
@@ -446,7 +446,7 @@
     },
     {
       "number": 36,
-      "question": "In this question, an instance of Cereal has been serialized to disk, with the source object having a name value of CornLoops and sugar value of 5. What is the value of name and sugar after this object has been read from disk using the ObjectInputStream's readObject() method?",
+      "question": "36. In this question, an instance of Cereal has been serialized to disk, with the source object having a name value of CornLoops and sugar value of 5. What is the value of name and sugar after this object has been read from disk using the ObjectInputStream's readObject() method?",
       "code": "package breakfast;\nimport java.io.Serializable;\nrecord Bowl(boolean spoon) {}\npublic class Cereal implements Serializable {\n   private String name = \"CocoaCookies\";\n   private transient int sugar = 10;\n   private Bowl bowl;\n   public Cereal() {\n      super();\n      this.name = \"CaptainPebbles\";\n      this.bowl = new Bowl(true);\n      sugar = 2;\n   }\n   { name = \"SugarPops\"; }\n   // Getters/Setters Omitted\n }",
       "choices": [
         "A. CaptainPebbles and 10",
@@ -459,7 +459,7 @@
     },
     {
       "number": 37,
-      "question": "What is the output of the following code snippet?",
+      "question": "37. What is the output of the following code snippet?",
       "code": "11: var halleysComet = Path.of(\"stars/./rocks/../m1.meteor\")\n 12:    .subpath(1, 5).normalize();\n 13:\n 14: var lexellsComet = Paths.get(\"./stars/../solar/\");\n 15: lexellsComet.subpath(1, 3)\n 16:    .resolve(\"m1.meteor\").normalize();\n 17:\n 18: System.out.print(halleysComet.equals(lexellsComet) ? \n 19:    \"Same!\" : \"Different!\");",
       "choices": [
         "A. Same!",
@@ -471,7 +471,7 @@
     },
     {
       "number": 38,
-      "question": "During deserialization from an I/O stream, which element of the class can be used to assign a value to the deserialized object?",
+      "question": "38. During deserialization from an I/O stream, which element of the class can be used to assign a value to the deserialized object?",
       "choices": [
         "A. Variable initializer",
         "B. Instance initializer",
@@ -483,7 +483,7 @@
     },
     {
       "number": 39,
-      "question": "Assuming there are no symbolic links involved and file /nursery/sapling.seed exists, which statements about the following code snippet are correct? (Choose three.)",
+      "question": "39. Assuming there are no symbolic links involved and file /nursery/sapling.seed exists, which statements about the following code snippet are correct? (Choose three.)",
       "code": "Files.move(\n    Paths.get(\"/nursery/sapling.seed\"),\n    Paths.get(\"/forest\"),\n    StandardCopyOption.ATOMIC_MOVE);",
       "choices": [
         "A. The code may throw an exception at runtime.",
@@ -496,7 +496,7 @@
     },
     {
       "number": 40,
-      "question": "What is the output of the following application? Assume /all-data exists and is accessible within the file system.",
+      "question": "40. What is the output of the following application? Assume /all-data exists and is accessible within the file system.",
       "code": "1:package sesame;\n2:import java.nio.file.*;\n3:import java.util.stream.*;\n4:public class TheCount {\n5:   public static Stream<String> readLines(Path p) {\n6:      try { return Files.lines(p); } catch (Exception e) {\n7:         throw new RuntimeException(e);\n8:      }\n9:   }\n10:   public static long count(Path p) throws Exception {\n11:      return Files.list(p)\n12:            .filter(w -> Files.isRegularFile(w))\n13:            .flatMap(s -> readLines(s))\n14:            .count();\n15:   }\n16:   public static void main(String[] d) throws Exception {\n17:      System.out.print(count(Paths.get(\"/all-data\")));\n18:   } }",
       "choices": [
         "A. The code does not compile.",

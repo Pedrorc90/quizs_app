@@ -141,7 +141,7 @@
     },
     {
       "number": 12,
-      "question": "What is the output of the following application?",
+      "question": "12. What is the output of the following application?",
       "code": " 3:  public class TpsReport {\n 4:     public void submitReports() {\n 5:        var s = Executors.newCachedThreadPool();\n 6:        Future bosses = s.submit(() -> System.out.print(\"1\"));\n 7:        s.shutdown();\n 8:        System.out.print(bosses.get());\n 9:     }\n 10:    public static void main(String[] memo) {\n 11:       new TpsReport().submitReports();\n 12:    } }\n",
       "choices": [
         "A. null",
@@ -154,7 +154,7 @@
     },
     {
       "number": 13,
-      "question": "Which of the following static methods do not exist in the Executors class? (Choose two.)",
+      "question": "13. Which of the following static methods do not exist in the Executors class? (Choose two.)",
       "choices": [
         "A. newFixedScheduledThreadPool()",
         "B. newThreadPool()",
@@ -166,7 +166,7 @@
     },
     {
       "number": 14,
-      "question": "How many times does the following application print Ready at runtime?",
+      "question": "14. How many times does the following application print Ready at runtime?",
       "code": "package parade;\nimport java.util.concurrent.*;\npublic class CartoonCat {\n   private void await(CyclicBarrier c) {\n      try {\n         c.await();\n      } catch (Exception e) {}\n   }\n   public void march(CyclicBarrier c) {\n      var s = Executors.newSingleThreadExecutor();\n      for(int i=0; i<12; i++)\n         s.execute(() -> await(c));\n      s.shutdown();\n   }\n   public static void main(String… strings) {\n      new CartoonCat().march(new CyclicBarrier(4,\n            () -> System.out.println(\"Ready\")));\n   } }\n",
       "choices": [
         "A. Zero",
@@ -178,7 +178,7 @@
     },
     {
       "number": 15,
-      "question": "Let's say you needed a thread executor to create tasks for a CyclicBarrier that has a barrier limit of five threads. Which static method in ExecutorService should you use to obtain it?",
+      "question": "15. Let's say you needed a thread executor to create tasks for a CyclicBarrier that has a barrier limit of five threads. Which static method in ExecutorService should you use to obtain it?",
       "choices": [
         "A. newSingleThreadExecutor()",
         "B. newSingleThreadScheduledExecutor()",
@@ -189,7 +189,7 @@
     },
     {
       "number": 16,
-      "question": "The following diagrams represent the order of read/write operations of two threads sharing a common variable. Each thread first reads the value of the variable from memory and then writes a new value of the variable back to memory. Which diagram demonstrates proper synchronization?",
+      "question": "16. The following diagrams represent the order of read/write operations of two threads sharing a common variable. Each thread first reads the value of the variable from memory and then writes a new value of the variable back to memory. Which diagram demonstrates proper synchronization?",
       "choices": [
         "A. ",
         "B. ",
@@ -199,7 +199,7 @@
     },
     {
       "number": 17,
-      "question": "What is the output of the following program? (Choose three.)",
+      "question": "17. What is the output of the following program? (Choose three.)",
       "code": " import java.util.concurrent.atomic.*;\n import java.util.stream.*;\n public class Circus {\n    private static int seal = 0;\n    private static volatile int tiger = 0;\n    private static AtomicInteger lion = new AtomicInteger(0);\n    public static void main(String[] tent) {\n       Stream.iterate(0, x -> x + 1)\n          .parallel()\n          .limit(100)\n          .forEach(q -> {seal++; tiger++; lion.incrementAndGet();});\n       System.out.println(seal + \",\" + tiger + \",\"+ lion);\n    } }\n",
       "choices": [
         "A. The first number printed may be less than 100.",
@@ -212,7 +212,7 @@
     },
     {
       "number": 18,
-      "question": "What is the output of the following application?",
+      "question": "18. What is the output of the following application?",
       "code": " import java.util.*;\n import java.util.concurrent.*;\n public class Race {\n    ExecutorService service = Executors.newFixedThreadPool(8);\n    public static int sleep() {\n       try { Thread.sleep(1000); } catch (Exception e) {}\n       return 1;\n    }\n    public void hare() {\n       try {\n          Callable<Integer> c = () -> sleep();\n          final var r = List.of(c,c,c);\n          var results = service.invokeAll(r);\n          System.out.println(\"Hare won the race!\");\n       } catch (Exception e) {e.printStackTrace();}\n    }\n    public void tortoise() {\n       try {\n          Callable<Integer> c = () -> sleep();\n          final var r = List.of(c,c,c);\n          Integer result = service.invokeAny(r);\n          System.out.println(\"Tortoise won the race!\");\n       } catch (Exception e) {e.printStackTrace();}\n    }\n    public static void main(String[] p) throws Exception {\n       var race = new Race();\n       race.service.execute(() -> race.hare());\n       race.service.execute(() -> race.tortoise());\n    } }\n",
       "choices": [
         "A. Hare won the race! is printed first.",
@@ -225,7 +225,7 @@
     },
     {
       "number": 19,
-      "question": "Which of the following concurrent collections is sorted? (Choose two.)",
+      "question": "19. Which of the following concurrent collections is sorted? (Choose two.)",
       "choices": [
         "A. ConcurrentSkipList",
         "B. ConcurrentSkipListSet",
@@ -237,7 +237,7 @@
     },
     {
       "number": 20,
-      "question": "What is the output of the following application?",
+      "question": "20. What is the output of the following application?",
       "code": "package taxes;\nimport java.util.concurrent.*;\npublic class Accountant {\n   public static void completePaperwork() {\n      System.out.print(\"[Filing]\");\n   }\n   public static double getPi() {\n      return 3.14159;\n   }\n   public static void main(String[] args) throws Exception {\n      ExecutorService x = Executors.newSingleThreadExecutor();\n      Future<?> f1 = x.submit(() -> completePaperwork());\n      Future<Object> f2 = x.submit(() -> getPi());\n      System.out.print(f1.get()+\" \"+f2.get());\n      x.shutdown();\n   }\n}",
       "choices": [
         "A. [Filing]",
@@ -250,7 +250,7 @@
     },
     {
       "number": 21,
-      "question": "Assuming 10 seconds is enough time for all the tasks to finish, what statements about the following program are correct? (Choose two.)",
+      "question": "21. Assuming 10 seconds is enough time for all the tasks to finish, what statements about the following program are correct? (Choose two.)",
       "code": "import java.util.concurrent.*;\nimport java.util.concurrent.atomic.*;\npublic class Clock {\n   private AtomicLong bigHand = new AtomicLong(0);\n   void incrementBy10() {\n      bigHand.getAndSet(bigHand.get() + 10);\n   }\n   public static void main(String[] c) throws Exception {\n      var smartWatch = new Clock();\n      ExecutorService s = Executors.newCachedThreadPool();\n      for(int i=0; i<100; i++) {\n         s.submit(() -> smartWatch.incrementBy10()).get();\n      }\n      s.shutdown();\n      s.awaitTermination(10, TimeUnit.SECONDS);\n      System.out.println(smartWatch.bigHand.get());\n   }\n}",
       "choices": [
         "A. The code does not compile.",
@@ -263,7 +263,7 @@
     },
     {
       "number": 22,
-      "question": "What is the most likely result of executing the following application?",
+      "question": "22. What is the most likely result of executing the following application?",
       "code": "package jokes;\nimport java.util.concurrent.*;\npublic class Riddle {\n   public void sleep() {\n      try { Thread.sleep(5000); } catch (Exception e) {}\n   }\n   public String getQuestion(Riddle r) {\n      synchronized {\n         sleep();\n         if(r != null) r.getAnswer(null);\n         return \"How many programmers does it take \"\n               + \"to change a light bulb?\";\n      } }\n   public synchronized String getAnswer(Riddle r) {\n      sleep();\n      if(r != null) r.getAnswer(null);\n      return \"None, that's a hardware problem\";\n   }\n   public static void main(String… ununused) {\n      var r1 = new Riddle();\n      var r2 = new Riddle();\n      var s = Executors.newFixedThreadPool(2);\n      s.submit(() -> r1.getQuestion(r2));\n      s.execute(() -> r2.getAnswer(r1));\n      s.shutdown();\n   }\n}",
       "choices": [
         "A. A deadlock is produced at runtime.",
@@ -276,7 +276,7 @@
     },
     {
       "number": 23,
-      "question": "Which ScheduledExecutorService method can result in the same action being executed by two threads at the same time?",
+      "question": "23. Which ScheduledExecutorService method can result in the same action being executed by two threads at the same time?",
       "choices": [
         "A. scheduleAtFixedDelay()",
         "B. scheduleAtFixedRate()",
@@ -288,7 +288,7 @@
     },
     {
       "number": 24,
-      "question": "What is the output of the following application?",
+      "question": "24. What is the output of the following application?",
       "code": "package olympics;\nimport java.util.concurrent.*;\npublic class Athlete {\n   int stroke = 0;\n   public synchronized void swimming() {\n      stroke++;\n   }\n   private int getStroke() {\n      synchronized(this) { return stroke; }\n   }\n   public static void main(String… laps) {\n      ExecutorService s = Executors.newFixedThreadPool(10);\n      Athlete a = new Athlete();\n      for(int i=0; i<1000; i++) {\n         s.execute(() -> a.swimming());\n      }\n      s.shutdown();\n      System.out.print(a.getStroke());\n   }\n}",
       "choices": [
         "A. A deadlock is produced at runtime.",
@@ -301,7 +301,7 @@
     },
     {
       "number": 25,
-      "question": "Which of the following is most likely to be caused by a race condition?",
+      "question": "25. Which of the following is most likely to be caused by a race condition?",
       "choices": [
         "A. A thread perpetually denied access to a resource",
         "B. A program hanging indefinitely",
@@ -312,8 +312,8 @@
     },
     {
       "number": 26,
-      "question": "Which statement about the following class is correct?",
-      "code": "package my;\nimport java.util.*;\npublic class ThreadSafeList {\n   private List<Integer> data = new ArrayList<>();\n   public synchronized void addValue(int value) {\n      data.add(value);\n   }\n   public int getValue(int index) {\n      return data.get(index);\n   }\n   public int size() {\n      synchronized(ThreadSafeList.class) {\n         return data.size();\n      } }\n}",
+      "question": "26. Which statement about the following class is correct?",
+      "code": "package my;\nimport java.util.*;\npublic class ThreadSafeList {\n&nbsp; private List<Integer> data = new ArrayList<>();\n&nbsp;   public synchronized void addValue(int value) {\n&nbsp;      data.add(value);\n   }\n   public int getValue(int index) {\n&nbsp;&nbsp;&nbsp;      return data.get(index);\n   }\n   public int size() {\n&nbsp;      synchronized(ThreadSafeList.class) {\n&nbsp;         return data.size();\n&nbsp;      }\n }\n}",
       "choices": [
         "A. The code compiles and is thread-safe.",
         "B. The code compiles and is not thread-safe.",
@@ -325,7 +325,7 @@
     },
     {
       "number": 27,
-      "question": "Which two method names, when filled into the print2() method, produce the same output as the print1() method? Assume the input arguments for each represent the same non-null numeric value.",
+      "question": "27. Which two method names, when filled into the print2() method, produce the same output as the print1() method? Assume the input arguments for each represent the same non-null numeric value.",
       "code": "public static synchronized void print1(int counter) {\n   System.out.println(counter--);\n   System.out.println(++counter);\n}\n\npublic static synchronized void print2(AtomicInteger counter) {\n   System.out.println(counter._________________);\n   System.out.println(counter._________________);\n}",
       "choices": [
         "A. decrementAndGet() and getAndIncrement()",
@@ -337,7 +337,7 @@
     },
     {
       "number": 28,
-      "question": "What is the result of executing the following application multiple times?",
+      "question": "28. What is the result of executing the following application multiple times?",
       "code": "package bears;\nimport java.util.*;\npublic class Bounce {\n   public static void main(String… legend) {\n      List.of(1,2,3,4).stream()\n         .forEach(System.out::println);\n      List.of(1,2,3,4).parallel()\n         .forEach(System.out::println);\n      List.of(1,2,3,4).parallel()\n         .forEachOrdered(System.out::println);\n   }\n}",
       "choices": [
         "A. Only the first stream prints the same order every time.",
@@ -350,7 +350,7 @@
     },
     {
       "number": 29,
-      "question": "How many lines of the following code snippet contain compilation errors?",
+      "question": "29. How many lines of the following code snippet contain compilation errors?",
       "code": "11: ScheduledExecutorService t = Executors\n12:    .newSingleThreadScheduledExecutor();\n13: Future result = t.execute(System.out::println);\n14: t.invokeAll(null);\n15: t.scheduleAtFixedRate(() -> {return;},5,TimeUnit.MINUTES);",
       "choices": [
         "A. None",
@@ -362,7 +362,7 @@
     },
     {
       "number": 30,
-      "question": "How many times does the following application print W at runtime?",
+      "question": "30. How many times does the following application print W at runtime?",
       "code": "package crew;\nimport java.util.concurrent.*;\nimport java.util.stream.*;\npublic class Boat {\n   private void waitTillFinished(CyclicBarrier c) {\n      try {\n         c.await();\n         System.out.print(\"W\");\n      } catch (Exception e) {}\n   }\n   public void row(ExecutorService s) {\n      var cb = new CyclicBarrier(5);\n      IntStream.iterate(1, i-> i+1)\n         .limit(12)\n         .forEach(i -> s.submit(() -> waitTillFinished(cb)));\n   }\n   public static void main(String[] oars) {\n      ExecutorService service = null;\n      try {\n         service = Executors.newCachedThreadPool();\n         new Boat().row(service);\n      } finally {\n         service.isShutdown();\n      } }\n}",
       "choices": [
         "A. Zero.",
@@ -375,7 +375,7 @@
     },
     {
       "number": 31,
-      "question": "Using the Boat class from the previous question, what is the final state of the application?",
+      "question": "31. Using the Boat class from the previous question, what is the final state of the application?",
       "choices": [
         "A. The application produces an exception at runtime.",
         "B. The application terminates successfully.",
@@ -386,7 +386,7 @@
     },
     {
       "number": 32,
-      "question": "Given the following code snippet, what statement about the values printed on lines p1 and p2 is correct?",
+      "question": "32. Given the following code snippet, what statement about the values printed on lines p1 and p2 is correct?",
       "code": "var db = Collections.synchronizedList(new ArrayList<>());\nIntStream.range(1,6)\n   .parallel()\n   .map(i -> {db.add(i); return i;})\n   .forEachOrdered(System.out::print);  // p1\nSystem.out.println();\ndb.forEach(System.out::print);          // p2",
       "choices": [
         "A. They are always the same.",
@@ -399,7 +399,7 @@
     },
     {
       "number": 33,
-      "question": "Given the following program, how many times is TV Time expected to be printed? Assume 10 seconds is enough time for each task created by the program to complete.",
+      "question": "33. Given the following program, how many times is TV Time expected to be printed? Assume 10 seconds is enough time for each task created by the program to complete.",
       "code": "import java.util.concurrent.*;\nimport java.util.concurrent.locks.*;\npublic class Television {\n   private static Lock myTurn = new ReentrantLock();\n   public void watch() {\n      try {\n         if (myTurn.lock(5, TimeUnit.SECONDS)) {\n            System.out.println(\"TV Time\");\n            myTurn.unlock();\n         }\n      } catch (InterruptedException e) {}\n   }\n   public static void main(String[] t) throws Exception {\n      var newTv = new Television();\n      for (int i = 0; i < 3; i++) {\n         new Thread(() -> newTv.watch()).start();\n         Thread.sleep(10*1000);\n      }\n   }\n}",
       "choices": [
         "A. One time.",
@@ -412,7 +412,7 @@
     },
     {
       "number": 34,
-      "question": "Given the original array, how many of the following for statements enter an infinite loop at runtime, assuming each is executed independently?",
+      "question": "34. Given the original array, how many of the following for statements enter an infinite loop at runtime, assuming each is executed independently?",
       "code": "var original = new ArrayList<Integer>(List.of(1,2,3));\n\nvar copy1 = new ArrayList<Integer>(original);\nfor(Integer q : copy1)\n   copy1.add(1);\n\nvar copy2 = new CopyOnWriteArrayList<Integer>(original);\nfor(Integer q : copy2)\n   copy2.add(2);\n\nvar copy3 = new LinkedBlockingQueue<Integer>(original);\nfor(Integer q : copy3)\n   copy3.offer(3);\n\nvar copy4 = Collections.synchronizedList(original);\nfor(Integer q : copy4)\n   copy4.add(4);",
       "choices": [
         "A. Zero",
@@ -425,7 +425,7 @@
     },
     {
       "number": 35,
-      "question": "Which ExecutorService method guarantees all running tasks are stopped in an orderly fashion?",
+      "question": "35. Which ExecutorService method guarantees all running tasks are stopped in an orderly fashion?",
       "choices": [
         "A. shutdown()",
         "B. shutdownNow()",
@@ -436,7 +436,7 @@
     },
     {
       "number": 36,
-      "question": "Assuming 10 seconds is enough time for all of the tasks to finish, what is the output of the following application?",
+      "question": "36. Assuming 10 seconds is enough time for all of the tasks to finish, what is the output of the following application?",
       "code": "import java.util.concurrent.*;\npublic class Bank {\n   static int cookies = 0;\n   public synchronized void deposit(int amount) {\n      cookies += amount;\n   }\n   public static synchronized void withdrawal(int amount) {\n      cookies -= amount;\n   }\n   public static void main(String[] amount) throws Exception {\n      var teller = Executors.newScheduledThreadPool(50);\n      Bank bank = new Bank();\n      for(int i=0; i<25; i++) {\n         teller.submit(() -> bank.deposit(5));\n         teller.submit(() -> bank.withdrawal(5));\n      }\n      teller.shutdown();\n      teller.awaitTermination(10, TimeUnit.SECONDS);\n       System.out.print(bank.cookies);\n   } }",
       "choices": [
         "A. 0",
@@ -449,7 +449,7 @@
     },
     {
       "number": 37,
-      "question": "What is the output of the following application?",
+      "question": "37. What is the output of the following application?",
       "code": "import java.util.*;\npublic class SearchList<T> {\n   private List<T> data;\n   private boolean foundMatch = false;\n   public SearchList(List<T> list) {\n      this.data = list;\n   }\n   public void exists(T v,int start, int end) {\n      if(end-start==0) {}\n      else if(end-start==1) {\n         foundMatch = foundMatch || v.equals(data.get(start));\n      } else {\n         final int middle = start + (end-start)/2;\n         new Thread(() -> exists(v,start,middle)).run();\n         new Thread(() -> exists(v,middle,end)).run();\n      }\n   }\n   public static void main(String[] a) throws Exception {\n      List<Integer> data = List.of(1,2,3,4,5,6);\n      SearchList<Integer> t = new SearchList<Integer>(data);\n      t.exists(5, 0, data.size());\n      System.out.print(t.foundMatch);\n   } }",
       "choices": [
         "A. true",
@@ -462,7 +462,7 @@
     },
     {
       "number": 38,
-      "question": "Given the following code snippet, what statement about the values printed on lines q1 and q2 is correct?",
+      "question": "38. Given the following code snippet, what statement about the values printed on lines q1 and q2 is correct?",
       "code": "var mitchsWorkout = new CopyOnWriteArrayList<Integer>();\nList.of(1,5,7,9).stream().parallel()\n   .forEach(mitchsWorkout::add);\nmitchsWorkout\n   .forEachOrdered(System.out::print);  // q1\nList.of(1,5,7,9).stream().parallel()\n   .forEachOrdered(System.out::print);  // q2",
       "choices": [
         "A. They are always the same.",
@@ -475,7 +475,7 @@
     },
     {
       "number": 39,
-      "question": "What is the output of the following program? (Choose three.)",
+      "question": "39. What is the output of the following program? (Choose three.)",
       "code": "import java.util.concurrent.atomic.*;\nimport java.util.stream.*;\npublic class Moon {\n   private volatile AtomicLong green = new AtomicLong(0);\n   private volatile int cheese = 0;\n   private volatile int rocket = 0;\n   private void takeOff() {\n      Stream.iterate(0, x -> x + 1).parallel().limit(1000).forEach(q -> {\n         green.getAndIncrement();\n         cheese++;\n         synchronized (this) {\n            ++rocket;\n         }\n      });\n      System.out.println(green + \",\" + cheese + \",\" + rocket);\n   }\n   public static void main(String[] tent) {\n      new Moon().takeOff();\n   } }",
       "choices": [
         "A. The first number printed may be less than 1000.",
@@ -488,7 +488,7 @@
     },
     {
       "number": 40,
-      "question": "Assuming the two stream operators are compiled and executed independently, which statements are correct? (Choose two.)",
+      "question": "40. Assuming the two stream operators are compiled and executed independently, which statements are correct? (Choose two.)",
       "code": "var drink = List.of(\"coke\", \"soda\", \"pop\");\n \nSystem.out.print(drink.parallelStream()\n   .parallel()\n   .reduce(0, (c1, c2) -> c1 + c2.length(), (s1, s2) -> s1 + s2));\n \nSystem.out.print(drink.stream()\n   .reduce(0, (c1, c2) -> c1 + c2.length(), (s1, s2) -> s1 + s2));",
       "choices": [
         "A. The first number printed is sometimes 11.",
